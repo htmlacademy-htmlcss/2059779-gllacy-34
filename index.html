@@ -2,11 +2,74 @@
 <html lang="ru">
   <head>
     <meta charset="utf-8">
-    <title>HTML Academy: Глейси</title>
+    <title>Магазин мороженого Глейси</title>
   </head>
-  <body>
-
-    <p>Репозиторий создан для обучения на профессиональном онлайн‑курсе «<a href="https://htmlacademy.ru/intensive/htmlcss">HTML и CSS. Профессиональная вёрстка сайтов</a>».</p>
-
+  <body class="default">
+    <header class="page-header">
+      <nav class="navigation">
+        <a class="navigation__logo" href="index.html"><img src="" alt="Логотип магазина мороженого Глейси"
+            class="page-header-logo"></a>
+        <ul class="site-navigation">
+          <li class="site-navigation__item"><a class="site-navigation__link" href="catalog.html">Каталог</a></li>
+          <li class="site-navigation__item"><a class="site-navigation__link" href="#">Доставка и&nbsp;оплата</a></li>
+          <li class="site-navigation__item"><a class="site-navigation__link" href="#">О&nbsp;компании</a></li>
+        </ul>
+        <a class="navigation-phone" href="tel:+78005558628">+7 800 55-86-28</a>
+        <ul class="user-navigation">
+          <li class="user-navigation__item"><a class="user-navigation__link" href="#"><span
+                class="visually-hidden">Поиск</span></a></li>
+          <li class="user-navigation__item"><a class="user-navigation__link href=" #" "><span
+                class="visually-hidden">Вход</span></a></li>
+          <li class="user-navigation__item"><a class="user-navigation__link href=" #" "><span
+                class="visually-hidden">Корзина</span></a></li>
+        </ul>
+      </nav>
+    </header>
+    <main class="main-index">
+      <h1 class="visually-hidden">Магазин мороженого Глейси</h1>
+      <section class="promo">
+        <h2 class="visually-hidden">Выбор мороженого</h2>
+        <dl class="promo__product">
+          <dt class="promo__title">Нежный пломбир<br>с&nbsp;клубничным джемом</dt>
+          <dd class="promo__definition">Натуральное мороженое из&nbsp;свежих сливок и&nbsp;молока с&nbsp;вкуснейшим
+            клубничным джемом&nbsp;&mdash; это идеальный десерт для всей семьи.</dd>
+          <!-- В макете должен быть слайдер, видимо на CSS, я пока не знаю, как его буду верстать, но заготовки текстов для слайдера оставлю здесь закомментированными
+          <dt class="promo__title">Сливочное мороженое со&nbsp;вкусом банана</dt>
+          <dd class="promo__definition">Сливочное мороженое<br>с&nbsp;ярким банановым вкусом подарит вам свежесть
+          и&nbsp;наслаждение даже в&nbsp;самый жаркий летний день.</dd>
+          <dt class="promo__title">Карамельный пломбир<br>с&nbsp;маршмеллоу</dt>
+          <dd class="promo__definition">Необычный сладкий десерт с&nbsp;карамельным топпингом и&nbsp;кусочками зефира
+            завоюет сердца сладкоежек всех возрастов.</dd>
+          </dl>
+          -->
+        </dl>
+        <a class="button promo__order" href="#">Заказать</button>
+          <!-- Я полагаю, что это ссылка, которая переводит в форму заказа. Возможно ей нужна общая обёртка с текстом выше, и ссылок должно быть три, подумаю. -->
+        <div class="promo__slider">
+          <img class="promo__slider-image" src=""><!-- Думаю, что здесь alt атрибут не нужен, потому что в определении есть и заголовок и описание. -->
+          <button class="promo__slider-button slider-prev" type="button">
+            <span class="visually-hidden">Предыдущее фото</span>
+          </button>
+          <button class="promo__slider-button slider-next" type="button">
+            <span class="visually-hidden">Следующее фото</span>
+          </button>
+        </div>
+        <!-- В курсе рассказывают как делать CSS слайдер через псевдокласс :checked. Видимо подразумевается, что слайдер должен быть с радио-баттонами. Сделаю для них вёрстку.-->
+        <div class="promo__slider-controls">
+          <input class="promo__slider-button hidden" type="radio" id="button-1" name="toggle" checked>
+          <input class="promo__slider-button hidden" type="radio" id="button-2" name="toggle">
+          <input class="promo__slider-button hidden" type="radio" id="button-3" name="toggle">
+          <label class="promo__slider-control promo__slider-control--active" for="button-1"></label>
+          <label class="promo__slider-control" for="button-2"></label>
+          <label class="promo__slider-control" for="button-3"></label>
+        </div>
+        <!-- Похоже, что ссылки на социальные сети выглядят как другие кнопки в шаблоне. Попробую переиспользовать весь блок -->
+        <ul class="promo-social social">
+          <li class="promo-social__item"><a class="promo-social__link button" href="#"><span class="visually-hidden">Телеграм</span></a></li>
+          <li class="promo-social__item"><a class="promo-social__link button" href="#"><span class="visually-hidden">Вконтакте</span></a></li>
+          <li class="promo-social__item"><a class="promo-social__link button" href="#"><span class="visually-hidden">YouTube</span></a></li>
+        </ul>
+      </section>
+    </main>
   </body>
 </html>
