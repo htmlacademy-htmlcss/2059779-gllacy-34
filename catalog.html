@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <title>Сливочное мороженое</title>
+  <meta name="description" content="Вкусное мороженое на основе жирных сливок в магазине Глейси">
+  <meta name="keywords" content="сливочное мороженое, купить мороженое, заказать мороженое, смерть от ожирения, магазин мороженого, каталог мороженого, мороженое, пломбир, маршмеллоу, доставка мороженого">
+</head>
+<body class="default"><!-- Вот не знаю, нужна ли глобальная обёртка для всей страницы. С одной стороны мы меняем тушке фон, а с другой стороны всё содержимое должно быть фиксированной ширины и отцентрировано. Наверное не айс каждой секции задавать ширину -->
+  <header class="page-header">
+    <nav class="navigation">
+      <a class="navigation__logo" href="index.html">
+        <img src="" alt="Логотип магазина мороженого Глейси" class="page-header-logo">
+      </a>
+      <ul class="site-navigation">
+        <li class="site-navigation__item">
+          <a class="site-navigation__link" href="catalog.html">Каталог</a>
+        </li>
+        <li class="site-navigation__item">
+          <a class="site-navigation__link" href="#">Доставка и&nbsp;оплата</a>
+        </li>
+        <li class="site-navigation__item">
+          <a class="site-navigation__link" href="#">О&nbsp;компании</a>
+        </li>
+      </ul>
+      <a class="navigation-phone" href="tel:+78005558628">+7 800 55-86-28</a>
+      <ul class="user-navigation">
+        <li class="user-navigation__item">
+          <a class="user-navigation__link" href="#">
+            <span class="visually-hidden">Поиск</span>
+          </a>
+        </li>
+        <li class="user-navigation__item">
+          <a class="user-navigation__link" href="#">
+            <span class="visually-hidden">Вход</span>
+          </a>
+        </li>
+        <li class="user-navigation__item">
+          <a class="user-navigation__link" href="#">
+            <span class="visually-hidden">Корзина</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <main class="main-catalog">
+    <ul class="breadcrumbs">
+      <li class="breadcrumbs__item">
+        <a class="breadcrumbs__link" href="index.html">Главная</a>
+      </li>
+      <li class="breadcrumbs-item">
+        <a class="breadcrumbs-link">Каталог</a>
+      </li>
+    </ul>
+    <h1 class="catalog-title">Сливочное мороженое</h1>
+    <section class="catalog-products">
+      <h2 class="visually-hidden">Список товаров с фильтрами</h2>
+      <form class="catalog-products__filter" action="https://echo.htmlacademy.ru/" method="get">
+        <fieldset class="catalog-products__field">
+          <legend class="catalog-products__title">Сортировка</legend>
+          <select class="catalog-products__select" name="sorting">
+            <option class="catalog-products__select-item" value="popular">по популярности</option>
+            <option class="catalog-products__select-item" value="price">по цене</option>
+            <option class="catalog-products__select-item" value="calory">по калорийности</option>
+          </select>
+        </fieldset>
+        <fieldset class="catalog-products__field">
+          <legend class="catalog-products__title">
+            <label class="catalog-products__label">Цена: <input class="catalog-products__range-input" type="number" value="100" name="min-price">&nbsp;₽</label>
+            <label class="catalog-products__label">&mdash; <input class="catalog-products__range-input" type="number" value="500" name="max-price" style="width: 37px">500&nbsp;₽</label><!-- Скопировано из примера академии из раздела 9. Стиль заинлайнен. Позже разберусь для чего. -->
+          </legend>
+          <div class="catalog-products__range">
+            <div class="catalog-products__range-scale">
+              <div class="catalog-products__range-bar" style="left: 42px; width: 136px"><!-- Снова инлайн-стиль. -->
+                <button class="catalog-products__range-toggle catalog-products__range-toggle--toggle-min">
+                  <span class="visually-hidden">Изменить минимальную цену.</span>
+                </button>
+                <button class="catalog-products__range-toggle catalog-products__range-toggle--toggle-max">
+                  <span class="visually-hidden">Изменить максимальную цену.</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </fieldset>
+        <fieldset class="catalog-products__field">
+          <legend class="catalog-products__title">Жирность:</legend><!-- Здесь я подсмотрел, как сделано в 9 разделе. В тренажёрах вроде-бы оформляли через псевды. Отношение БЭМ к псевдам ещё не выяснил. -->
+          <ul class="catalog-products__filter-list">
+            <li class="catalog-products__filter-item">
+              <label class="catalog-products__control">
+                <input class="visually-hidden catalog-products__control-input" type="radio" name="product-group" value="0%">
+                <span class="catalog-products__control-mark catalog-products__control-mark--radiobutton"></span>
+                <span class="catalog-products__control-label">0%</span>
+              </label>
+            </li>
+            <li class="catalog-products__filter-item">
+              <label class="catalog-products__control">
+                <input class="visually-hidden catalog-products__control-input" type="radio" name="product-group" value="10%" checked>
+                <span class="catalog-products__control-mark catalog-products__control-mark--active catalog-products__control-mark--radiobutton"></span><!--На макете этот пункт выбран. Нужно уточнить, надо ли повторять на макете состояние элементов форм. Если нет, то модификатор убрать. -->
+                <span class="catalog-products__control-label">до 10%</span>
+              </label>
+            </li>
+            <li class="catalog-products__filter-item">
+              <label class="catalog-products__control">
+                <input class="visually-hidden catalog-products__control-input" type="radio" name="product-group" value="30%">
+                <span class="catalog-products__control-mark catalog-products__control-mark--radiobutton"></span>
+                <span class="catalog-products__control-label">до 30%</span>
+              </label>
+            </li>
+            <li class="catalog-products__filter-item">
+              <label class="catalog-products__control">
+                <input class="visually-hidden catalog-products__control-input" type="radio" name="product-group" value="above 30%">
+                <span class="catalog-products__control-mark catalog-products__control-mark--radiobutton"></span>
+                <span class="catalog-products__control-label">выше 30%</span>
+              </label>
+            </li>
+          </ul>
+        </fieldset>
+        <fieldset class="catalog-products__field">
+          <legend class="catalog-products__title">Наполнители:</legend>
+          <ul class="catalog-products__filter-item">
+            <li class="catalog-products__filter-item">
+              <label class="catalog-products__control">
+                <input class="visually-hidden catalog-products__control-input" type="checkbox" name="chocolate" checked>
+                <span class="catalog-products__control-mark catalog-products__control-mark--active catalog-products__control-mark--checkbox"></span>
+                <span class="catalog-products__control-label">шоколадные</span>
+              </label>
+            </li>
+            <li class="catalog-products__filter-item">
+              <label class="catalog-products__control">
+                <input class="visually-hidden catalog-products__control-input" type="checkbox" name="sugar-sprinkles" checked>
+                <span class="catalog-products__control-mark catalog-products__control-mark--active catalog-products__control-mark--checkbox"></span>
+                <span class="catalog-products__control-label">сахарные посыпки</span>
+              </label>
+            </li>
+            <li class="catalog-products__filter-item">
+              <label class="catalog-products__control">
+                <input class="visually-hidden catalog-products__control-input" type="checkbox" name="fruits">
+                <span class="catalog-products__control-mark catalog-products__control-mark--checkbox"></span>
+                <span class="catalog-products__control-label">фрукты</span>
+              </label>
+            </li>
+            <li class="catalog-products__filter-item">
+              <label class="catalog-products__control">
+                <input class="visually-hidden catalog-products__control-input" type="checkbox" name="syrups">
+                <span class="catalog-products__control-mark catalog-products__control-mark--checkbox"></span>
+                <span class="catalog-products__control-label">сиропы</span>
+              </label>
+            </li>
+            <li class="catalog-products__filter-item">
+              <label class="catalog-products__control">
+                <input class="visually-hidden catalog-products__control-input" type="checkbox" name="jams">
+                <span class="catalog-products__control-mark catalog-products__control-mark--checkbox"></span>
+                <span class="catalog-products__control-label">джемы</span>
+              </label>
+            </li>
+          </ul>
+        </fieldset>
+        <button class="catalog-products__button button" type="submit">Применить</button>
+      </form>
+
+
+  </main>
+  <footer class="page-footer">
+    <ul class="footer-social social">
+      <li class="footer-social__item">
+        <a class="promo-social__link button" href="#">
+          <span class="visually-hidden">Телеграм</span>
+        </a>
+      </li>
+      <li class="footer-social__item">
+        <a class="promo-social__link button" href="#">
+          <span class="visually-hidden">Вконтакте</span>
+        </a>
+      </li>
+      <li class="footer-social__item">
+        <a class="promo-social__link button" href="#">
+          <span class="visually-hidden">YouTube</span>
+        </a>
+      </li>
+    </ul>
+    <ul class="about">
+      <li class="about__item">
+        <a href="#" class="about__link">Для поставщиков</a>
+      </li>
+      <li class="about__item">
+        <a href="#" class="about__link">О&nbsp;производстве</a>
+      </li>
+      <li class="about__item">
+        <a href="#" class="about__link">Наши документы</a>
+      </li>
+      <li class="about__item">
+        <a href="#" class="about__link">Экологические стандарты</a>
+      </li>
+    </ul>
+    <div class="footer-logo-container"><!-- Пока не могу придумать, как выравнивать без этой обёртки -->
+    <a class="footer-logo" href="https://htmlacademy.ru/">
+      <img class="footer-logo__image" src="" alt="логотип HTML Academy">
+    </a>
+    <p class="about-text">Сделано в <a class="htmlacademy-link" href="https://htmlacademy.ru/">.html academy</a></p>
+    </div>
+  </footer>
+</body>
+</html>
