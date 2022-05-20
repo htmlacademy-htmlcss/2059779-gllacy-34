@@ -96,7 +96,7 @@
       <div class="product-cards">
         <!-- Этот блок нужно переиспользовать в каталоге.  -->
         <article class="product-card card-small"><!-- В примерах чаще используется список. В Академии в одном или двух примерах был всё же article. Он реже используется, но вроде бы тоже подходит. -->
-          <h3 class="product-card__title">Малинка</h4>
+          <h3 class="product-card__title">Малинка</h3>
             <!-- Для семантики заголовок должен идти первым. Его положение нужно не забыть изменить через order. -->
             <img class="product-card__image" src=""><!-- alt не нужен, потому что есть заголовок. -->
             <p class="product-card__description">Сливочное мороженое с&nbsp;малиновым джемом</p>
@@ -105,28 +105,28 @@
             <!-- Ну, может хоть это кнопка. Модальное окно например. -->
         </article>
         <article class="product-card card-small">
-          <h3 class="product-card__title">Фисташка</h4>
+          <h3 class="product-card__title">Фисташка</h3>
             <img class="product-card__image" src="">
             <p class="product-card__description">Фисташковый пломбир с&nbsp;кусочками шоколада</p>
             <b class="product-card__price">340&nbsp;₽/кг</b><!-- Где бы такое дешёвое мороженое купить? -->
             <button class="product-card__button button" type="button"><span class="visually-hidden">Заказать</span></button>
         </article>
         <article class="product-card card-small">
-          <h3 class="product-card__title">Черника</h4>
+          <h3 class="product-card__title">Черника</h3>
             <img class="product-card__image" src="">
             <p class="product-card__description">Крем-брюле с&nbsp;черничным джемом</p>
             <b class="product-card__price">330&nbsp;₽/кг</b>
             <button class="product-card__button button" type="button"><span class="visually-hidden">Заказать</span></button>
         </article>
         <article class="product-card card-small">
-          <h3 class="product-card__title">Черника</h4>
+          <h3 class="product-card__title">Черника</h3>
             <img class="product-card__image" src="">
             <p class="product-card__description">Крем-брюле с&nbsp;черничным джемом</p>
             <b class="product-card__price">330&nbsp;₽/кг</b>
             <button class="product-card__button button" type="button"><span class="visually-hidden">Заказать</span></button>
         </article>
         <article class="product-card card-small">
-          <h3 class="product-card__title">Бабл-гам</h4>
+          <h3 class="product-card__title">Бабл-гам</h3>
             <img class="product-card__image" src="">
             <p class="product-card__description">Ванильный пломбир со&nbsp;сладкой посыпкой</p>
             <b class="product-card__price">320&nbsp;₽/кг</b>
@@ -171,7 +171,7 @@
         <form class="delivery__form" action="https://echo.htmlacademy.ru/" method="post">
           <p class="delivery__form-date">
             <label class="delivery__form-label" for="delivery-date">Дата</label>
-            <input class="delivery__input input" type="date" id="delivery-date" name="delivery-date" placeholder="01.04.2020" required><!-- Академия даёт пример с type text, но просится же date -->
+            <input class="delivery__input input" type="date" id="delivery-date" name="delivery-date" required><!-- Академия даёт пример с type text, но просится же date. Хотя могут быть ошибки с пиксельпёрфект, потому что плейсхолдер сюда не ставится. -->
           </p>
           <p class="delivery__form-phone-nubmer">
             <label class="delivery__form-label" for="delivery-phone">Телефон</label>
@@ -188,9 +188,9 @@
     <section class="contacts">
       <h2 class="visually-hidden">Контактная информация</h2>
       <address class="card-small">
-        <h3 class="contacts__title">Адрес главного офиса и&nbsp;офлайн-магазина:</h3>
+        <p class="contacts__title">Адрес главного офиса и&nbsp;офлайн-магазина:</p><!-- сюда напрашивались заголовки, но они не могут быть в address-->
         <p class="contacts__address">наб. реки Карповки, 5&nbsp;лит П, Санкт-Петербург</p>
-        <h3 class="contacts__title">Для заказов по&nbsp;телефону:</h3>
+        <p class="contacts__title">Для заказов по&nbsp;телефону:</p>
         <a class="contacts__phone-number" href="tel:+78128121212">+7&nbsp;(812)&nbsp;812-12-12</a>
         <p class="contacts__note">(с&nbsp;10&nbsp;до&nbsp;20&nbsp;ежедневно)</p>
         <button class="contacts__form" type="button">Форма обратной связи</button>
