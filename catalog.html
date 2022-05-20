@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="Магазин Глейси – это онлайн и офлайн-магазин по продаже мороженого собственного производства на развес">
+  <meta name="keywords" content="Глейси, магазин мороженого, каталог мороженого, каталог, мороженое, пломбир, сливочное мороженое, маршмеллоу, доставка мороженого">
+  <title>Каталог мороженого Глейси</title>
+</head>
+<body>
+  <header class="page-header">
+    <nav class="navigation">
+      <a class="navigation__logo" href="index.html"><img src="" alt="Логотип магазина мороженого Глейси" class="page-header-logo"></a>
+      <ul class="site-navigation">
+        <li class="site-navigation__item"><a class="site-navigation__link" href="catalog.html">Каталог</a></li>
+        <li class="site-navigation__item"><a class="site-navigation__link" href="#">Доставка и&nbsp;оплата</a></li>
+        <li class="site-navigation__item"><a class="site-navigation__link" href="#">О&nbsp;компании</a></li>
+      </ul>
+      <a class="navigation-phone" href="tel:+78005558628">+7 800 55-86-28</a>
+      <ul class="user-navigation">
+        <li class="user-navigation__item"><a class="user-navigation__link" href="#"><span class="visually-hidden">Поиск</span></a></li>
+        <li class="user-navigation__item"><a class="user-navigation__link" href="#"><span class="user-navigation__content">Вход</span></a></li>
+        <li class="user-navigation__item"><a class="user-navigation__link" href="#"><span class="user-navigation__content">2 товара</span></a></li>
+      </ul>
+    </nav>
+  </header>
+  <main class="main-catalog">
+    <ul class="breadcrumbs">
+      <li class="breadcrumbs__items"><a class="breadcrumbs__link" href="index.html">Главная</a></li>
+      <li class="breadcrumbs__items"><a class="breadcrumbs__link">Каталог</a></li>
+    </ul>
+    <h1 class="main-catalog__title">Сливочное мороженое</h1>
+    <section class="catalog-products">
+      <h2 class="visually-hidden">Список товаров с фильтрами</h2>
+      <fieldset class="catalog-filter-group">
+        <legend class="catalog-filter-group__title">Группы товаров</legend>
+          <select class="catalog-filter-group__sorting" name="sorting" aria-label="Сортировка">
+            <option class="catalog-filter-group__item" value=" popular">по популярности</option>
+            <option class="catalog-filter-group__item" value="cheap">по цене</option>
+            <option class="catalog-filter-group__item" value="calories">по калорийности</option>
+          </select>
+      </fieldset>
+      <fieldset class="catalog-filter-group">
+        <legend class="catalog-filter-group__title">Цена: 100&nbsp;₽&nbsp;&mdash; 500&nbsp;₽</legend>
+        <select class="catalog-filter-group__sorting" aria-label="Ценовой диапазон">
+          <input type="range" min="200" max="1100" step="10">
+        </select>
+      </fieldset>
+    </section>
+
+
+
+  </main>
+  <footer class="page-footer">
+    <ul class="footer-social social">
+      <li class="footer-social__item"><a class="promo-social__link button" href="#"><span class="visually-hidden">Телеграм</span></a></li>
+      <li class="footer-social__item"><a class="promo-social__link button" href="#"><span class="visually-hidden">Вконтакте</span></a></li>
+      <li class="footer-social__item"><a class="promo-social__link button" href="#"><span class="visually-hidden">YouTube</span></a></li>
+    </ul>
+    <ul class="about">
+      <li class="about__item"><a href="#" class="about__link">Для поставщиков</a></li>
+      <li class="about__item"><a href="#" class="about__link">О&nbsp;производстве</a></li>
+      <li class="about__item"><a href="#" class="about__link">Наши документы</a></li>
+      <li class="about__item"><a href="#" class="about__link">Экологические стандарты</a></li>
+    </ul>
+  </footer>
+  <div class="footer-logo-container">
+    <!-- Пока не могу придумать, как выравнивать без этой обёртки -->
+    <a class="footer-logo" href="https://htmlacademy.ru/"><img class="footer-logo__image" src="" alt="логотип HTML Academy"></a>
+    <p class="about-text">Сделано в <a class="htmlacademy-link" href="https://htmlacademy.ru/">.html academy</a></p>
+  </div>
+  </body>
+  </html>
