@@ -6,7 +6,7 @@
   <meta name="keywords" content="Глейси, магазин мороженого, мороженое, пломбир, сливочное мороженое, маршмеллоу, доставка мороженого">
   <title>Магазин мороженого Глейси</title>
 </head>
-<body class="default">
+<body class="default"><!-- Вот не знаю, нужна ли глобальная обёртка для всей страницы. С одной стороны мы меняем тушке фон, а с другой стороны всё содержимое должно быть фиксированной ширины и отцентрировано. Наверное не айс каждой секции задавать ширину -->
   <header class="page-header">
     <nav class="navigation">
       <a class="navigation__logo" href="index.html"><img src="" alt="Логотип магазина мороженого Глейси" class="page-header-logo"></a>
@@ -28,41 +28,39 @@
     <h1 class="visually-hidden">Магазин мороженого Глейси</h1>
     <section class="promo">
       <h2 class="visually-hidden">Выбор мороженого</h2>
-      <dl class="promo__product">
-        <dt class="promo__title">Нежный пломбир<br>с&nbsp;клубничным джемом</dt><!-- В учебнике Академии есть статья про br. Они пишут, что нужно его использовать для соответствия макету. В дальнейшем буду его ставить на местах переноса в макете.-->
-        <dd class="promo__definition">Натуральное мороженое из&nbsp;свежих сливок и&nbsp;молока с&nbsp;вкуснейшим
-          клубничным джемом&nbsp;&mdash; это идеальный десерт для всей семьи.</dd>
-        <!-- В макете должен быть слайдер, видимо на CSS, я пока не знаю, как его буду верстать, но заготовки текстов для слайдера оставлю здесь закомментированными.
-          <dt class="promo__title">Сливочное мороженое со&nbsp;вкусом банана</dt>
-          <dd class="promo__definition">Сливочное мороженое<br>с&nbsp;ярким банановым вкусом подарит вам свежесть
-          и&nbsp;наслаждение даже в&nbsp;самый жаркий летний день.</dd>
-          <dt class="promo__title">Карамельный пломбир<br>с&nbsp;маршмеллоу</dt>
-          <dd class="promo__definition">Необычный сладкий десерт с&nbsp;карамельным топпингом и&nbsp;кусочками зефира
-            завоюет сердца сладкоежек всех возрастов.</dd>
+      <ul class="slider">
+        <li class="slider__item slider-item--active">
+          <dl class="slider__item-product">
+            <dt class="slider__title">Нежный пломбир с&nbsp;клубничным джемом</dt><!-- Мне кажется, что это похоже на список определений из одного пункта. -->
+            <dd class="slider__definition">Натуральное мороженое из&nbsp;свежих сливок и&nbsp;молока с&nbsp;вкуснейшим клубничным джемом&nbsp;&mdash; это идеальный десерт для всей семьи.</dd>
           </dl>
-          -->
-      </dl>
-      <a class="button promo__order" href="#">Заказать</a>
-      <!-- Я полагаю, что это ссылка, которая переводит в форму заказа. Возможно ей нужна общая обёртка с текстом выше, и ссылок должно быть три, подумаю. -->
-      <div class="promo__slider">
-        <img class="promo__slider-image" src="">
-        <!-- Думаю, что здесь alt атрибут не нужен, потому что в определении есть и заголовок и описание. -->
-        <button class="promo__slider-button slider-prev" type="button">
-          <span class="visually-hidden">Предыдущее фото</span>
-        </button>
-        <button class="promo__slider-button slider-next" type="button">
-          <span class="visually-hidden">Следующее фото</span>
-        </button>
-      </div>
-      <!-- В курсе рассказывают как делать CSS слайдер через псевдокласс :checked. Я понимаю, что CSS слайдеры баловство, но хочется сделать для тренировки. Сделаю для него вёрстку.-->
-      <div class="promo__slider-controls">
-        <input class="promo__slider-button hidden" type="radio" id="button-1" name="toggle" checked>
-        <input class="promo__slider-button hidden" type="radio" id="button-2" name="toggle">
-        <input class="promo__slider-button hidden" type="radio" id="button-3" name="toggle">
-        <label class="promo__slider-control promo__slider-control--active" for="button-1"></label>
-        <label class="promo__slider-control" for="button-2"></label>
-        <label class="promo__slider-control" for="button-3"></label>
-      </div>
+          <a class="button slider__order" href="#">Заказать</a><!-- Я полагаю, что это ссылка, которая переводит на страницу товара для заказа. Возможно ей нужна общая обёртка с текстом выше, и ссылок должно быть три, подумаю. -->
+          <img class="slider__image" src=""><!-- Думаю, что здесь alt атрибут не нужен, потому что в определении есть и заголовок и описание. -->
+        </li>
+        <li class="slider__item slider-item--inactive">
+          <dl class="slider__item-product slider__item-product--inactive">
+            <dt class="slider__title slider__title--inactive">Сливочное мороженое со&nbsp;вкусом банана</dt>
+            <dd class="slider__definition slider__definition--inactive">Сливочное мороженое с&nbsp;ярким банановым вкусом подарит вам свежесть и&nbsp;наслаждение даже в&nbsp;самый жаркий летний день.</dd>
+          </dl>
+          <a class="button slider__order slider__order--inactive" href="#">Заказать</a>
+          <img class="slider__image slider__image--inactive" src="">
+        </li>
+        <li class="slider__item slider-item--inactive">
+          <dl class="slider__item-product slider__item-product--inactive">
+            <dt class="slider__title slider__title--inactive">Карамельный пломбир с&nbsp;маршмеллоу</dt>
+            <dd class="slider__definition slider__definition--inactive">Необычный сладкий десерт с&nbsp;карамельным топпингом и&nbsp;кусочками зефира завоюет сердца сладкоежек всех возрастов.</dd>
+          </dl>
+          <a class="button slider__order slider__order--inactive" href="#">Заказать</a>
+          <img class="slider__image slider__image--inactive" src="">
+        </li>
+      </ul>
+      <button class="button slider-prev" type="button"><span class="visually-hidden">Предыдущее фото</span></button>
+      <button class="button slider-next" type="button"><span class="visually-hidden">Следующее фото</span></button>
+      <ol class="slider-pagination">
+        <li class="slider-pagination__item"><button class="button slider-pagination__button slider-pagination__button--active"><span class="visually-hidden">Первый слайд</span></button></li>
+        <li class="slider-pagination__item"><button class="button slider-pagination__button"><span class="visually-hidden">Второй слайд</span></button></li><!-- Думаю, что базовый класс кнопки в соответствии с логикой БЭМ выглядеть будет так. -->
+        <li class="slider-pagination__item"><button class="button slider-pagination__button"><span class="visually-hidden">Третий слайд</span></button></li>
+      </ol>
       <ul class="promo-social social">
         <!-- Похоже, что ссылки на социальные сети выглядят как другие кнопки в шаблоне. Попробую переиспользовать весь блок -->
         <li class="promo-social__item"><a class="promo-social__link button" href="#"><span class="visually-hidden">Телеграм</span></a></li>
@@ -71,7 +69,7 @@
       </ul>
     </section>
     <section class="promo-action">
-      <h2 class="promo-action__title">Заказывайте мороженое<br>и&nbsp;получайте подарки!</h2>
+      <h2 class="promo-action__title">Заказывайте мороженое и&nbsp;получайте подарки!</h2>
       <div class="promo-action-cards">
         <!-- Очевидно, что потребуется обёртка для карточек товара, если только не делать их флоатнутыми. Насколько я понимаю, это случай, когда БЭМ блок, внутри БЭМ блока. Надеюсь, что я всё делаю примерно верно, и меня не забанят в Яндексе за ересь. -->
         <div class="promo-action-cards__card card-big card-big--accent">
@@ -92,7 +90,7 @@
       </div>
     </section>
     <section class="promo-action">
-      <h2 class="promo-action__title">Попробуйте самые популярные<br>вкусы нашего мороженого</h2>
+      <h2 class="promo-action__title">Попробуйте самые популярные вкусы нашего мороженого</h2>
       <div class="product-cards">
         <!-- Этот блок нужно переиспользовать в каталоге.  -->
         <article class="product-card card-small"><!-- В примерах чаще используется список. В Академии в одном или двух примерах был всё же article. Он реже используется, но вроде бы тоже подходит. -->
@@ -151,7 +149,7 @@
       <h2 class="visually-hidden">Новости</h2>
       <article class="main-news__item card-big">
         <h3 class="main-news__blog-title">Новое в&nbsp;нашем блоге</h3>
-        <а class="main-news__blog">10&nbsp;способов сервировки фруктовых щербетов к&nbsp;столу</а>
+        <a class="main-news__blog" href="#">10&nbsp;способов сервировки фруктовых щербетов к&nbsp;столу</a> <!-- Валидатор здесь ругается: Bad character а after <. Probable cause: Unescaped <. Try escaping it as &lt;. Не могу понять почему. Ему скобочки не нравятся или что? -->
       </article>
       <aside class="main-news__item card-big card-big--post-border">
         <p class="main-news__subscription">Подпишитесь на&nbsp;нашу сладкую рассылку и&nbsp;будьте всегда в&nbsp;курсе всего самого вкусного, что у&nbsp;нас происходит. Обещаем не&nbsp;спамить и&nbsp;не&nbsp;слать всякой ненужной ерунды. Честно =)</p>
@@ -171,7 +169,7 @@
         <form class="delivery__form" action="https://echo.htmlacademy.ru/" method="post">
           <p class="delivery__form-date">
             <label class="delivery__form-label" for="delivery-date">Дата</label>
-            <input class="delivery__input input" type="date" id="delivery-date" name="delivery-date" required><!-- Академия даёт пример с type text, но просится же date. Хотя могут быть ошибки с пиксельпёрфект, потому что плейсхолдер сюда не ставится. -->
+            <input class="delivery__input input" type="text" id="delivery-date" name="delivery-date" placeholder="01.04.2020" required>
           </p>
           <p class="delivery__form-phone-nubmer">
             <label class="delivery__form-label" for="delivery-phone">Телефон</label>
@@ -188,7 +186,7 @@
     <section class="contacts">
       <h2 class="visually-hidden">Контактная информация</h2>
       <address class="card-small">
-        <p class="contacts__title">Адрес главного офиса и&nbsp;офлайн-магазина:</p><!-- сюда напрашивались заголовки, но они не могут быть в address-->
+        <p class="contacts__title">Адрес главного офиса и&nbsp;офлайн-магазина:</p><!-- Cюда напрашивались заголовки, но они не могут быть в address-->
         <p class="contacts__address">наб. реки Карповки, 5&nbsp;лит П, Санкт-Петербург</p>
         <p class="contacts__title">Для заказов по&nbsp;телефону:</p>
         <a class="contacts__phone-number" href="tel:+78128121212">+7&nbsp;(812)&nbsp;812-12-12</a>
