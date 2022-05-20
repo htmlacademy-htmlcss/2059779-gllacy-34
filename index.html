@@ -2,6 +2,8 @@
 <html lang="ru">
   <head>
     <meta charset="utf-8">
+    <meta name="description" content="Магазин Глейси – это онлайн и офлайн-магазин по продаже мороженого собственного производства на развес">
+    <meta name="keywords" content="Глейси, магазин мороженого, мороженое, пломбир, сливочное мороженое, маршмеллоу, доставка мороженого">
     <title>Магазин мороженого Глейси</title>
   </head>
   <body class="default">
@@ -18,14 +20,14 @@
         <ul class="user-navigation">
           <li class="user-navigation__item"><a class="user-navigation__link" href="#"><span
                 class="visually-hidden">Поиск</span></a></li>
-          <li class="user-navigation__item"><a class="user-navigation__link href=" #" "><span
+          <li class="user-navigation__item"><a class="user-navigation__link" href="#"><span
                 class="visually-hidden">Вход</span></a></li>
-          <li class="user-navigation__item"><a class="user-navigation__link href=" #" "><span
+          <li class="user-navigation__item"><a class="user-navigation__link" href="#"><span
                 class="visually-hidden">Корзина</span></a></li>
         </ul>
       </nav>
     </header>
-    <main class="main-index">
+    <main class="main-index"><!-- Напрашивается установить row-gap 80px в стилях. -->
       <h1 class="visually-hidden">Магазин мороженого Глейси</h1>
       <section class="promo">
         <h2 class="visually-hidden">Выбор мороженого</h2>
@@ -43,8 +45,7 @@
           </dl>
           -->
         </dl>
-        <a class="button promo__order" href="#">Заказать</button>
-          <!-- Я полагаю, что это ссылка, которая переводит в форму заказа. Возможно ей нужна общая обёртка с текстом выше, и ссылок должно быть три, подумаю. -->
+        <a class="button promo__order" href="#">Заказать</a><!-- Я полагаю, что это ссылка, которая переводит в форму заказа. Возможно ей нужна общая обёртка с текстом выше, и ссылок должно быть три, подумаю. -->
         <div class="promo__slider">
           <img class="promo__slider-image" src=""><!-- Думаю, что здесь alt атрибут не нужен, потому что в определении есть и заголовок и описание. -->
           <button class="promo__slider-button slider-prev" type="button">
@@ -54,7 +55,7 @@
             <span class="visually-hidden">Следующее фото</span>
           </button>
         </div>
-        <!-- В курсе рассказывают как делать CSS слайдер через псевдокласс :checked. Видимо подразумевается, что слайдер должен быть с радио-баттонами. Сделаю для них вёрстку.-->
+        <!-- В курсе рассказывают как делать CSS слайдер через псевдокласс :checked. Я понимаю, что CSS слайдеры баловство, но хочется сделать для тренировки. Сделаю для него вёрстку.-->
         <div class="promo__slider-controls">
           <input class="promo__slider-button hidden" type="radio" id="button-1" name="toggle" checked>
           <input class="promo__slider-button hidden" type="radio" id="button-2" name="toggle">
@@ -63,12 +64,119 @@
           <label class="promo__slider-control" for="button-2"></label>
           <label class="promo__slider-control" for="button-3"></label>
         </div>
-        <!-- Похоже, что ссылки на социальные сети выглядят как другие кнопки в шаблоне. Попробую переиспользовать весь блок -->
-        <ul class="promo-social social">
+        <ul class="promo-social social"><!-- Похоже, что ссылки на социальные сети выглядят как другие кнопки в шаблоне. Попробую переиспользовать весь блок -->
           <li class="promo-social__item"><a class="promo-social__link button" href="#"><span class="visually-hidden">Телеграм</span></a></li>
           <li class="promo-social__item"><a class="promo-social__link button" href="#"><span class="visually-hidden">Вконтакте</span></a></li>
           <li class="promo-social__item"><a class="promo-social__link button" href="#"><span class="visually-hidden">YouTube</span></a></li>
         </ul>
+      </section>
+      <section class="promo-action">
+        <h2 class="promo-action__title">Заказывайте мороженое<br>и&nbsp;получайте подарки!</h2>
+        <div class="promo-action-cards"><!-- Очевидно, что потребуется обёртка для карточек товара, если только не делать их флоатнутыми. Насколько я понимаю, это случай, когда БЭМ блок, внутри БЭМ блока. Надеюсь, что я всё делаю примерно верно, и меня не забанят в Яндексе за ересь. -->
+          <div class="promo-action-cards__card card-big card-big--accent"><!-- Подложки на странице имеют два вида скругления углов 16px и 8px. Я не совсем понимаю, можно ли их считать отдельным БЭМ блоком. Вроде бы можно, но содержание местами сильно разное. Пока завёл для подложек с 16px класс card-big. -->
+            <h3 class="promo-action-cards__title">Малинка даром!</h3>
+            <p class="promo-action-cards__description">При покупке 2&nbsp;кг любого фруктового мороженого добавим в&nbsp;ваш заказ банку малинового варенья бесплатно.</p>
+            <a class="button promo-action-cards__order" href="#">Хочу подарок</a><!-- Скорее всего это ссылка, которая ведёт на форму заполнения заказа или условия рекламной кампании. -->
+            <!-- Дальше идёт фоточка, но мне кажется, что это не контентное изображение. Возможно из-за этого придётся возиться с выравниванием текста. -->
+          </div>
+          <div class="promo-action-cards__card card-big card-big--accent">
+            <h3 class="promo-action-cards__title">Маршмеллоу даром!</h3>
+            <p class="promo-action-cards__description">При покупке 2&nbsp;кг пломбира добавим в&nbsp;ваш заказ упаковку нежных зефирок совершенно бесплатно.</p>
+            <a class="button promo-action-cards__order" href="#">Хочу подарок</a>
+            <!-- Скорее всего это ссылка, которая ведёт на форму заполнения заказа или условия рекламной кампании. -->
+            <!-- Дальше идёт фоточка, но мне кажется, что это не контентное изображение. Возможно из-за этого придётся возиться с выравниванием текста. -->
+          </div>
+        </div>
+      </section>
+      <section class="promo-action">
+        <h2 class="promo-action__title">Попробуйте самые популярные<br>вкусы нашего мороженого</h2>
+        <div class="product-cards"><!-- Этот блок нужно переиспользовать в каталоге.  -->
+          <article class="product-card card-small">
+            <h4 class="product-card__title">Малинка</h4><!-- Для семантики заголовок должен идти первым. Его положение нужно не забыть изменить через order. -->
+            <img class="product-card__image" src=""><!-- alt не нужен, потому что есть заголовок. -->
+            <p class="product-card__description">Сливочное мороженое с&nbsp;малиновым джемом</p>
+            <b class="product-card__price">310&nbsp;₽/кг</b>
+            <button class="product-card__button button" type="button"><span class="visually-hidden">Заказать</span></button><!-- Ну, может хоть это кнопка. Модальное окно например. -->
+          </article>
+          <article class="product-card card-small">
+            <h4 class="product-card__title">Фисташка</h4>
+            <img class="product-card__image" src="">
+            <p class="product-card__description">Фисташковый пломбир с&nbsp;кусочками шоколада</p>
+            <b class="product-card__price">340&nbsp;₽/кг</b><!-- Где бы такое дешёвое мороженое купить? -->
+            <button class="product-card__button button" type="button"><span class="visually-hidden">Заказать</span></button>
+          </article>
+          <article class="product-card card-small">
+            <h4 class="product-card__title">Черника</h4>
+            <img class="product-card__image" src="">
+            <p class="product-card__description">Крем-брюле с&nbsp;черничным джемом</p>
+            <b class="product-card__price">330&nbsp;₽/кг</b>
+            <button class="product-card__button button" type="button"><span class="visually-hidden">Заказать</span></button>
+          </article>
+          <article class="product-card card-small">
+            <h4 class="product-card__title">Черника</h4>
+            <img class="product-card__image" src="">
+            <p class="product-card__description">Крем-брюле с&nbsp;черничным джемом</p>
+            <b class="product-card__price">330&nbsp;₽/кг</b>
+            <button class="product-card__button button" type="button"><span class="visually-hidden">Заказать</span></button>
+          </article>
+          <article class="product-card card-small">
+            <h4 class="product-card__title">Бабл-гам</h4>
+            <img class="product-card__image" src="">
+            <p class="product-card__description">Ванильный пломбир со&nbsp;сладкой посыпкой</p>
+            <b class="product-card__price">320&nbsp;₽/кг</b>
+            <button class="product-card__button button" type="button"><span class="visually-hidden">Заказать</span></button>
+          </article>
+        </div>
+      </section>
+      <section class="company-description card-big card-big--themed-border">
+        <article class="company-description__container"><!-- Не уверен на счёт выбора тэга. -->
+          <h3 class="company-description__title">Магазин Глейси&nbsp;&mdash; это онлайн и&nbsp;офлайн-магазин по&nbsp;продаже мороженого собственного производства на&nbsp;развес</h3>
+          <ul class="company-description__features-list">
+            <li class="company-description__features-item">Всё наше мороженое изготавливается на&nbsp;собственном производстве с&nbsp;использованием современного оборудования и&nbsp;проверенных временем технологий.</li>
+            <li class="company-description__features-item">Для приготовления мороженого используются сливки и&nbsp;молоко высочайшего качества. Все ингредиенты и&nbsp;добавки произведены из&nbsp;натурального сырья.</li>
+            <li class="company-description__features-item">Закупка ингредиентов производится только у&nbsp;проверенных фермерских хозяйств, с&nbsp;которыми нас связывает долговременное сотрудничество.</li>
+            <li class="company-description__features-item">Доставка нашего мороженого осуществляется в&nbsp;специальном термопаке, который не&nbsp;даёт мороженому растаять и&nbsp;позволяет сохранить превосходный вкус.</li>
+          </ul>
+        </article>
+      </section>
+      <section class="main-news">
+        <article class="main-news__item card-big">
+          <p class="main-news__blog">Новое в&nbsp;нашем блоге</p>
+          <h3 class="main-news__blog-title">10&nbsp;способов сервировки фруктовых щербетов к&nbsp;столу</h3>
+        </article>
+        <aside class="main-news__item card-big card-big--post-border">
+          <p class="main-news__subscription">Подпишитесь на&nbsp;нашу сладкую рассылку и&nbsp;будьте всегда в&nbsp;курсе всего самого вкусного, что у&nbsp;нас происходит. Обещаем не&nbsp;спамить и&nbsp;не&nbsp;слать всякой ненужной ерунды. Честно =)</p>
+          <form class="main-news__subscription-form" action="https://echo.htmlacademy.ru/" method="post">
+            <label class="visually-hidden" for="newsletter-email">Email</label>
+            <input class="main-news__subscription-input input" placeholder="email@example.com" type="email" name="newsletter-email" id="newsletter-email" required>
+            <button class="main-news__subscription-button button" type="submit">Отправить</button>
+          </form>
+        </aside>
+      </section>
+      <section class="delivery card-big">
+        <h2 class="delivery__title">Доставка любимого мороженого на&nbsp;дом</h2>
+        <p class="delivery__description">Хочется полакомиться любимым дессертом, но&nbsp;нет времени съездить в&nbsp;магазин? Закажите доставку мороженого на&nbsp;дом, и&nbsp;курьер привезёт вам ваш заказ в&nbsp;течение часа!</p>
+        <div class="delivery__order">
+          <p class="delivery__description">Укажите адрес и&nbsp;дату доставки, и&nbsp;мы&nbsp;свяжемся с&nbsp;вами, чтобы подтвердить заказ.</p>
+
+          <form class="delivery__form" action="https://echo.htmlacademy.ru/" method="post">
+            <p class="delivery__form-date">
+              <label class="delivery__form-label" for="delivery-date">Дата</label>
+              <input class="delivery__input input" type="date" id="delivery-date" name="delivery-date" placeholder="01.04.2020"><!-- Академия даёт пример с type text, но просится же date -->
+            </p>
+            <p class="delivery__form-phone-nubmer">
+              <label class="delivery__form-label" for="delivery-phone">Телефон</label>
+              <input class="delivery__input input" type="text" id="delivery-phone" name="delivery-phone" placeholder="+7 800 999-00-00">
+            </p>
+            <p class="delivery__form-address">
+            <label class="delivery__form-label" for="delivery-address">Адрес</label>
+            <input class="delivery__input input" type="text" id="delivery-address" name="delivery-address" placeholder="ул. Большая Конюшенная, 19/8">
+          </p>
+
+          <button class="delivery__-button button" type="submit">Отправить</button>
+        </form>
+
+        </div>
       </section>
     </main>
   </body>
