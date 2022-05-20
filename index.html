@@ -2,24 +2,44 @@
 <html lang="ru">
 <head>
   <meta charset="utf-8">
+  <title>Магазин мороженого Глейси</title>
   <meta name="description" content="Магазин Глейси – это онлайн и офлайн-магазин по продаже мороженого собственного производства на развес">
   <meta name="keywords" content="Глейси, магазин мороженого, мороженое, пломбир, сливочное мороженое, маршмеллоу, доставка мороженого">
-  <title>Магазин мороженого Глейси</title>
 </head>
 <body class="default"><!-- Вот не знаю, нужна ли глобальная обёртка для всей страницы. С одной стороны мы меняем тушке фон, а с другой стороны всё содержимое должно быть фиксированной ширины и отцентрировано. Наверное не айс каждой секции задавать ширину -->
   <header class="page-header">
     <nav class="navigation">
-      <a class="navigation__logo" href="index.html"><img src="" alt="Логотип магазина мороженого Глейси" class="page-header-logo"></a>
+      <a class="navigation__logo" href="index.html">
+        <img src="" alt="Логотип магазина мороженого Глейси" class="page-header-logo">
+      </a>
       <ul class="site-navigation">
-        <li class="site-navigation__item"><a class="site-navigation__link" href="catalog.html">Каталог</a></li>
-        <li class="site-navigation__item"><a class="site-navigation__link" href="#">Доставка и&nbsp;оплата</a></li>
-        <li class="site-navigation__item"><a class="site-navigation__link" href="#">О&nbsp;компании</a></li>
+        <li class="site-navigation__item">
+          <a class="site-navigation__link" href="catalog.html">Каталог</a>
+        </li>
+        <li class="site-navigation__item">
+          <a class="site-navigation__link" href="#">Доставка и&nbsp;оплата</a>
+        </li>
+        <li class="site-navigation__item">
+          <a class="site-navigation__link" href="#">О&nbsp;компании</a>
+        </li>
       </ul>
       <a class="navigation-phone" href="tel:+78005558628">+7 800 55-86-28</a>
       <ul class="user-navigation">
-        <li class="user-navigation__item"><a class="user-navigation__link" href="#"><span class="visually-hidden">Поиск</span></a></li>
-        <li class="user-navigation__item"><a class="user-navigation__link" href="#"><span class="visually-hidden">Вход</span></a></li>
-        <li class="user-navigation__item"><a class="user-navigation__link" href="#"><span class="visually-hidden">Корзина</span></a></li>
+        <li class="user-navigation__item">
+          <a class="user-navigation__link" href="#">
+            <span class="visually-hidden">Поиск</span>
+          </a>
+        </li>
+        <li class="user-navigation__item">
+          <a class="user-navigation__link" href="#">
+            <span class="visually-hidden">Вход</span>
+          </a>
+        </li>
+        <li class="user-navigation__item">
+          <a class="user-navigation__link" href="#">
+            <span class="visually-hidden">Корзина</span>
+          </a>
+        </li>
       </ul>
     </nav>
   </header>
@@ -54,18 +74,46 @@
           <img class="slider__image slider__image--inactive" src="">
         </li>
       </ul>
-      <button class="button slider-prev" type="button"><span class="visually-hidden">Предыдущее фото</span></button>
-      <button class="button slider-next" type="button"><span class="visually-hidden">Следующее фото</span></button>
+      <button class="button slider-prev" type="button">
+        <span class="visually-hidden">Предыдущее фото</span>
+      </button>
+      <button class="button slider-next" type="button">
+        <span class="visually-hidden">Следующее фото</span>
+      </button>
       <ol class="slider-pagination">
-        <li class="slider-pagination__item"><button class="button slider-pagination__button slider-pagination__button--active"><span class="visually-hidden">Первый слайд</span></button></li>
-        <li class="slider-pagination__item"><button class="button slider-pagination__button"><span class="visually-hidden">Второй слайд</span></button></li><!-- Думаю, что базовый класс кнопки в соответствии с логикой БЭМ выглядеть будет так. -->
-        <li class="slider-pagination__item"><button class="button slider-pagination__button"><span class="visually-hidden">Третий слайд</span></button></li>
+        <li class="slider-pagination__item">
+          <button class="button slider-pagination__button slider-pagination__button--active">
+            <span class="visually-hidden">Первый слайд</span>
+          </button>
+        </li>
+        <li class="slider-pagination__item">
+          <button class="button slider-pagination__button">
+            <span class="visually-hidden">Второй слайд</span>
+          </button>
+        </li><!-- Думаю, что базовый класс кнопки в соответствии с логикой БЭМ выглядеть будет так. -->
+        <li class="slider-pagination__item">
+          <button class="button slider-pagination__button">
+            <span class="visually-hidden">Третий слайд</span>
+          </button>
+        </li>
       </ol>
       <ul class="promo-social social">
         <!-- Похоже, что ссылки на социальные сети выглядят как другие кнопки в шаблоне. Попробую переиспользовать весь блок -->
-        <li class="promo-social__item"><a class="promo-social__link button" href="#"><span class="visually-hidden">Телеграм</span></a></li>
-        <li class="promo-social__item"><a class="promo-social__link button" href="#"><span class="visually-hidden">Вконтакте</span></a></li>
-        <li class="promo-social__item"><a class="promo-social__link button" href="#"><span class="visually-hidden">YouTube</span></a></li>
+        <li class="promo-social__item">
+          <a class="promo-social__link button" href="#">
+            <span class="visually-hidden">Телеграм</span>
+          </a>
+        </li>
+        <li class="promo-social__item">
+          <a class="promo-social__link button" href="#">
+            <span class="visually-hidden">Вконтакте</span>
+          </a>
+        </li>
+        <li class="promo-social__item">
+          <a class="promo-social__link button" href="#">
+            <span class="visually-hidden">YouTube</span>
+          </a>
+        </li>
       </ul>
     </section>
     <section class="promo-action">
@@ -196,21 +244,43 @@
     </section>
   </main>
   <footer class="page-footer">
-  <ul class="footer-social social">
-    <li class="footer-social__item"><a class="promo-social__link button" href="#"><span class="visually-hidden">Телеграм</span></a></li>
-    <li class="footer-social__item"><a class="promo-social__link button" href="#"><span class="visually-hidden">Вконтакте</span></a></li>
-    <li class="footer-social__item"><a class="promo-social__link button" href="#"><span class="visually-hidden">YouTube</span></a></li>
-  </ul>
-  <ul class="about">
-    <li class="about__item"><a href="#" class="about__link">Для поставщиков</a></li>
-    <li class="about__item"><a href="#" class="about__link">О&nbsp;производстве</a></li>
-    <li class="about__item"><a href="#" class="about__link">Наши документы</a></li>
-    <li class="about__item"><a href="#" class="about__link">Экологические стандарты</a></li>
-  </ul>
-  </footer>
-  <div class="footer-logo-container"><!-- Пока не могу придумать, как выравнивать без этой обёртки -->
-    <a class="footer-logo" href="https://htmlacademy.ru/"><img class="footer-logo__image" src="" alt="логотип HTML Academy"></a>
+    <ul class="footer-social social">
+      <li class="footer-social__item">
+        <a class="promo-social__link button" href="#">
+          <span class="visually-hidden">Телеграм</span>
+        </a>
+      </li>
+      <li class="footer-social__item">
+        <a class="promo-social__link button" href="#">
+          <span class="visually-hidden">Вконтакте</span>
+        </a>
+      </li>
+      <li class="footer-social__item">
+        <a class="promo-social__link button" href="#">
+          <span class="visually-hidden">YouTube</span>
+        </a>
+      </li>
+    </ul>
+    <ul class="about">
+      <li class="about__item">
+        <a href="#" class="about__link">Для поставщиков</a>
+      </li>
+      <li class="about__item">
+        <a href="#" class="about__link">О&nbsp;производстве</a>
+      </li>
+      <li class="about__item">
+        <a href="#" class="about__link">Наши документы</a>
+      </li>
+      <li class="about__item">
+        <a href="#" class="about__link">Экологические стандарты</a>
+      </li>
+    </ul>
+    <div class="footer-logo-container"><!-- Пока не могу придумать, как выравнивать без этой обёртки -->
+    <a class="footer-logo" href="https://htmlacademy.ru/">
+      <img class="footer-logo__image" src="" alt="логотип HTML Academy">
+    </a>
     <p class="about-text">Сделано в <a class="htmlacademy-link" href="https://htmlacademy.ru/">.html academy</a></p>
-  </div>
+    </div>
+  </footer>
 </body>
 </html>
