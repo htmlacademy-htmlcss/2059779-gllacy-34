@@ -1,18 +1,16 @@
 <!DOCTYPE html>
 <html lang="ru">
-<!-- Из индекса я буду копировать куски кода с комментариями и не буду комментарии удалять. Мне кажется, так правильнее. -->
-<!-- Сейчас в Дискорде Николай Шабалин на пример кода парня, где он пытался классы в стиле БЭМа писать ответил, что у него неправильный БЭМ. А у меня примерно такой же. Так что я вдруг почувствовал себя последователем карго-культа. Если хреново и нечитаемо выглядит, переделаю. -->
 <head>
   <meta charset="utf-8">
   <title>Сливочное мороженое</title>
   <meta name="description" content="Вкусное мороженое на основе жирных сливок в магазине Глейси">
   <meta name="keywords" content="сливочное мороженое, купить мороженое, заказать мороженое, смерть от ожирения, магазин мороженого, каталог мороженого, мороженое, пломбир, маршмеллоу, доставка мороженого">
 </head>
-<body class="default"><!-- Вот не знаю, нужна ли глобальная обёртка для всей страницы. С одной стороны мы меняем тушке фон, а с другой стороны всё содержимое должно быть фиксированной ширины и отцентрировано. Наверное не айс каждой секции задавать ширину -->
+<body class="page"><!-- Вот не знаю, нужна ли глобальная обёртка для всей страницы. С одной стороны мы меняем тушке фон, а с другой стороны всё содержимое должно быть фиксированной ширины и отцентрировано. Наверное не айс каждой секции задавать ширину -->
   <header class="page-header">
     <nav class="navigation">
       <a class="navigation__logo" href="index.html">
-        <img src="" alt="Логотип магазина мороженого Глейси." class="page-header-logo">
+        <img class="page-header-logo" src="#" alt="Логотип магазина мороженого «Глейси».">
       </a>
       <ul class="site-navigation">
         <li class="site-navigation__item">
@@ -60,7 +58,7 @@
       <div class="catalog-products-filter-container">
         <form class="catalog-products__filter" action="https://echo.htmlacademy.ru/" method="get">
           <fieldset class="catalog-products__field">
-            <legend class="catalog-products__title">Сортировка</legend>
+            <h3 class="catalog-products__title">Сортировка</h3>
             <select class="catalog-products__select" name="sorting">
               <option class="catalog-products__select-item" value="popular">по популярности</option>
               <option class="catalog-products__select-item" value="price">по цене</option>
@@ -68,13 +66,13 @@
             </select>
           </fieldset>
           <fieldset class="catalog-products__field">
-            <legend class="catalog-products__title">
+            <h3 class="catalog-products__title">
               <label class="catalog-products__label">Цена: <input class="catalog-products__range-input" type="number" value="100" name="min-price">&nbsp;₽</label>
-              <label class="catalog-products__label">&mdash; <input class="catalog-products__range-input" type="number" value="500" name="max-price" style="width: 37px">500&nbsp;₽</label><!-- Скопировано из примера академии из раздела 9. Стиль заинлайнен. Позже разберусь почему. -->
-            </legend>
+              <label class="catalog-products__label">&mdash; <input class="catalog-products__range-input" type="number" value="500" name="max-price">500&nbsp;₽</label>
+            </h3>
             <div class="catalog-products__range">
               <div class="catalog-products__range-scale">
-                <div class="catalog-products__range-bar" style="left: 42px; width: 136px"><!-- Снова инлайн-стиль. -->
+                <div class="catalog-products__range-bar">
                   <button class="catalog-products__range-toggle catalog-products__range-toggle--toggle-min">
                     <span class="visually-hidden">Изменить минимальную цену.</span>
                   </button>
@@ -86,7 +84,7 @@
             </div>
           </fieldset>
           <fieldset class="catalog-products__field">
-            <legend class="catalog-products__title">Жирность:</legend><!-- Здесь я снова подсмотрел, как сделано в 9 разделе. В тренажёрах вроде-бы оформляли через псевды. Отношение БЭМ к псевдам ещё не выяснил. А также БЭМ не любит псевдоклассы (даже :hover, :active и прочие) и контекст типа :checked ~, но здесь я не буду пытаться применять другие подходы (если они вообще есть без JS), а сделаю как Академия рекомендует. -->
+            <h3 class="catalog-products__title">Жирность:</h3><!-- Здесь я снова подсмотрел, как сделано в 9 разделе. В тренажёрах вроде-бы оформляли через псевды. Отношение БЭМ к псевдам ещё не выяснил. А также БЭМ не любит псевдоклассы (даже :hover, :active и прочие) и контекст типа :checked ~, но здесь я не буду пытаться применять другие подходы (если они вообще есть без JS), а сделаю как Академия рекомендует. -->
             <ul class="catalog-products__filter-list">
               <li class="catalog-products__filter-item">
                 <label class="catalog-products__control">
@@ -119,7 +117,7 @@
             </ul>
           </fieldset>
           <fieldset class="catalog-products__field">
-            <legend class="catalog-products__title">Наполнители:</legend>
+            <h3 class="catalog-products__title">Наполнители:</h3>
             <ul class="catalog-products__filter-item">
               <li class="catalog-products__filter-item">
                 <label class="catalog-products__control">
@@ -162,11 +160,10 @@
         </form>
       </div>
       <div class="catalog-products-container">
-        <!-- В примерах Академии на «Барбершопе» и в тренажёрах в основном верстают через список. Но я по образцу первой страницы продолжу использовать артикулы. Вроде бы так можно. И я чуть-чуть избавлюсь от синдрома утёнка. А если нельзя, переделаю на список.-->
-        <article class="product-card card-small"><!-- В примерах чаще используется список. В Академии в одном или двух примерах был всё же article. Он реже используется, но вроде бы тоже подходит. -->
+        <article class="product-card card-small">
           <h3 class="product-card__title">Малинка</h3>
             <!-- Для семантики заголовок должен идти первым. Его положение нужно не забыть изменить через order. -->
-            <img class="product-card__image" src=""><!-- alt не нужен, потому что есть заголовок. -->
+            <img class="product-card__image" src="#" alt="">
             <p class="product-card__description">Сливочное мороженое с&nbsp;малиновым джемом</p>
             <b class="product-card__price">310&nbsp;₽/кг</b>
             <button class="product-card__button button" type="button"><span class="visually-hidden">Заказать</span></button>
@@ -174,84 +171,81 @@
         </article>
         <article class="product-card card-small">
           <h3 class="product-card__title">Фисташка</h3>
-            <img class="product-card__image" src="">
+            <img class="product-card__image" src="#" alt="">
             <p class="product-card__description">Фисташковый пломбир с&nbsp;кусочками шоколада</p>
-            <b class="product-card__price">340&nbsp;₽/кг</b><!-- Где бы такое дешёвое мороженое купить? -->
+            <b class="product-card__price">340&nbsp;₽/кг</b>
             <button class="product-card__button button" type="button"><span class="visually-hidden">Заказать</span></button>
         </article>
         <article class="product-card card-small">
           <h3 class="product-card__title">Черника</h3>
-            <img class="product-card__image" src="">
+            <img class="product-card__image" src="#" alt="">
             <p class="product-card__description">Крем-брюле с&nbsp;черничным джемом</p>
             <b class="product-card__price">330&nbsp;₽/кг</b>
             <button class="product-card__button button" type="button"><span class="visually-hidden">Заказать</span></button>
         </article>
         <article class="product-card card-small">
           <h3 class="product-card__title">Бабл-гам</h3>
-            <img class="product-card__image" src="">
+            <img class="product-card__image" src="#" alt="">
             <p class="product-card__description">Ванильный пломбир со&nbsp;сладкой посыпкой</p>
             <b class="product-card__price">320&nbsp;₽/кг</b>
             <button class="product-card__button button" type="button"><span class="visually-hidden">Заказать</span></button>
         </article>
-
         <article class="product-card card-small">
           <h3 class="product-card__title">Ежевика</h3>
-            <img class="product-card__image" src="">
+            <img class="product-card__image" src="#" alt="">
             <p class="product-card__description">Сливочное мороженое с&nbsp;ежевичным джемом</p>
             <b class="product-card__price">330&nbsp;₽/кг</b>
             <button class="product-card__button button" type="button"><span class="visually-hidden">Заказать</span></button>
         </article>
         <article class="product-card card-small">
           <h3 class="product-card__title">Банан</h3>
-            <img class="product-card__image" src="">
+            <img class="product-card__image" src="#" alt="">
             <p class="product-card__description">Сливочный пломбир с&nbsp;банановым вкусом</p>
             <b class="product-card__price">340&nbsp;₽/кг</b>
             <button class="product-card__button button" type="button"><span class="visually-hidden">Заказать</span></button>
         </article>
         <article class="product-card card-small">
           <h3 class="product-card__title">Шоколадка</h3>
-            <img class="product-card__image" src="">
+            <img class="product-card__image" src="#" alt="">
             <p class="product-card__description">Классический шоколадный пломбир</p>
             <b class="product-card__price">270&nbsp;₽/кг</b>
             <button class="product-card__button button" type="button"><span class="visually-hidden">Заказать</span></button>
         </article>
         <article class="product-card card-small">
           <h3 class="product-card__title">Клубничка</h3>
-            <img class="product-card__image" src="">
+            <img class="product-card__image" src="#" alt="">
             <p class="product-card__description">Сливочный пломбир с&nbsp;клубничным вкусом</p>
             <b class="product-card__price">300&nbsp;₽/кг</b>
             <button class="product-card__button button" type="button"><span class="visually-hidden">Заказать</span></button>
         </article>
-
         <article class="product-card card-small">
           <h3 class="product-card__title">Лимон</h3>
-            <img class="product-card__image" src="">
+            <img class="product-card__image" src="#" alt="">
             <p class="product-card__description">Освежающий лимонный сорбет</p>
             <b class="product-card__price">310&nbsp;₽/кг</b>
             <button class="product-card__button button" type="button"><span class="visually-hidden">Заказать</span></button>
         </article>
         <article class="product-card card-small">
           <h3 class="product-card__title">Ментол</h3>
-            <img class="product-card__image" src="">
+            <img class="product-card__image" src="#" alt="">
             <p class="product-card__description">Сливочный пломбир с&nbsp;ментоловым сиропом</p>
             <b class="product-card__price">320&nbsp;₽/кг</b>
             <button class="product-card__button button" type="button"><span class="visually-hidden">Заказать</span></button>
         </article>
         <article class="product-card card-small">
           <h3 class="product-card__title">Орешек</h3>
-            <img class="product-card__image" src="">
+            <img class="product-card__image" src="#" alt="">
             <p class="product-card__description">Фисташковый пломбир с&nbsp;шоколадным сиропом</p>
             <b class="product-card__price">360&nbsp;₽/кг</b>
             <button class="product-card__button button" type="button"><span class="visually-hidden">Заказать</span></button>
         </article>
         <article class="product-card card-small">
           <h3 class="product-card__title">Крем-брюле</h3>
-            <img class="product-card__image" src="">
+            <img class="product-card__image" src="#" alt="">
             <p class="product-card__description">Классическое крем-брюле </p>
             <b class="product-card__price">280&nbsp;₽/кг</b>
             <button class="product-card__button button" type="button"><span class="visually-hidden">Заказать</span></button>
         </article>
-<!-- Отвратительный макет. Работать над ним невозможно. Особенно до обеда. -->
       </div>
       <ul class="pagination">
         <li class="pagination__item">
@@ -315,9 +309,9 @@
         <a href="#" class="about__link">Экологические стандарты</a>
       </li>
     </ul>
-    <div class="footer-logo-container"><!-- Пока не могу придумать, как выравнивать без этой обёртки -->
+    <div class="footer-logo-container">
     <a class="footer-logo" href="https://htmlacademy.ru/">
-      <img class="footer-logo__image" src="" alt="логотип HTML Academy.">
+      <img class="footer-logo__image" src="#" alt="логотип HTML Academy.">
     </a>
     <p class="about-text">Сделано в&nbsp;<a class="htmlacademy-link" href="https://htmlacademy.ru/">.html&nbsp;academy</a>&nbsp;©&nbsp;2021</p>
     </div>

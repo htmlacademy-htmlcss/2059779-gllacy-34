@@ -6,11 +6,11 @@
   <meta name="description" content="Магазин Глейси – это онлайн и офлайн-магазин по продаже мороженого собственного производства на развес">
   <meta name="keywords" content="Глейси, магазин мороженого, мороженое, пломбир, сливочное мороженое, маршмеллоу, доставка мороженого">
 </head>
-<body class="default"><!-- Вот не знаю, нужна ли глобальная обёртка для всей страницы. С одной стороны мы меняем тушке фон, а с другой стороны всё содержимое должно быть фиксированной ширины и отцентрировано. Наверное не айс каждой секции задавать ширину -->
+<body class="page"><!-- Вот не знаю, нужна ли глобальная обёртка для всей страницы. С одной стороны мы меняем тушке фон, а с другой стороны всё содержимое должно быть фиксированной ширины и отцентрировано. Наверное не айс каждой секции задавать ширину -->
   <header class="page-header">
     <nav class="navigation">
       <a class="navigation__logo" href="index.html">
-        <img src="" alt="Логотип магазина мороженого Глейси." class="page-header-logo">
+        <img class="page-header-logo" src="#" alt="Логотип магазина мороженого «Глейси».">
       </a>
       <ul class="site-navigation">
         <li class="site-navigation__item">
@@ -45,33 +45,33 @@
   </header>
   <main class="main-index">
     <!-- Напрашивается установить row-gap 80px в стилях. -->
-    <h1 class="visually-hidden">Магазин мороженого Глейси</h1>
+    <h1 class="visually-hidden">Магазин мороженого «Глейси»</h1>
     <section class="promo">
       <h2 class="visually-hidden">Выбор мороженого</h2>
       <ul class="slider">
-        <li class="slider__item slider-item--active">
-          <dl class="slider__item-product">
-            <dt class="slider__title">Нежный пломбир с&nbsp;клубничным джемом</dt><!-- Мне кажется, что это похоже на список определений из одного пункта. -->
-            <dd class="slider__definition">Натуральное мороженое из&nbsp;свежих сливок и&nbsp;молока с&nbsp;вкуснейшим клубничным джемом&nbsp;&mdash; это идеальный десерт для всей семьи.</dd>
-          </dl>
-          <a class="button slider__order" href="#">Заказать</a><!-- Я полагаю, что это ссылка, которая переводит на страницу товара для заказа. Возможно ей нужна общая обёртка с текстом выше, и ссылок должно быть три, подумаю. -->
-          <img class="slider__image" src=""><!-- Думаю, что здесь alt атрибут не нужен, потому что в определении есть и заголовок и описание. -->
+        <li class="slider__item slider__item--active">
+          <div class="slider__item-product">
+            <p class="slider__title">Нежный пломбир с&nbsp;клубничным джемом</p>
+            <p class="slider__definition">Натуральное мороженое из&nbsp;свежих сливок и&nbsp;молока с&nbsp;вкуснейшим клубничным джемом&nbsp;&mdash; это идеальный десерт для всей семьи.</p>
+          </div>
+          <a class="button slider__order" href="#">Заказать</a><!-- Подумать над обёрткой -->
+          <img class="slider__image" src="#" alt="Пломбир с джемом в стаканчике.">
         </li>
-        <li class="slider__item slider-item--inactive">
-          <dl class="slider__item-product slider__item-product--inactive">
-            <dt class="slider__title slider__title--inactive">Сливочное мороженое со&nbsp;вкусом банана</dt>
-            <dd class="slider__definition slider__definition--inactive">Сливочное мороженое с&nbsp;ярким банановым вкусом подарит вам свежесть и&nbsp;наслаждение даже в&nbsp;самый жаркий летний день.</dd>
-          </dl>
+        <li class="slider__item slider__item--inactive">
+          <div class="slider__item-product slider__item-product--inactive">
+            <p class="slider__title slider__title--inactive">Сливочное мороженое со&nbsp;вкусом банана</p>
+            <p class="slider__definition slider__definition--inactive">Сливочное мороженое с&nbsp;ярким банановым вкусом подарит вам свежесть и&nbsp;наслаждение даже в&nbsp;самый жаркий летний день.</p>
+          </div>
           <a class="button slider__order slider__order--inactive" href="#">Заказать</a>
-          <img class="slider__image slider__image--inactive" src="">
+          <img class="slider__image slider__image--inactive" src="#" alt="Сливочное мороженое с бананом в стаканчике.">
         </li>
-        <li class="slider__item slider-item--inactive">
-          <dl class="slider__item-product slider__item-product--inactive">
-            <dt class="slider__title slider__title--inactive">Карамельный пломбир с&nbsp;маршмеллоу</dt>
-            <dd class="slider__definition slider__definition--inactive">Необычный сладкий десерт с&nbsp;карамельным топпингом и&nbsp;кусочками зефира завоюет сердца сладкоежек всех возрастов.</dd>
-          </dl>
+        <li class="slider__item slider__item--inactive">
+          <div class="slider__item-product slider__item-product--inactive">
+            <p class="slider__title slider__title--inactive">Карамельный пломбир с&nbsp;маршмеллоу</p>
+            <p class="slider__definition slider__definition--inactive">Необычный сладкий десерт с&nbsp;карамельным топпингом и&nbsp;кусочками зефира завоюет сердца сладкоежек всех возрастов.</p>
+          </div>
           <a class="button slider__order slider__order--inactive" href="#">Заказать</a>
-          <img class="slider__image slider__image--inactive" src="">
+          <img class="slider__image slider__image--inactive" src="#" alt="Пломбир с маршмеллоу в стаканчике.">
         </li>
       </ul>
       <button class="button slider-prev" type="button">
@@ -98,7 +98,6 @@
         </li>
       </ol>
       <ul class="promo-social social">
-        <!-- Похоже, что ссылки на социальные сети выглядят как другие кнопки в шаблоне. Попробую переиспользовать весь блок -->
         <li class="promo-social__item">
           <a class="promo-social__link button" href="#">
             <span class="visually-hidden">Телеграм.</span>
@@ -125,15 +124,11 @@
           <h3 class="promo-action-cards__title">Малинка даром!</h3>
           <p class="promo-action-cards__description">При покупке 2&nbsp;кг любого фруктового мороженого добавим в&nbsp;ваш заказ банку малинового варенья бесплатно.</p>
           <a class="button promo-action-cards__order" href="#">Хочу подарок</a>
-          <!-- Скорее всего это ссылка, которая ведёт на форму заполнения заказа или условия рекламной кампании. -->
-          <!-- Дальше идёт фоточка, но мне кажется, что это не контентное изображение. Возможно из-за этого придётся возиться с выравниванием текста. -->
         </div>
         <div class="promo-action-cards__card card-big card-big--accent">
           <h3 class="promo-action-cards__title">Маршмеллоу даром!</h3>
           <p class="promo-action-cards__description">При покупке 2&nbsp;кг пломбира добавим в&nbsp;ваш заказ упаковку нежных зефирок совершенно бесплатно.</p>
           <a class="button promo-action-cards__order" href="#">Хочу подарок</a>
-          <!-- Скорее всего это ссылка, которая ведёт на форму заполнения заказа или условия рекламной кампании. -->
-          <!-- Дальше идёт фоточка, но мне кажется, что это не контентное изображение. Возможно из-за этого придётся возиться с выравниванием текста. -->
         </div>
       </div>
     </section>
@@ -141,10 +136,10 @@
       <h2 class="promo-action__title">Попробуйте самые популярные вкусы нашего мороженого</h2>
       <div class="product-cards">
         <!-- Этот блок нужно переиспользовать в каталоге.  -->
-        <article class="product-card card-small"><!-- В примерах чаще используется список. В Академии в одном или двух примерах был всё же article. Он реже используется, но вроде бы тоже подходит. -->
+        <article class="product-card card-small">
           <h3 class="product-card__title">Малинка</h3>
             <!-- Для семантики заголовок должен идти первым. Его положение нужно не забыть изменить через order. -->
-            <img class="product-card__image" src=""><!-- alt не нужен, потому что есть заголовок. -->
+            <img class="product-card__image" src="#" alt=""><!-- Альт нужен, но можно оставлять пустым, потому что есть заголовок. !!ПРОВЕРИТЬ ПО ЛЕКЦИИ!!-->
             <p class="product-card__description">Сливочное мороженое с&nbsp;малиновым джемом</p>
             <b class="product-card__price">310&nbsp;₽/кг</b>
             <button class="product-card__button button" type="button"><span class="visually-hidden">Заказать</span></button>
@@ -152,21 +147,21 @@
         </article>
         <article class="product-card card-small">
           <h3 class="product-card__title">Фисташка</h3>
-            <img class="product-card__image" src="">
+            <img class="product-card__image" src="#" alt="">
             <p class="product-card__description">Фисташковый пломбир с&nbsp;кусочками шоколада</p>
-            <b class="product-card__price">340&nbsp;₽/кг</b><!-- Где бы такое дешёвое мороженое купить? -->
+            <b class="product-card__price">340&nbsp;₽/кг</b>
             <button class="product-card__button button" type="button"><span class="visually-hidden">Заказать</span></button>
         </article>
         <article class="product-card card-small">
           <h3 class="product-card__title">Черника</h3>
-            <img class="product-card__image" src="">
+            <img class="product-card__image" src="#" alt="">
             <p class="product-card__description">Крем-брюле с&nbsp;черничным джемом</p>
             <b class="product-card__price">330&nbsp;₽/кг</b>
             <button class="product-card__button button" type="button"><span class="visually-hidden">Заказать</span></button>
         </article>
         <article class="product-card card-small">
           <h3 class="product-card__title">Бабл-гам</h3>
-            <img class="product-card__image" src="">
+            <img class="product-card__image" src="#" alt="">
             <p class="product-card__description">Ванильный пломбир со&nbsp;сладкой посыпкой</p>
             <b class="product-card__price">320&nbsp;₽/кг</b>
             <button class="product-card__button button" type="button"><span class="visually-hidden">Заказать</span></button>
@@ -176,7 +171,6 @@
     <section class="company-description card-big card-big--themed-border">
       <h2 class="visually-hidden">О компании</h2>
       <article class="company-description__container">
-        <!-- Не уверен на счёт выбора тэга. -->
         <h3 class="company-description__title">Магазин Глейси&nbsp;&mdash; это онлайн и&nbsp;офлайн-магазин по&nbsp;продаже мороженого собственного производства на&nbsp;развес</h3>
         <ul class="company-description__features-list">
           <li class="company-description__features-item">Всё наше мороженое изготавливается на&nbsp;собственном производстве с&nbsp;использованием современного оборудования и&nbsp;проверенных временем технологий.</li>
@@ -190,7 +184,7 @@
       <h2 class="visually-hidden">Новости</h2>
       <article class="main-news__item card-big">
         <h3 class="main-news__blog-title">Новое в&nbsp;нашем блоге</h3>
-        <a class="main-news__blog" href="#">10&nbsp;способов сервировки фруктовых щербетов к&nbsp;столу</a> <!-- Валидатор здесь ругается: Bad character а after <. Probable cause: Unescaped <. Try escaping it as &lt;. Не могу понять почему. Ему скобочки не нравятся или что? -->
+        <a class="main-news__blog" href="#">10&nbsp;способов сервировки фруктовых щербетов к&nbsp;столу</a>
       </article>
       <aside class="main-news__item card-big card-big--post-border">
         <p class="main-news__subscription">Подпишитесь на&nbsp;нашу сладкую рассылку и&nbsp;будьте всегда в&nbsp;курсе всего самого вкусного, что у&nbsp;нас происходит. Обещаем не&nbsp;спамить и&nbsp;не&nbsp;слать всякой ненужной ерунды. Честно =)</p>
@@ -227,7 +221,7 @@
     <section class="contacts">
       <h2 class="visually-hidden">Контактная информация</h2>
       <address class="card-small">
-        <p class="contacts__title">Адрес главного офиса и&nbsp;офлайн-магазина:</p><!-- Cюда напрашивались заголовки, но они не могут быть в address-->
+        <p class="contacts__title">Адрес главного офиса и&nbsp;офлайн-магазина:</p>
         <p class="contacts__address">наб. реки Карповки, 5&nbsp;лит П, Санкт-Петербург</p>
         <p class="contacts__title">Для заказов по&nbsp;телефону:</p>
         <a class="contacts__phone-number" href="tel:+78128121212">+7&nbsp;(812)&nbsp;812-12-12</a>
@@ -268,9 +262,9 @@
         <a href="#" class="about__link">Экологические стандарты</a>
       </li>
     </ul>
-    <div class="footer-logo-container"><!-- Пока не могу придумать, как выравнивать без этой обёртки -->
+    <div class="footer-logo-container">
     <a class="footer-logo" href="https://htmlacademy.ru/">
-      <img class="footer-logo__image" src="" alt="логотип HTML Academy.">
+      <img class="footer-logo__image" src="#" alt="логотип HTML Academy.">
     </a>
     <p class="about-text">Сделано в&nbsp;<a class="htmlacademy-link" href="https://htmlacademy.ru/">.html&nbsp;academy</a>&nbsp;©&nbsp;2021</p>
     </div>
