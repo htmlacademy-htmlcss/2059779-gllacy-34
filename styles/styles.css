@@ -54,8 +54,6 @@
   --extra-bright-accent: #ff2f64;
   --transparent-accent: rgba(252, 252, 252, 0.3); /* Прозрачные кнопочки пользовательского меню для всех страниц одинаковые */
   --transparent-border: rgba(45, 52, 64, 0.5); /* За каким-то фигом один единственный бордер особого цвета в макете */
-
-
 }
 
 .page {
@@ -433,7 +431,7 @@ border-bottom: 1px solid var(--extra-dark);
 }
 
 .catalog-products__filter-list {
-  background-color: var(--transparent-accent));
+  background-color: var(--transparent-accent);
   border-radius: 20px;
   border: none;
 }
