@@ -1,0 +1,462 @@
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/inter-400.woff2") format("woff2"),
+       url("../fonts/inter-400.woff") format("woff");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  src: url("../fonts/inter-700.woff2") format("woff2"),
+       url("../fonts/inter-700.woff") format("woff");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 900;
+  src: url("../fonts/inter-900.woff2") format("woff2"),
+       url("../fonts/inter-900.woff") format("woff");
+  font-display: swap;
+}
+
+/* Пока закомментирую, а то неудобно ориентироваться
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+*/
+:root {
+  --page-background: #feafc3; /* Варианты страниц #69a9ff и #fcc850 */
+  --neutral: #b9b9b9;
+  --extra-light: #fcfcfc;
+  --light: #e7e7e7;
+  --blank: #ffffff;
+  --dark: #565c66;
+  --extra-dark: #2d3440;
+  --neutral-accent: #ff7799;
+  --extra-light-accent: #ffcbd8;
+  --bright-accent: #ff4a78;
+  --extra-bright-accent: #ff2f64;
+  --transparent-accent: rgba(252, 252, 252, 0.3); /* Прозрачные кнопочки пользовательского меню для всех страниц одинаковые */
+  --transparent-border: rgba(45, 52, 64, 0.5); /* За каким-то фигом один единственный бордер особого цвета в макете */
+}
+
+.page {
+  margin: 0;
+  padding: 0;
+  font-family: "Inter", Arial, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+  color: var(--dark);
+  background-color: var(--page-background);
+}
+
+.page-container {
+  width: 1170px;
+  margin: 0 auto;
+}
+
+/*button*/
+.button {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+  text-decoration: none;
+  text-align: center;
+}
+
+/*card*/
+.card-big {
+  border-radius: 16px;
+}
+
+.card-small {
+  border-radius: 8px;
+}
+
+.card-big--themed-border {
+  background: url("../images/waffle-tile.jpg") repeat var(--blank);
+}
+
+.card-big--blog {
+  background: url("../images/blog.jpg") no-repeat var(--blank);
+  background-size: cover;
+}
+
+.card-big--post-border {
+    background-image: repeating-linear-gradient(-50deg, #ff2f64 0, #ff2f64 9px, #edf1f5 10px, #edf1f5 22px, #68a9ff 23px, #68a9ff 31px, #edf1f5 32px, #edf1f5 44px, #ff2f64 45px);
+}
+
+/*social*/
+
+/*List reset*/
+.reset-list {
+margin: 0;
+padding: 0;
+list-style: none;
+}
+
+/*Хэдер*/
+/*navigation*/
+.navigation {
+  line-height: 20px;
+}
+
+.site-navigation__link {
+  font-style: normal;
+  text-decoration: none;
+  color: var(--extra-dark);
+}
+
+.navigation-phone {
+  font-weight: 700;
+  text-decoration: none;
+  color: var(--extra-dark);
+}
+
+.user-navigation__item {
+  background-color: var(--transparent-accent);
+}
+
+.user-navigation__link {
+  font-size: 14px;
+  line-height: 20px;
+  text-decoration: none;
+  color: var(--extra-dark);
+}
+
+/*Футер*/
+/*about*/
+.about__link {
+  font-size: 14px;
+  line-height: 20px;
+  text-decoration: none;
+  color: var(--extra-dark);
+}
+
+.about__link--favorite {
+  font-weight: 700;
+}
+
+.about-text {
+  font-size: 12px;
+  line-height: 16px;
+  color: var(--extra-dark);
+}
+
+.htmlacademy-link {
+  text-decoration: none;
+  border-bottom: 1px solid var(--transparent-border);
+  color: var(--extra-dark);
+}
+
+/*Главная страница*/
+/*slider*/
+.slider__title {
+  font-weight: 900;
+  font-size: 36px;
+  line-height: 46px;
+  color: var(--extra-dark);
+}
+
+.slider__definition {
+  font-size: 18px;
+  line-height: 24px;
+  color: var(--extra-dark);
+}
+
+.slider__order {
+  color: var(--extra-dark);
+  background-color: var(--extra-light);
+}
+
+/*promo-action*/
+.promo-action-cards__card {
+  width: 570px;
+  background-color: var(--neutral-accent);
+}
+
+.promo-action__title {
+  font-weight: 900;
+  font-size: 32px;
+  line-height: 46px;
+  text-align: center;
+  color: var(--extra-dark);
+}
+
+.promo-action-cards__title {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 30px;
+  color: var(--extra-dark);
+}
+
+.promo-action-cards__description {
+  line-height: 22px;
+  color: var(--extra-dark);
+}
+
+.promo-action-cards__order {
+  color: var(--extra-dark);
+  background-color: var(--extra-light);
+}
+
+/*product-cards*/
+.product-card {
+  width: 270px;
+  background-color: var(--extra-light);
+}
+
+.product-card__title {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+  text-align: center;
+  color: var(--extra-dark);
+}
+
+.product-card__description {
+  line-height: 22px;
+  color: var(--dark);
+}
+
+.product-card__price {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+  color: var(--extra-dark);
+}
+
+.product-card__button {
+  background-color: var(--extra-bright-accent);
+}
+
+/*company-description*/
+.company-description {
+  width: 1170px;
+}
+
+.company-description__container {
+  width: 1122px;
+  background-color: var(--blank);
+  border-radius: 16px;
+}
+
+.company-description__title {
+  font-weight: 900;
+  font-size: 32px;
+  line-height: 46px;
+  text-align: center;
+  color: var(--extra-dark);
+}
+
+/*main-news*/
+.main-news__item {
+  width: 570px;
+}
+
+.main-news__blog-title {
+  line-height: 20px;
+  color: var(--dark);
+}
+
+.main-news__blog {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 30px;
+  text-decoration: none;
+  color: var(--extra-dark);
+}
+
+.main-news__container {
+  width: 558px;
+  background-color: var(--blank);
+  border-radius: 16px;
+  overflow: hidden;
+
+}
+
+.main-news__subscription-input {
+  line-height: 20px;
+  color: var(--neutral);
+}
+
+.main-news__subscription-button {
+  background-color: var(--extra-bright-accent);
+}
+
+/*delivery*/
+.delivery {
+  width: 1170px;
+  background: url("../images/delivery.jpg") no-repeat;
+  background-size: cover;
+  overflow: hidden;
+}
+
+.delivery__order {
+  width: 500px;
+  background-color: var(--extra-light);
+}
+
+.delivery__title { /*На очередном заголовке подумал, что возможно им тоже можно было бы назначить один класс и переиспользовать */
+  font-size: 32px;
+  line-height: 46px;
+  color: var(--extra-dark);
+}
+
+.delivery__form-label {
+  line-height: 20px;
+  color: var(--extra-dark);
+}
+
+.delivery__input {
+  line-height: 20px;
+  color: var(--neutral);
+}
+
+.delivery__button {
+  background-color: var(--extra-bright-accent);
+}
+
+/*contacts*/
+.contacts {
+  width: 1170px;
+  background: url("../images/contacts.jpg") no-repeat;
+  background-size: cover;
+}
+
+.contacts__card {
+  width: 343px;
+  background-color: var(--extra-light);
+}
+
+.contacts__title { /*Я знаю, можно было через запятую перечислить, но БЭМ так не любит вроде бы, а я всё ещё питаю надежды, что где-то рядом с ним пишу.*/
+  font-style: normal;
+}
+
+.contacts__address {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+  color: var(--extra-dark);
+}
+
+.contacts__title {
+  font-style: normal;
+}
+
+.contacts__phone-number {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+  text-decoration: none;
+  color: var(--extra-dark);
+}
+
+.contacts__note {
+  font-style: normal;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.contacts__form {
+  background-color: var(--extra-bright-accent);
+}
+
+/*Каталог*/
+.main-catalog {
+  width: 1170px;
+}
+
+.breadcrumbs__link {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 20px;
+  text-decoration: none;
+  color: var(--extra-dark);
+}
+
+.breadcrumbs__link--current {
+border-bottom: 1px solid var(--extra-dark);
+}
+
+/*catalog*/
+.catalog-title {
+  font-weight: 900;
+  font-size: 32px;
+  line-height: 46px;
+  color: var(--extra-dark);
+}
+
+.catalog-products__field {
+  border: none;
+}
+
+.catalog-products__title {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  color: var(--extra-dark);
+}
+
+.catalog-products__select {
+  background-color:var(--transparent-accent);
+  border-radius: 20px;
+  border: none;
+}
+
+.catalog-products__select-item {
+    font-size: 14px;
+    line-height: 20px;
+    color: var(--extra-dark);
+}
+
+.catalog-products__filter-list {
+  background-color: var(--transparent-accent);
+  border-radius: 20px;
+  border: none;
+}
+
+.catalog-products__control-label {
+  font-size: 14px;
+  line-height: 20px;
+  color: var(--extra-dark);
+}
+
+.catalog-products__button {
+  background-color: var(--transparent-accent);
+}
+
+.pagination {
+  list-style: none;
+}
+
+.pagination__button {
+  background-color: var(--extra-light);
+}
+
+.pagination__link {
+  font-size: 16px;
+  line-height: 20px;
+  text-decoration: none;
+  color: var(--extra-dark);
+}

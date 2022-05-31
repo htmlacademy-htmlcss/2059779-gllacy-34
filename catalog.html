@@ -5,14 +5,16 @@
   <title>Сливочное мороженое</title>
   <meta name="description" content="Вкусное мороженое на основе жирных сливок в магазине Глейси">
   <meta name="keywords" content="сливочное мороженое, купить мороженое, заказать мороженое, смерть от ожирения, магазин мороженого, каталог мороженого, мороженое, пломбир, маршмеллоу, доставка мороженого">
+  <link rel="stylesheet" href="styles/styles.css">
 </head>
 <body class="page"><!-- Вот не знаю, нужна ли глобальная обёртка для всей страницы. С одной стороны мы меняем тушке фон, а с другой стороны всё содержимое должно быть фиксированной ширины и отцентрировано. Наверное не айс каждой секции задавать ширину -->
+<div class="page-container">
   <header class="page-header">
     <nav class="navigation">
       <a class="navigation__logo" href="index.html">
         <img class="page-header-logo" src="images/page-header-logo.svg" width="137px" height="57px" alt="Логотип магазина мороженого «Глейси».">
       </a>
-      <ul class="site-navigation">
+      <ul class="site-navigation reset-list">
         <li class="site-navigation__item">
           <a class="site-navigation__link" href="catalog.html">Каталог</a>
         </li>
@@ -24,7 +26,7 @@
         </li>
       </ul>
       <a class="navigation-phone" href="tel:+78005558628">+7 800 55-86-28</a>
-      <ul class="user-navigation">
+      <ul class="user-navigation reset-list">
         <li class="user-navigation__item">
           <a class="user-navigation__link" href="#">
             <span class="visually-hidden">Поиск.</span>
@@ -44,12 +46,12 @@
     </nav>
   </header>
   <main class="main-catalog">
-    <ul class="breadcrumbs">
+    <ul class="breadcrumbs reset-list">
       <li class="breadcrumbs__item">
         <a class="breadcrumbs__link" href="index.html">Главная</a>
       </li>
       <li class="breadcrumbs-item">
-        <a class="breadcrumbs-link">Каталог</a>
+        <a class="breadcrumbs__link breadcrumbs__link--current">Каталог</a>
       </li>
     </ul>
     <h1 class="catalog-title">Сливочное мороженое</h1>
@@ -85,7 +87,7 @@
           </fieldset>
           <fieldset class="catalog-products__field">
             <h3 class="catalog-products__title">Жирность:</h3><!-- Здесь я снова подсмотрел, как сделано в 9 разделе. В тренажёрах вроде-бы оформляли через псевды. Отношение БЭМ к псевдам ещё не выяснил. А также БЭМ не любит псевдоклассы (даже :hover, :active и прочие) и контекст типа :checked ~, но здесь я не буду пытаться применять другие подходы (если они вообще есть без JS), а сделаю как Академия рекомендует. -->
-            <ul class="catalog-products__filter-list">
+            <ul class="catalog-products__filter-list reset-list">
               <li class="catalog-products__filter-item">
                 <label class="catalog-products__control">
                   <input class="visually-hidden catalog-products__control-input" type="radio" name="product-group" value="0%">
@@ -118,7 +120,7 @@
           </fieldset>
           <fieldset class="catalog-products__field">
             <h3 class="catalog-products__title">Наполнители:</h3>
-            <ul class="catalog-products__filter-item">
+            <ul class="catalog-products__filter-list reset-list">
               <li class="catalog-products__filter-item">
                 <label class="catalog-products__control">
                   <input class="visually-hidden catalog-products__control-input" type="checkbox" name="chocolate" checked>
@@ -247,7 +249,7 @@
             <button class="product-card__button button" type="button"><span class="visually-hidden">Заказать</span></button>
         </article>
       </div>
-      <ul class="pagination">
+      <ul class="pagination reset-list">
         <li class="pagination__item">
           <a class="pagination__link pagination__link--prev pagination__link--disabled">
             <span class="visually-hidden">Предыдущая страница.</span>
@@ -278,26 +280,26 @@
     </section>
   </main>
   <footer class="page-footer">
-    <ul class="footer-social social">
+    <ul class="footer-social social reset-list">
       <li class="footer-social__item">
-        <a class="promo-social__link button" href="#">
+        <a class="promo-social__link promo-social__link--telegram button" href="https://t.me/htmlacademy">
           <span class="visually-hidden">Телеграм.</span>
         </a>
       </li>
       <li class="footer-social__item">
-        <a class="promo-social__link button" href="#">
+        <a class="promo-social__link promo-social__link--vk button" href="https://vk.com/htmlacademy">
           <span class="visually-hidden">Вконтакте.</span>
         </a>
       </li>
       <li class="footer-social__item">
-        <a class="promo-social__link button" href="#">
+        <a class="promo-social__link promo-social__link--youtube button" href="https://www.youtube.com/user/htmlacademyru">
           <span class="visually-hidden">YouTube.</span>
         </a>
       </li>
     </ul>
-    <ul class="about">
+    <ul class="about reset-list">
       <li class="about__item">
-        <a href="#" class="about__link">Для поставщиков</a>
+        <a href="#" class="about__link about__link--favorite">Для поставщиков</a>
       </li>
       <li class="about__item">
         <a href="#" class="about__link">О&nbsp;производстве</a>
@@ -316,5 +318,6 @@
     <p class="about-text">Сделано в&nbsp;<a class="htmlacademy-link" href="https://htmlacademy.ru/">.html&nbsp;academy</a>&nbsp;©&nbsp;2021</p>
     </div>
   </footer>
+</div>
 </body>
 </html>
