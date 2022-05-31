@@ -5,8 +5,10 @@
   <title>Магазин мороженого Глейси</title>
   <meta name="description" content="Магазин Глейси – это онлайн и офлайн-магазин по продаже мороженого собственного производства на развес">
   <meta name="keywords" content="Глейси, магазин мороженого, мороженое, пломбир, сливочное мороженое, маршмеллоу, доставка мороженого">
+  <link rel="stylesheet" href="styles/styles.css">
 </head>
 <body class="page"><!-- Вот не знаю, нужна ли глобальная обёртка для всей страницы. С одной стороны мы меняем тушке фон, а с другой стороны всё содержимое должно быть фиксированной ширины и отцентрировано. Наверное не айс каждой секции задавать ширину -->
+<div class="page-container">
   <header class="page-header">
     <nav class="navigation">
       <a class="navigation__logo" href="index.html">
@@ -99,17 +101,17 @@
       </ol>
       <ul class="promo-social social">
         <li class="promo-social__item">
-          <a class="promo-social__link button" href="https://t.me/htmlacademy">
+          <a class="promo-social__link promo-social__link--telegram button" href="https://t.me/htmlacademy">
             <span class="visually-hidden">Телеграм.</span>
           </a>
         </li>
         <li class="promo-social__item">
-          <a class="promo-social__link button" href="https://vk.com/htmlacademy">
+          <a class="promo-social__link promo-social__link--vk button" href="https://vk.com/htmlacademy">
             <span class="visually-hidden">Вконтакте.</span>
           </a>
         </li>
         <li class="promo-social__item">
-          <a class="promo-social__link button" href="https://www.youtube.com/user/htmlacademyru">
+          <a class="promo-social__link promo-social__link--youtube button" href="https://www.youtube.com/user/htmlacademyru">
             <span class="visually-hidden">YouTube.</span>
           </a>
         </li>
@@ -169,30 +171,34 @@
       </div>
     </section>
     <section class="company-description card-big card-big--themed-border">
-      <h2 class="visually-hidden">О компании</h2>
-      <article class="company-description__container">
-        <h3 class="company-description__title">Магазин Глейси&nbsp;&mdash; это онлайн и&nbsp;офлайн-магазин по&nbsp;продаже мороженого собственного производства на&nbsp;развес</h3>
-        <ul class="company-description__features-list">
-          <li class="company-description__features-item">Всё наше мороженое изготавливается на&nbsp;собственном производстве с&nbsp;использованием современного оборудования и&nbsp;проверенных временем технологий.</li>
-          <li class="company-description__features-item">Для приготовления мороженого используются сливки и&nbsp;молоко высочайшего качества. Все ингредиенты и&nbsp;добавки произведены из&nbsp;натурального сырья.</li>
-          <li class="company-description__features-item">Закупка ингредиентов производится только у&nbsp;проверенных фермерских хозяйств, с&nbsp;которыми нас связывает долговременное сотрудничество.</li>
-          <li class="company-description__features-item">Доставка нашего мороженого осуществляется в&nbsp;специальном термопаке, который не&nbsp;даёт мороженому растаять и&nbsp;позволяет сохранить превосходный вкус.</li>
-        </ul>
-      </article>
+      <div class="company-description__container">
+        <h2 class="visually-hidden">О компании</h2>
+        <article class="company-description__content">
+          <h3 class="company-description__title">Магазин Глейси&nbsp;&mdash; это онлайн и&nbsp;офлайн-магазин по&nbsp;продаже мороженого собственного производства на&nbsp;развес</h3>
+          <ul class="company-description__features-list">
+            <li class="company-description__features-item">Всё наше мороженое изготавливается на&nbsp;собственном производстве с&nbsp;использованием современного оборудования и&nbsp;проверенных временем технологий.</li>
+            <li class="company-description__features-item">Для приготовления мороженого используются сливки и&nbsp;молоко высочайшего качества. Все ингредиенты и&nbsp;добавки произведены из&nbsp;натурального сырья.</li>
+            <li class="company-description__features-item">Закупка ингредиентов производится только у&nbsp;проверенных фермерских хозяйств, с&nbsp;которыми нас связывает долговременное сотрудничество.</li>
+            <li class="company-description__features-item">Доставка нашего мороженого осуществляется в&nbsp;специальном термопаке, который не&nbsp;даёт мороженому растаять и&nbsp;позволяет сохранить превосходный вкус.</li>
+          </ul>
+        </article>
+      </div>
     </section>
     <section class="main-news">
       <h2 class="visually-hidden">Новости</h2>
-      <article class="main-news__item card-big">
+      <article class="main-news__item card-big card-big--blog">
         <h3 class="main-news__blog-title">Новое в&nbsp;нашем блоге</h3>
         <a class="main-news__blog" href="#">10&nbsp;способов сервировки фруктовых щербетов к&nbsp;столу</a>
       </article>
       <aside class="main-news__item card-big card-big--post-border">
+        <div class="main-news__container">
         <p class="main-news__subscription">Подпишитесь на&nbsp;нашу сладкую рассылку и&nbsp;будьте всегда в&nbsp;курсе всего самого вкусного, что у&nbsp;нас происходит. Обещаем не&nbsp;спамить и&nbsp;не&nbsp;слать всякой ненужной ерунды. Честно =)</p>
         <form class="main-news__subscription-form" action="https://echo.htmlacademy.ru/" method="post">
           <label class="visually-hidden" for="newsletter-email">Email.</label>
           <input class="main-news__subscription-input input" placeholder="email@example.com" type="email" name="newsletter-email" id="newsletter-email" required>
           <button class="main-news__subscription-button button" type="submit">Отправить</button>
         </form>
+        </div>
       </aside>
     </section>
     <section class="delivery card-big">
@@ -214,43 +220,43 @@
             <label class="delivery__form-label" for="delivery-address">Адрес</label>
             <input class="delivery__input input" type="text" id="delivery-address" name="delivery-address" placeholder="ул. Большая Конюшенная, 19/8" required>
           </p>
-          <button class="delivery__-button button" type="submit">Отправить</button>
+          <button class="delivery__button button" type="submit">Отправить</button>
         </form>
       </div>
     </section>
-    <section class="contacts">
+    <section class="contacts card-big">
       <h2 class="visually-hidden">Контактная информация</h2>
-      <address class="card-small">
+      <address class="contacts__card card-small">
         <p class="contacts__title">Адрес главного офиса и&nbsp;офлайн-магазина:</p>
         <p class="contacts__address">наб. реки Карповки, 5&nbsp;лит П, Санкт-Петербург</p>
         <p class="contacts__title">Для заказов по&nbsp;телефону:</p>
         <a class="contacts__phone-number" href="tel:+78128121212">+7&nbsp;(812)&nbsp;812-12-12</a>
         <p class="contacts__note">(с&nbsp;10&nbsp;до&nbsp;20&nbsp;ежедневно)</p>
-        <button class="contacts__form" type="button">Форма обратной связи</button>
+        <button class="contacts__form button" type="button">Форма обратной связи</button>
       </address>
     </section>
   </main>
   <footer class="page-footer">
     <ul class="footer-social social">
       <li class="footer-social__item">
-        <a class="promo-social__link button" href="https://t.me/htmlacademy">
+        <a class="promo-social__link promo-social__link--telegram button" href="https://t.me/htmlacademy">
           <span class="visually-hidden">Телеграм.</span>
         </a>
       </li>
       <li class="footer-social__item">
-        <a class="promo-social__link button" href="https://vk.com/htmlacademy">
+        <a class="promo-social__link promo-social__link--vk button" href="https://vk.com/htmlacademy">
           <span class="visually-hidden">Вконтакте.</span>
         </a>
       </li>
       <li class="footer-social__item">
-        <a class="promo-social__link button" href="https://www.youtube.com/user/htmlacademyru">
+        <a class="promo-social__link promo-social__link--youtube button" href="https://www.youtube.com/user/htmlacademyru">
           <span class="visually-hidden">YouTube.</span>
         </a>
       </li>
     </ul>
     <ul class="about">
       <li class="about__item">
-        <a href="#" class="about__link">Для поставщиков</a>
+        <a href="#" class="about__link about__link--favorite">Для поставщиков</a>
       </li>
       <li class="about__item">
         <a href="#" class="about__link">О&nbsp;производстве</a>
@@ -269,5 +275,6 @@
     <p class="about-text">Сделано в&nbsp;<a class="htmlacademy-link" href="https://htmlacademy.ru/">.html&nbsp;academy</a>&nbsp;©&nbsp;2021</p>
     </div>
   </footer>
+</div>
 </body>
 </html>

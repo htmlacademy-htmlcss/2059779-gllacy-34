@@ -5,8 +5,10 @@
   <title>Сливочное мороженое</title>
   <meta name="description" content="Вкусное мороженое на основе жирных сливок в магазине Глейси">
   <meta name="keywords" content="сливочное мороженое, купить мороженое, заказать мороженое, смерть от ожирения, магазин мороженого, каталог мороженого, мороженое, пломбир, маршмеллоу, доставка мороженого">
+  <link rel="stylesheet" href="styles/styles.css">
 </head>
 <body class="page"><!-- Вот не знаю, нужна ли глобальная обёртка для всей страницы. С одной стороны мы меняем тушке фон, а с другой стороны всё содержимое должно быть фиксированной ширины и отцентрировано. Наверное не айс каждой секции задавать ширину -->
+<div class="page-container">
   <header class="page-header">
     <nav class="navigation">
       <a class="navigation__logo" href="index.html">
@@ -280,17 +282,17 @@
   <footer class="page-footer">
     <ul class="footer-social social">
       <li class="footer-social__item">
-        <a class="promo-social__link button" href="https://t.me/htmlacademy">
+        <a class="promo-social__link promo-social__link--telegram button" href="https://t.me/htmlacademy">
           <span class="visually-hidden">Телеграм.</span>
         </a>
       </li>
       <li class="footer-social__item">
-        <a class="promo-social__link button" href="https://vk.com/htmlacademy">
+        <a class="promo-social__link promo-social__link--vk button" href="https://vk.com/htmlacademy">
           <span class="visually-hidden">Вконтакте.</span>
         </a>
       </li>
       <li class="footer-social__item">
-        <a class="promo-social__link button" href="https://www.youtube.com/user/htmlacademyru">
+        <a class="promo-social__link promo-social__link--youtube button" href="https://www.youtube.com/user/htmlacademyru">
           <span class="visually-hidden">YouTube.</span>
         </a>
       </li>
@@ -316,5 +318,6 @@
     <p class="about-text">Сделано в&nbsp;<a class="htmlacademy-link" href="https://htmlacademy.ru/">.html&nbsp;academy</a>&nbsp;©&nbsp;2021</p>
     </div>
   </footer>
+</div>
 </body>
 </html>
