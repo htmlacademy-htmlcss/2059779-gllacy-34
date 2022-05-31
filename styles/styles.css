@@ -57,6 +57,7 @@
 }
 .page-container {
   width: 1170px;
+  margin: 0 auto;
 }
 /*button*/
 .button {
@@ -87,6 +88,7 @@
 .social {
   list-style: none;
 }
+/*Хэдер*/
 /*navigation*/
 .navigation {
   line-height: 20px;
@@ -114,6 +116,31 @@
   text-decoration: none;
   color: var(--extra-dark);
 }
+/*Футер*/
+/*about*/
+.about {
+  list-style: none;
+}
+.about__link {
+  font-size: 14px;
+  line-height: 20px;
+  text-decoration: none;
+  color: var(--extra-dark);
+}
+.about__link--favorite {
+  font-weight: 700;
+}
+.about-text {
+  font-size: 12px;
+  line-height: 16px;
+  color: var(--extra-dark);
+}
+.htmlacademy-link {
+  text-decoration: none;
+  border-bottom: 1px solid rgba(45, 52, 64, 0.5);
+  color: var(--extra-dark);
+}
+/*Главная страница*/
 /*slider*/
 .slider__item {
   list-style: none;
@@ -302,26 +329,73 @@
 .contacts__form {
   background-color: var(--buttons-accent);
 }
-/*about*/
-.about {
+/*Каталог*/
+.main-catalog {
+  width: 1170px;
+}
+/*breadcrumbs*/
+.breadcrumbs {
   list-style: none;
 }
-.about__link {
+.breadcrumbs__link {
+  font-weight: 700;
   font-size: 14px;
   line-height: 20px;
   text-decoration: none;
   color: var(--extra-dark);
 }
-.about__link--favorite {
-  font-weight: 700;
+.breadcrumbs__link--current {
+border-bottom: 1px solid var(--extra-dark);
 }
-.about-text {
-  font-size: 12px;
-  line-height: 16px;
+/*catalog*/
+.catalog-title {
+  font-weight: 900;
+  font-size: 32px;
+  line-height: 46px;
   color: var(--extra-dark);
 }
-.htmlacademy-link {
+.catalog-products__field {
+  border: none;
+}
+.catalog-products__title {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  color: var(--extra-dark);
+}
+.catalog-products__select {
+  background-color: rgba(252, 252, 252, 0.3);
+  border-radius: 20px;
+  border: none;
+}
+.catalog-products__select-item {
+    font-size: 14px;
+    line-height: 20px;
+    color: var(--extra-dark);
+}
+.catalog-products__filter-list {
+  list-style: none;
+  background-color: rgba(252, 252, 252, 0.3);
+  border-radius: 20px;
+  border: none;
+}
+.catalog-products__control-label {
+  font-size: 14px;
+  line-height: 20px;
+  color: var(--extra-dark);
+}
+.catalog-products__button {
+  background-color: rgba(252, 252, 252, 0.3);
+}
+.pagination {
+  list-style: none;
+}
+.pagination__button {
+  background-color: #fcfcfc;
+}
+.pagination__link {
+  font-size: 16px;
+  line-height: 20px;
   text-decoration: none;
-  border-bottom: 1px solid rgba(45, 52, 64, 0.5);
   color: var(--extra-dark);
 }
