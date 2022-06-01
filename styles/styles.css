@@ -51,11 +51,11 @@
   --extra-light-accent: #ffcbd8;
   --bright-accent: #ff4a78;
   --extra-bright-accent: #ff2f64;
-  --transparent-accent: rgba(252, 252, 252, 0.3); /* Прозрачные кнопочки пользовательского меню для всех страниц одинаковые */
-  --transparent-border: rgba(45, 52, 64, 0.5); /* За каким-то фигом один единственный бордер особого цвета в макете */
+  --transparent-accent: rgba(252, 252, 252, 0.3);
+  --transparent-border: rgba(45, 52, 64, 0.5);
 }
 
-html { /*C одной стороны Академия и БЭМ учат не делать селекторов по элементу, а с другой стороны, наверное, исключения возможны. По крайней мере я не понял, как добиться эффекта прилипания к низу, без указания 100% элементу */
+html {
   height: 100%;
 }
 
@@ -73,7 +73,7 @@ html { /*C одной стороны Академия и БЭМ учат не д
 }
 
 .page-container {
-  display: grid; /* С гридами как-то меньше кода писать для стики футера, чем с флексами. Надеюсь, это не будет нарушением ТЗ домашнего задания.*/
+  display: grid;
   grid-template-rows: auto 1fr auto;
   min-height: 100%;
   width: 1170px;
@@ -214,7 +214,7 @@ list-style: none;
 /*Главная страница*/
 /*main*/
 .main-index {
-  display: grid; /*Для флекса нужно ещё писать direction, а это длиннее*/
+  display: grid;
   row-gap: 80px;
 }
 
@@ -416,7 +416,7 @@ list-style: none;
 }
 
 .delivery__text {
-  width: 371px; /* Пока не придумал другой размер */
+  width: 371px;
 }
 
 .delivery__order {
@@ -456,7 +456,7 @@ list-style: none;
   background-color: var(--extra-light);
 }
 
-.contacts__title { /*Я знаю, можно было через запятую перечислить, но БЭМ так не любит вроде бы, а я всё ещё питаю надежды, что где-то рядом с ним пишу.*/
+.contacts__title {
   font-style: normal;
 }
 
