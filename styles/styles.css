@@ -38,7 +38,6 @@
   clip: rect(0 0 0 0);
   overflow: hidden;
 }
-
 */
 :root {
   --page-background: #feafc3; /* Варианты страниц #69a9ff и #fcc850 */
@@ -56,7 +55,12 @@
   --transparent-border: rgba(45, 52, 64, 0.5); /* За каким-то фигом один единственный бордер особого цвета в макете */
 }
 
+html { /*C одной стороны Академия и БЭМ учат не делать селекторов по элементу, а с другой стороны, наверное, исключения возможны. По крайней мере я не понял, как добиться эффекта прилипания к низу, без указания 100% элементу */
+  height: 100%;
+}
+
 .page {
+  height: 100%;
   margin: 0;
   padding: 0;
   font-family: "Inter", Arial, sans-serif;
@@ -69,6 +73,9 @@
 }
 
 .page-container {
+  display: grid; /* С гридами как-то меньше кода писать для стики футера, чем с флексами. Надеюсь, это не будет нарушением ТЗ домашнего задания.*/
+  grid-template-rows: auto 1fr auto;
+  min-height: 100%;
   width: 1170px;
   margin: 0 auto;
 }
@@ -115,8 +122,23 @@ list-style: none;
 
 /*Хэдер*/
 /*navigation*/
+.page-header {
+  width: 1170px;
+  margin: 0 auto;
+}
+
 .navigation {
+  display: flex;
   line-height: 20px;
+}
+
+.navigation__logo {
+  width: 137px;
+}
+
+.site-navigation {
+  width: 500px;   /* Делаю с запасом, как учит скрин каст */
+  margin-right: auto; /* Без понятия, как БЭМ предлагает центрировать. justify content не подойдёт в этом случае. Только если делать ещё больше обёрток */
 }
 
 .site-navigation__link {
@@ -125,10 +147,14 @@ list-style: none;
   color: var(--extra-dark);
 }
 
-.navigation-phone {
+.navigation__phone {
   font-weight: 700;
   text-decoration: none;
   color: var(--extra-dark);
+}
+
+.user-navigation { /* По макету этот блок объединён с телефоном, но сделаю его отдельно. Размер 267px */
+  max-width: 350px; /* Запас под другие иконки и трёхзначеное количество товаров в корзине. А вдруг кто-то очень любит мороженое? */
 }
 
 .user-navigation__item {
@@ -144,6 +170,20 @@ list-style: none;
 
 /*Футер*/
 /*about*/
+.page-footer {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 48px;
+}
+
+.common-page-footer {
+  border-top: 1px solid var(--transparent-accent);
+}
+
+.about {
+  width: 356px; /* Может можно и больше указать под более длинные пункты меню, но пока не буду */
+}
+
 .about__link {
   font-size: 14px;
   line-height: 20px;
@@ -161,6 +201,10 @@ list-style: none;
   color: var(--extra-dark);
 }
 
+.footer-logo-container {
+  width: 193px;
+}
+
 .htmlacademy-link {
   text-decoration: none;
   border-bottom: 1px solid var(--transparent-border);
@@ -168,7 +212,22 @@ list-style: none;
 }
 
 /*Главная страница*/
+/*main*/
+.main-index {
+  display: grid; /*Для флекса нужно ещё писать direction, а это длиннее*/
+  row-gap: 80px;
+}
+
 /*slider*/
+
+.promo {
+  position: relative;
+}
+
+.slider__item {
+  display: flex;
+}
+
 .slider__title {
   font-weight: 900;
   font-size: 36px;
@@ -187,7 +246,25 @@ list-style: none;
   background-color: var(--extra-light);
 }
 
+.slider-pagination { /* Хотел сначала сделать список из слайдера и кнопки флексбоксом, списку дать flex-grow 1, а эти блоки раскидать justify-content space between. Но пока не могу придумать, куда деть кнопки "влево"/"вправо", и они всё портят.*/
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.promo-social {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
 /*promo-action*/
+
+.promo-action-cards {
+  display: flex;
+  justify-content: space-between;
+}
+
 .promo-action-cards__card {
   width: 570px;
   background-color: var(--neutral-accent);
@@ -248,6 +325,13 @@ list-style: none;
   background-color: var(--extra-bright-accent);
 }
 
+/*Каторчки product-cards*/
+.product-cards {
+  display: grid;
+  grid-template-columns: repeat(4, 270px);
+  gap: 40px 30px;
+}
+
 /*company-description*/
 .company-description {
   width: 1170px;
@@ -267,7 +351,26 @@ list-style: none;
   color: var(--extra-dark);
 }
 
+.company-description__features-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px 30px;
+}
+
+.company-description__features-item {
+  width: 505px;
+}
+
+.company-description__features-item:last-child:nth-child(odd) { /* А вдруг добавится пятый пункт списка? А он такой раз и на всю ширину. Как такой на гридах сделать я что-то не понял, хотя для записи 2х2 без изысков код гридов короче. Правда БЭМ не любит псевдоклассы. Но я без понятия, как можно в такой ситуации обойтись без них -_-. */
+  width: 1042px;
+}
+
+
 /*main-news*/
+.main-news {
+  display: flex;
+}
+
 .main-news__item {
   width: 570px;
 }
@@ -304,10 +407,16 @@ list-style: none;
 
 /*delivery*/
 .delivery {
+  display: flex;
+  justify-content: space-around; /* Временная заглушка */
   width: 1170px;
   background: url("../images/delivery.jpg") no-repeat;
   background-size: cover;
   overflow: hidden;
+}
+
+.delivery__text {
+  width: 371px; /* Пока не придумал другой размер */
 }
 
 .delivery__order {
@@ -405,6 +514,12 @@ border-bottom: 1px solid var(--extra-dark);
   font-size: 32px;
   line-height: 46px;
   color: var(--extra-dark);
+}
+
+.catalog-products-fields {
+ display: flex;
+ column-gap: 24px;
+ justify-content: flex-start;
 }
 
 .catalog-products__field {

@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="ru">
-<head>
+<head class="root">
   <meta charset="utf-8">
   <title>Сливочное мороженое</title>
   <meta name="description" content="Вкусное мороженое на основе жирных сливок в магазине Глейси">
@@ -59,6 +59,8 @@
       <h2 class="visually-hidden">Список товаров с фильтрами</h2>
       <div class="catalog-products-filter-container">
         <form class="catalog-products__filter" action="https://echo.htmlacademy.ru/" method="get">
+          <div class="catalog-products-fields"><!-- Здесь пока ничего умнее не придумал, чем ещё 2 обёртки. Для второй части пока не буду писать, там кнопка на расстоянии 16px от блока, а не 24, как здесь -->
+
           <fieldset class="catalog-products__field">
             <h3 class="catalog-products__title">Сортировка</h3>
             <select class="catalog-products__select" name="sorting">
@@ -118,6 +120,8 @@
               </li>
             </ul>
           </fieldset>
+          </div>
+
           <fieldset class="catalog-products__field">
             <h3 class="catalog-products__title">Наполнители:</h3>
             <ul class="catalog-products__filter-list reset-list">
@@ -161,7 +165,7 @@
           <button class="catalog-products__button button" type="submit">Применить</button>
         </form>
       </div>
-      <div class="catalog-products-container">
+      <div class="catalog-products-container product-cards">
         <article class="product-card card-small">
           <h3 class="product-card__title">Малинка</h3>
             <!-- Для семантики заголовок должен идти первым. Его положение нужно не забыть изменить через order. -->
@@ -279,7 +283,7 @@
       <button class="button pagination__button" type="button">Показать ещё</button>
     </section>
   </main>
-  <footer class="page-footer">
+  <footer class="page-footer common-page-footer">
     <ul class="footer-social social reset-list">
       <li class="footer-social__item">
         <a class="promo-social__link promo-social__link--telegram button" href="https://t.me/htmlacademy">
