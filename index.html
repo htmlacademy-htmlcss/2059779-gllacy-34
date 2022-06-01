@@ -6,15 +6,22 @@
   <meta name="description" content="Магазин Глейси – это онлайн и офлайн-магазин по продаже мороженого собственного производства на развес">
   <meta name="keywords" content="Глейси, магазин мороженого, мороженое, пломбир, сливочное мороженое, маршмеллоу, доставка мороженого">
   <link rel="stylesheet" href="styles/styles.css">
+  <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
 </head>
-<body class="page"><!-- Вот не знаю, нужна ли глобальная обёртка для всей страницы. С одной стороны мы меняем тушке фон, а с другой стороны всё содержимое должно быть фиксированной ширины и отцентрировано. Наверное не айс каждой секции задавать ширину -->
+<body class="page">
 <div class="page-container">
   <header class="page-header">
     <nav class="navigation">
       <a class="navigation__logo" href="index.html">
         <img class="page-header-logo" src="images/page-header-logo.svg" width="137px" height="57px" alt="Логотип магазина мороженого «Глейси».">
       </a>
-      <ul class="site-navigation reset-list">
+      <ul class="site-navigation reset-list"><!-- Вот тут мои игры в БЭМ и начали сыпаться. Не знаю, нужно ли это делать элементом и миксовать, и как жить без margin auto-->
         <li class="site-navigation__item">
           <a class="site-navigation__link" href="catalog.html">Каталог</a>
         </li>
@@ -25,7 +32,7 @@
           <a class="site-navigation__link" href="#">О&nbsp;компании</a>
         </li>
       </ul>
-      <a class="navigation-phone" href="tel:+78005558628">+7 800 55-86-28</a>
+      <a class="navigation__phone" href="tel:+78005558628">+7 800 55-86-28</a>
       <ul class="user-navigation reset-list">
         <li class="user-navigation__item">
           <a class="user-navigation__link" href="#">
@@ -55,24 +62,24 @@
           <div class="slider__item-product">
             <p class="slider__title">Нежный пломбир с&nbsp;клубничным джемом</p>
             <p class="slider__definition">Натуральное мороженое из&nbsp;свежих сливок и&nbsp;молока с&nbsp;вкуснейшим клубничным джемом&nbsp;&mdash; это идеальный десерт для всей семьи.</p>
+            <a class="button slider__order" href="#">Заказать</a>
           </div>
-          <a class="button slider__order" href="#">Заказать</a><!-- Подумать над обёрткой -->
           <img class="slider__image" src="images/slider/ice-cream-strawberry.png" width="306px" height="507px" alt="Пломбир с джемом в стаканчике.">
         </li>
         <li class="slider__item slider__item--inactive">
           <div class="slider__item-product slider__item-product--inactive">
             <p class="slider__title slider__title--inactive">Сливочное мороженое со&nbsp;вкусом банана</p>
             <p class="slider__definition slider__definition--inactive">Сливочное мороженое с&nbsp;ярким банановым вкусом подарит вам свежесть и&nbsp;наслаждение даже в&nbsp;самый жаркий летний день.</p>
+            <a class="button slider__order slider__order--inactive" href="#">Заказать</a>
           </div>
-          <a class="button slider__order slider__order--inactive" href="#">Заказать</a>
           <img class="slider__image slider__image--inactive" src="images/slider/ice-cream-banana.png" width="306px" height="507px" alt="Сливочное мороженое с бананом в стаканчике.">
         </li>
         <li class="slider__item slider__item--inactive">
           <div class="slider__item-product slider__item-product--inactive">
             <p class="slider__title slider__title--inactive">Карамельный пломбир с&nbsp;маршмеллоу</p>
             <p class="slider__definition slider__definition--inactive">Необычный сладкий десерт с&nbsp;карамельным топпингом и&nbsp;кусочками зефира завоюет сердца сладкоежек всех возрастов.</p>
+            <a class="button slider__order slider__order--inactive" href="#">Заказать</a>
           </div>
-          <a class="button slider__order slider__order--inactive" href="#">Заказать</a>
           <img class="slider__image slider__image--inactive" src="images/slider/ice-cream-marshmallow.png" width="306px" height="507px" alt="Пломбир с маршмеллоу в стаканчике.">
         </li>
       </ul>
@@ -117,6 +124,7 @@
         </li>
       </ul>
     </section>
+    <div class="page-common-content">
     <section class="promo-action">
       <h2 class="promo-action__title">Заказывайте мороженое и&nbsp;получайте подарки!</h2>
       <div class="promo-action-cards">
@@ -185,7 +193,7 @@
       </div>
     </section>
     <section class="main-news">
-      <h2 class="visually-hidden">Новости</h2>
+      <h2 class="visually-hidden" hidden>Новости</h2><!-- Поставил атрибут, а то мешает -->
       <article class="main-news__item card-big card-big--blog">
         <h3 class="main-news__blog-title">Новое в&nbsp;нашем блоге</h3>
         <a class="main-news__blog" href="#">10&nbsp;способов сервировки фруктовых щербетов к&nbsp;столу</a>
@@ -202,9 +210,11 @@
       </aside>
     </section>
     <section class="delivery card-big">
-      <h2 class="delivery__title">Доставка любимого мороженого на&nbsp;дом</h2>
-      <p class="delivery__description">Хочется полакомиться любимым десертом, но&nbsp;нет времени съездить в&nbsp;магазин? Закажите доставку мороженого на&nbsp;дом, и&nbsp;курьер привезёт вам ваш заказ в&nbsp;течение
-        часа!</p>
+      <div class="delivery__text">
+        <h2 class="delivery__title">Доставка любимого мороженого на&nbsp;дом</h2>
+        <p class="delivery__description">Хочется полакомиться любимым десертом, но&nbsp;нет времени съездить в&nbsp;магазин? Закажите доставку мороженого на&nbsp;дом, и&nbsp;курьер привезёт вам ваш заказ в&nbsp;течение
+          часа!</p>
+      </div>
       <div class="delivery__order card-small">
         <p class="delivery__description">Укажите адрес и&nbsp;дату доставки, и&nbsp;мы&nbsp;свяжемся с&nbsp;вами, чтобы подтвердить заказ.</p>
         <form class="delivery__form" action="https://echo.htmlacademy.ru/" method="post">
@@ -269,10 +279,10 @@
       </li>
     </ul>
     <div class="footer-logo-container">
-    <a class="footer-logo" href="https://htmlacademy.ru/">
-      <img class="footer-logo__image" src="images/footer-logo.svg" width="93px" height="27px" alt="логотип HTML Academy.">
-    </a>
-    <p class="about-text">Сделано в&nbsp;<a class="htmlacademy-link" href="https://htmlacademy.ru/">.html&nbsp;academy</a>&nbsp;©&nbsp;2021</p>
+      <a class="footer-logo" href="https://htmlacademy.ru/">
+        <img class="footer-logo__image" src="images/footer-logo.svg" width="93px" height="27px" alt="логотип HTML Academy.">
+      </a>
+      <p class="about-text">Сделано в&nbsp;<a class="htmlacademy-link" href="https://htmlacademy.ru/">.html&nbsp;academy</a>&nbsp;©&nbsp;2021</p>
     </div>
   </footer>
 </div>
