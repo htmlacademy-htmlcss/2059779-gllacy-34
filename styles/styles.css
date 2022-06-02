@@ -601,7 +601,7 @@ html {
 .delivery__form-description {
   display: block;
   width: 380px;
-  margin: 32px;
+  margin-bottom: 32px;
 }
 
 .delivery__order {
