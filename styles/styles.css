@@ -601,6 +601,7 @@ html {
 .delivery__form-description {
   display: block;
   width: 380px;
+  margin: 0px;
   margin-bottom: 32px;
 }
 
