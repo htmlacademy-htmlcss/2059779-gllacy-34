@@ -155,7 +155,6 @@ html {
   margin-bottom: 40px;
 }
 
-
 /*Карточки*/
 /*cards*/
 .cards {
@@ -322,12 +321,12 @@ html {
   border-top: 1px solid var(--transparent-accent);
 }
 
-.about { /*Вроде простая фигня, но чуть мозг себе не сломал. Может есть способ проще?*/
+.about {
   width: 400px;
   display: grid;
   grid-template-columns: max-content max-content;
   gap: 8px 24px;
-  align-content: start; /* По-моему, в учебнике такого не было, но вроде можно https://www.w3.org/TR/css-align-3/#propdef-align-content*/
+  align-content: start;
 }
 
 .about__link {
@@ -602,7 +601,7 @@ html {
 .delivery__form-description {
   display: block;
   width: 380px;
-  margin: 32;
+  margin: 32px;
 }
 
 .delivery__order {
