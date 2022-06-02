@@ -3,7 +3,7 @@
   font-style: normal;
   font-weight: 400;
   src: url("../fonts/inter-400.woff2") format("woff2"),
-       url("../fonts/inter-400.woff") format("woff");
+    url("../fonts/inter-400.woff") format("woff");
   font-display: swap;
 }
 
@@ -12,7 +12,7 @@
   font-style: normal;
   font-weight: 700;
   src: url("../fonts/inter-700.woff2") format("woff2"),
-       url("../fonts/inter-700.woff") format("woff");
+    url("../fonts/inter-700.woff") format("woff");
   font-display: swap;
 }
 
@@ -21,11 +21,10 @@
   font-style: normal;
   font-weight: 900;
   src: url("../fonts/inter-900.woff2") format("woff2"),
-       url("../fonts/inter-900.woff") format("woff");
+    url("../fonts/inter-900.woff") format("woff");
   font-display: swap;
 }
 
-/* Пока закомментирую, а то неудобно ориентироваться
 .visually-hidden {
   position: absolute;
   width: 1px;
@@ -38,9 +37,10 @@
   clip: rect(0 0 0 0);
   overflow: hidden;
 }
-*/
+
 :root {
-  --page-background: #feafc3; /* Варианты страниц #69a9ff и #fcc850 */
+  --page-background: #feafc3;
+  /* Варианты страниц #69a9ff и #fcc850 */
   --neutral: #b9b9b9;
   --extra-light: #fcfcfc;
   --light: #e7e7e7;
@@ -51,11 +51,11 @@
   --extra-light-accent: #ffcbd8;
   --bright-accent: #ff4a78;
   --extra-bright-accent: #ff2f64;
-  --transparent-accent: rgba(252, 252, 252, 0.3); /* Прозрачные кнопочки пользовательского меню для всех страниц одинаковые */
-  --transparent-border: rgba(45, 52, 64, 0.5); /* За каким-то фигом один единственный бордер особого цвета в макете */
+  --transparent-accent: rgba(252, 252, 252, 0.3);
+  --transparent-border: rgba(45, 52, 64, 0.5);
 }
 
-html { /*C одной стороны Академия и БЭМ учат не делать селекторов по элементу, а с другой стороны, наверное, исключения возможны. По крайней мере я не понял, как добиться эффекта прилипания к низу, без указания 100% элементу */
+html {
   height: 100%;
 }
 
@@ -73,54 +73,166 @@ html { /*C одной стороны Академия и БЭМ учат не д
 }
 
 .page-container {
-  display: grid; /* С гридами как-то меньше кода писать для стики футера, чем с флексами. Надеюсь, это не будет нарушением ТЗ домашнего задания.*/
+  display: grid;
   grid-template-rows: auto 1fr auto;
   min-height: 100%;
   width: 1170px;
   margin: 0 auto;
 }
 
+/*Кнопки*/
 /*button*/
 .button {
+  display: inline-block;
+  border-radius: 26px;
+  padding: 12px 32px;
+  border: 0;
+}
+
+.button--form {
   font-weight: 700;
   font-size: 16px;
   line-height: 20px;
   text-decoration: none;
   text-align: center;
+  cursor: pointer;
+  color: var(--extra-light);
+  background-color: var(--bright-accent);
+}
+
+.button--link {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+  text-decoration: none;
+  text-align: center;
+  cursor: pointer;
+  color: var(--extra-dark);
+  background-color: var(--extra-light);
+}
+
+.button--filter {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+  text-decoration: none;
+  text-align: center;
+  cursor: pointer;
+  color: var(--extra-dark);
+  background-color: var(--transparent-accent);
+}
+
+/*Социальные кнопочки*/
+/*social*/
+.social {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+.social__item {
+  min-width: 24px;
+  min-height: 24px;
+}
+
+.social__link {
+  display: block;
+  border-radius: 50%;
+  background-color: var(--extra-light); /*Чтобы пока видно было*/
+}
+
+/*Заголовки*/
+/*section-title*/
+.section-title {
+  margin: 0;
+  margin-bottom: 56px;
+}
+
+.section-title--delivery {
+  margin-bottom: 24px;
+}
+
+.section-title--сatalog {
+  margin-bottom: 40px;
+}
+
+/*Карточки*/
+/*cards*/
+.cards {
+  display: flex;
+  justify-content: space-between;
 }
 
 /*card*/
-.card-big {
+.card--big {
   border-radius: 16px;
 }
 
-.card-small {
+.card--small {
   border-radius: 8px;
 }
 
-.card-big--themed-border {
+.card--themed-border {
   background: url("../images/waffle-tile.jpg") repeat var(--blank);
 }
 
-.card-big--blog {
+.card--blog {
   background: url("../images/blog.jpg") no-repeat var(--blank);
   background-size: cover;
 }
 
-.card-big--post-border {
-    background-image: repeating-linear-gradient(-50deg, #ff2f64 0, #ff2f64 9px, #edf1f5 10px, #edf1f5 22px, #68a9ff 23px, #68a9ff 31px, #edf1f5 32px, #edf1f5 44px, #ff2f64 45px);
+.card--post-border {
+  background-image: repeating-linear-gradient(-50deg, #ff2f64 0, #ff2f64 9px, #edf1f5 10px, #edf1f5 22px, #68a9ff 23px, #68a9ff 31px, #edf1f5 32px, #edf1f5 44px, #ff2f64 45px);
 }
 
-/*social*/
+.card--neutral-accent {
+  background-color: var(--neutral-accent);
+}
+
+.card--light-accent {
+  background-color: var(--extra-light);
+}
+
+.card--raspberry {
+  background: url("../images/promo-action/raspberry.jpg") no-repeat 100% 0% var(--neutral-accent);
+}
+
+.card--marshmallow {
+  background: url("../images/promo-action/marshmallow.jpg") no-repeat 100% 0% var(--neutral-accent);
+}
+
+.card--blank-accent {
+  background-color: var(--blank);
+}
+
+.card-content {
+  display: flex;
+  column-gap: 135px;
+  padding: 64px;
+  box-sizing: border-box;
+}
+
+.card-title {
+  margin: 0;
+  margin-bottom: 28px;
+}
+
+.card-text {
+  width: 328px;
+  margin: 0;
+  margin-bottom: 28px;
+}
 
 /*List reset*/
 .reset-list {
-margin: 0;
-padding: 0;
-list-style: none;
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
+/**/
 /*Хэдер*/
+/**/
+/*Навигация*/
 /*navigation*/
 .page-header {
   width: 1170px;
@@ -129,22 +241,47 @@ list-style: none;
 
 .navigation {
   display: flex;
-  line-height: 20px;
+  padding-top: 24px;
+  align-items: center;
 }
 
 .navigation__logo {
+  display: block;
   width: 137px;
+  margin-right: 16px;
 }
 
 .site-navigation {
-  width: 500px;   /* Делаю с запасом, как учит скрин каст */
-  margin-right: auto; /* Без понятия, как БЭМ предлагает центрировать. justify content не подойдёт в этом случае. Только если делать ещё больше обёрток */
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 500px;
+  margin-right: auto;
 }
 
 .site-navigation__link {
   font-style: normal;
   text-decoration: none;
+  line-height: 20px;
   color: var(--extra-dark);
+}
+
+.menu-link--site {
+  display: block;
+  padding: 8px 16px;
+}
+
+.menu-link--user {
+  display: block;
+  padding: 6px 16px;
+  /* У иконки поиска 8 на 8 */
+  min-width: 16px;
+  min-height: 16px;
+}
+
+.menu-link--phone {
+  display: block;
+  margin-right: 16px;
 }
 
 .navigation__phone {
@@ -153,8 +290,10 @@ list-style: none;
   color: var(--extra-dark);
 }
 
-.user-navigation { /* По макету этот блок объединён с телефоном, но сделаю его отдельно. Размер 267px */
-  max-width: 350px; /* Запас под другие иконки и трёхзначеное количество товаров в корзине. А вдруг кто-то очень любит мороженое? */
+.user-navigation {
+  display: flex;
+  column-gap: 16px;
+  max-width: 350px;
 }
 
 .user-navigation__item {
@@ -168,7 +307,9 @@ list-style: none;
   color: var(--extra-dark);
 }
 
+/**/
 /*Футер*/
+/**/
 /*about*/
 .page-footer {
   display: flex;
@@ -181,7 +322,11 @@ list-style: none;
 }
 
 .about {
-  width: 356px; /* Может можно и больше указать под более длинные пункты меню, но пока не буду */
+  width: 400px;
+  display: grid;
+  grid-template-columns: max-content max-content;
+  gap: 8px 24px;
+  align-content: start;
 }
 
 .about__link {
@@ -203,6 +348,7 @@ list-style: none;
 
 .footer-logo-container {
   width: 193px;
+  margin-bottom: 14px;
 }
 
 .htmlacademy-link {
@@ -211,21 +357,38 @@ list-style: none;
   color: var(--extra-dark);
 }
 
+/**/
 /*Главная страница*/
+/**/
 /*main*/
 .main-index {
-  display: grid; /*Для флекса нужно ещё писать direction, а это длиннее*/
+  display: grid;
   row-gap: 80px;
 }
 
+/*Слайдер*/
 /*slider*/
-
 .promo {
   position: relative;
 }
 
 .slider__item {
   display: flex;
+}
+
+.slider__item-product {
+  width: 540px;
+  padding: 136px 0px 136px 70px;
+  box-sizing: border-box;
+}
+
+.slider__item-product--inactive, /*Потом разделить*/
+.slider__image--inactive {
+  display: none;
+}
+
+.slider__image {
+  padding: 21px 21px 26px;
 }
 
 .slider__title {
@@ -236,17 +399,14 @@ list-style: none;
 }
 
 .slider__definition {
+  margin: 0;
+  margin-bottom: 48px;
   font-size: 18px;
   line-height: 24px;
   color: var(--extra-dark);
 }
 
-.slider__order {
-  color: var(--extra-dark);
-  background-color: var(--extra-light);
-}
-
-.slider-pagination { /* Хотел сначала сделать список из слайдера и кнопки флексбоксом, списку дать flex-grow 1, а эти блоки раскидать justify-content space between. Но пока не могу придумать, куда деть кнопки "влево"/"вправо", и они всё портят.*/
+.slider-pagination {
   position: absolute;
   bottom: 0;
   left: 0;
@@ -258,16 +418,12 @@ list-style: none;
   right: 0;
 }
 
+/*Промо*/
 /*promo-action*/
-
-.promo-action-cards {
-  display: flex;
-  justify-content: space-between;
-}
-
 .promo-action-cards__card {
   width: 570px;
-  background-color: var(--neutral-accent);
+  box-sizing: border-box;
+  padding: 36px;
 }
 
 .promo-action__title {
@@ -290,15 +446,10 @@ list-style: none;
   color: var(--extra-dark);
 }
 
-.promo-action-cards__order {
-  color: var(--extra-dark);
-  background-color: var(--extra-light);
-}
-
+/*Карточки товара*/
 /*product-cards*/
 .product-card {
   width: 270px;
-  background-color: var(--extra-light);
 }
 
 .product-card__title {
@@ -325,21 +476,24 @@ list-style: none;
   background-color: var(--extra-bright-accent);
 }
 
-/*Каторчки product-cards*/
 .product-cards {
   display: grid;
   grid-template-columns: repeat(4, 270px);
   gap: 40px 30px;
 }
 
+/*О компании*/
 /*company-description*/
 .company-description {
   width: 1170px;
+  padding: 24px;
+  box-sizing: border-box;
 }
 
 .company-description__container {
   width: 1122px;
-  background-color: var(--blank);
+  padding: 56px 40px;
+  box-sizing: border-box;
   border-radius: 16px;
 }
 
@@ -361,26 +515,26 @@ list-style: none;
   width: 505px;
 }
 
-.company-description__features-item:last-child:nth-child(odd) { /* А вдруг добавится пятый пункт списка? А он такой раз и на всю ширину. Как такой на гридах сделать я что-то не понял, хотя для записи 2х2 без изысков код гридов короче. Правда БЭМ не любит псевдоклассы. Но я без понятия, как можно в такой ситуации обойтись без них -_-. */
+.company-description__features-item:last-child:nth-child(odd) {
   width: 1042px;
 }
 
-
+/*Блог и подписка*/
 /*main-news*/
-.main-news {
-  display: flex;
-}
-
 .main-news__item {
   width: 570px;
 }
 
 .main-news__blog-title {
+  margin: 0;
+  margin-bottom: 12px;   /* Чё-то я приуныл, и мне надоело в БЭМ играть. Это сколько же классов нужно расплодить, чтобы развести вид и форму? */
   line-height: 20px;
   color: var(--dark);
 }
 
 .main-news__blog {
+  display: block;
+  width: 303px;
   font-weight: 700;
   font-size: 24px;
   line-height: 30px;
@@ -390,13 +544,31 @@ list-style: none;
 
 .main-news__container {
   width: 558px;
-  background-color: var(--blank);
-  border-radius: 16px;
-  overflow: hidden;
-
+  padding: 26px;
+  box-sizing: border-box;
 }
 
-.main-news__subscription-input {
+.main-news__container--blog { /* По идее БЭМ пытается исключить каскад, а я тут его добавляю. И блок должен быть закрыть на изменение, а я его изменяю. Нужно другой класс в принципе что ли? */
+  padding: 32px;
+}
+
+.main-news__item--subscription {
+  padding: 6px;
+  box-sizing: border-box;
+}
+
+.main-news__subscription {
+  margin: 0;
+  margin-bottom: 42px;
+}
+
+.main-news__subscription-form {
+  display: flex;
+  column-gap: 14px;
+}
+
+.main-news__subscription-input { /* Тут надо бы разделить flex-grow и оформление по разным классам*/
+  flex-grow: 1;
   line-height: 20px;
   color: var(--neutral);
 }
@@ -405,10 +577,9 @@ list-style: none;
   background-color: var(--extra-bright-accent);
 }
 
+/*Доставка*/
 /*delivery*/
 .delivery {
-  display: flex;
-  justify-content: space-around; /* Временная заглушка */
   width: 1170px;
   background: url("../images/delivery.jpg") no-repeat;
   background-size: cover;
@@ -416,17 +587,34 @@ list-style: none;
 }
 
 .delivery__text {
-  width: 371px; /* Пока не придумал другой размер */
+  width: 371px;
+  padding-top: 103px;
+  padding-left: 36px; /*Не могу придумать, как в данном случае сохранить единообразие падингов, чтобы не было left и bottom*/
+}
+
+.delivery__description {
+  display: block;
+  width: 371px;
+  margin: 0;
+}
+
+.delivery__form-description {
+  display: block;
+  width: 380px;
+  margin: 0px;
+  margin-bottom: 32px;
 }
 
 .delivery__order {
   width: 500px;
-  background-color: var(--extra-light);
+  padding: 40px;
+  box-sizing: border-box;
 }
 
-.delivery__title { /*На очередном заголовке подумал, что возможно им тоже можно было бы назначить один класс и переиспользовать */
+.delivery__title {
   font-size: 32px;
   line-height: 46px;
+  font-weight: 900;
   color: var(--extra-dark);
 }
 
@@ -441,9 +629,10 @@ list-style: none;
 }
 
 .delivery__button {
-  background-color: var(--extra-bright-accent);
+  text-align: center;
 }
 
+/*Контакты*/
 /*contacts*/
 .contacts {
   width: 1170px;
@@ -453,14 +642,20 @@ list-style: none;
 
 .contacts__card {
   width: 343px;
-  background-color: var(--extra-light);
+  padding: 40px;
+  box-sizing: border-box;
 }
 
-.contacts__title { /*Я знаю, можно было через запятую перечислить, но БЭМ так не любит вроде бы, а я всё ещё питаю надежды, что где-то рядом с ним пишу.*/
+.contacts__title { /* Отсюда и ниже очередной смешение формы и оформления */
+  width: 203px;
+  margin: 0;
+  margin-bottom: 12px;
   font-style: normal;
 }
 
 .contacts__address {
+  margin: 0;
+  margin-bottom: 24px;
   font-style: normal;
   font-weight: 700;
   font-size: 20px;
@@ -468,11 +663,8 @@ list-style: none;
   color: var(--extra-dark);
 }
 
-.contacts__title {
-  font-style: normal;
-}
-
 .contacts__phone-number {
+  margin: 0;
   font-style: normal;
   font-weight: 700;
   font-size: 20px;
@@ -482,6 +674,8 @@ list-style: none;
 }
 
 .contacts__note {
+  margin: 0;
+  margin-bottom: 32px;
   font-style: normal;
   font-size: 14px;
   line-height: 20px;
@@ -491,9 +685,22 @@ list-style: none;
   background-color: var(--extra-bright-accent);
 }
 
+/**/
 /*Каталог*/
+/**/
+.common-header {
+  margin-bottom: 32px;
+}
+
 .main-catalog {
   width: 1170px;
+}
+
+.breadcrumbs {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 28px;
+  margin-bottom: 16px;
 }
 
 .breadcrumbs__link {
@@ -505,9 +712,10 @@ list-style: none;
 }
 
 .breadcrumbs__link--current {
-border-bottom: 1px solid var(--extra-dark);
+  border-bottom: 1px solid var(--extra-dark);
 }
 
+/*Карточки товаров с фильтрами*/
 /*catalog*/
 .catalog-title {
   font-weight: 900;
@@ -517,9 +725,10 @@ border-bottom: 1px solid var(--extra-dark);
 }
 
 .catalog-products-fields {
- display: flex;
- column-gap: 24px;
- justify-content: flex-start;
+  display: flex;
+  column-gap: 24px;
+  justify-content: flex-start;
+  align-items: flex-start;
 }
 
 .catalog-products__field {
@@ -534,22 +743,24 @@ border-bottom: 1px solid var(--extra-dark);
 }
 
 .catalog-products__select {
-  background-color:var(--transparent-accent);
+  background-color: var(--transparent-accent);
   border-radius: 20px;
   border: none;
 }
 
 .catalog-products__select-item {
-    font-size: 14px;
-    line-height: 20px;
-    color: var(--extra-dark);
+  font-size: 14px;
+  line-height: 20px;
+  color: var(--extra-dark);
 }
 
 .catalog-products__filter-list {
+  display: flex;
+  column-gap: 16px;
   background-color: var(--transparent-accent);
   border-radius: 20px;
   border: none;
-}
+  }
 
 .catalog-products__control-label {
   font-size: 14px;
@@ -562,16 +773,31 @@ border-bottom: 1px solid var(--extra-dark);
 }
 
 .pagination {
+  display: grid;
+  grid-template-columns: 33% 33% 33%;
+  grid-template-areas: ". button list";
+  padding-top: 57px;
+  padding-bottom: 81px;
+}
+
+.pagination-button {
+  grid-area: button;
+  text-align: center;
+}
+
+.pagination-list {
+  grid-area: list;
+  display: flex;
+  justify-self: end;
   list-style: none;
 }
 
-.pagination__button {
-  background-color: var(--extra-light);
-}
-
-.pagination__link {
+.pagination-list__link {
+  display: block;
+  min-width: 24px;
+  min-height: 24px;
   font-size: 16px;
   line-height: 20px;
   text-decoration: none;
   color: var(--extra-dark);
-}
+  }
