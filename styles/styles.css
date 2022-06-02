@@ -614,6 +614,7 @@ html {
 .delivery__title {
   font-size: 32px;
   line-height: 46px;
+  font-weight: 900;
   color: var(--extra-dark);
 }
 
