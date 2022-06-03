@@ -486,6 +486,7 @@ html {
   top: -50px; /*В макете 51*/
   left: 50%;
   transform: translateX(-50%);
+  object-fit: cover;
 }
 
 .product-card__description {
