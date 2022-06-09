@@ -38,18 +38,27 @@
         <a class="page-navigation__phone page-navigation__link--phone" href="tel:+78005558628">+7 800 55-86-28</a>
         <ul class="page-navigation page-navigation--user reset-list">
           <li class="page-navigation__item">
-            <a class="page-navigation__link page-navigation__link--user" href="#">
-              <span class="visually-hidden">Поиск.</span>
+            <a class="page-navigation__link page-navigation__link--user page-navigation__link--serch" href="#">
+              <svg class="page-navigation__icon" width="14" height="14" fill="none" aria-hidden="true" focusable="false" viewBox="0 0 14 14" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M1.663 6.188a4.667 4.667 0 1 1 8.028 3.237.674.674 0 0 0-.124.124 4.667 4.667 0 0 1-7.904-3.361Zm8.412 4.688a6 6 0 1 1 .943-.943l2.45 2.45a.667.667 0 1 1-.943.943l-2.45-2.45Z" />
+              </svg>
+              <span class="visually-hidden page-navigation__text">Поиск.</span>
             </a>
           </li>
           <li class="page-navigation__item">
             <a class="page-navigation__link page-navigation__link--user" href="#">
-              <span class="page-navigation__icon">Вход</span>
+              <svg class="page-navigation__icon" width="16" height="17" aria-hidden="true" focusable="false" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M9 2.5246a.6667.6667 0 0 1 .6667-.6667h2.6666a1.9997 1.9997 0 0 1 2 2v9.3333a2 2 0 0 1-2 2H9.6667a.6666.6666 0 1 1 0-1.3333h2.6666a.6664.6664 0 0 0 .4714-.1953.6662.6662 0 0 0 .1953-.4714V3.8579a.6664.6664 0 0 0-.6667-.6667H9.6667A.6667.6667 0 0 1 9 2.5246ZM5.8619 4.7198a.6667.6667 0 0 1 .9428 0l3.3291 3.3291a.6627.6627 0 0 1 .129.177.664.664 0 0 1 .0705.2987.6636.6636 0 0 1-.1998.4759l-3.3288 3.3288a.6667.6667 0 1 1-.9428-.9428L8.057 9.1912H1.6668a.6667.6667 0 1 1 0-1.3333h6.3905L5.8619 5.6627a.6667.6667 0 0 1 0-.9429Z" />
+              </svg>
+              <span class="page-navigation__text">Вход</span>
             </a>
           </li>
           <li class="page-navigation__item">
             <a class="page-navigation__link page-navigation__link--user" href="#">
-              <span class="page-navigation__icon">Корзина</span>
+              <svg class="page-navigation__icon" width="16" height="16" aria-hidden="true" focusable="false" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M1.16667 1.25C.79847 1.25.5 1.54848.5 1.91667c0 .36819.29848.66666.66667.66666h1.77127l.46743 2.33539a.66396.66396 0 0 0 .01063.0531l.96738 4.83333.00012.00056a1.8254 1.8254 0 0 0 .64571 1.06579c.3319.2672.74674.4098 1.17262.4033h5.62067a1.82555 1.82555 0 0 0 1.8185-1.46965l.001-.00499.9271-4.86144a.6669.6669 0 0 0-.1412-.54985.66678.66678 0 0 0-.5137-.24171H4.61072L4.1381 1.78583C4.07574 1.47426 3.80215 1.25 3.4844 1.25H1.16667Zm4.52431 8.29444L4.87759 5.4805h8.23081l-.7756 4.06686a.4923.4923 0 0 1-.1737.28555.4923.4923 0 0 1-.3181.10871v-.00013H6.19614v-.00012l-.01277.00025a.49218.49218 0 0 1-.4922-.39622l-.00019-.00096ZM4.55739 13.5054c0-.6879.55771-1.2457 1.24568-1.2457.68798 0 1.24569.5578 1.24569 1.2457 0 .688-.55771 1.2457-1.24569 1.2457-.68797 0-1.24568-.5577-1.24568-1.2457Zm6.37331 0c0-.6879.5577-1.2457 1.2457-1.2457.688 0 1.2457.5578 1.2457 1.2457 0 .688-.5577 1.2457-1.2457 1.2457-.688 0-1.2457-.5577-1.2457-1.2457Z" />
+              </svg>
+              <span class="page-navigation__text">Корзина</span>
             </a>
           </li>
         </ul>
@@ -85,10 +94,10 @@
             <img class="slider__image slider__image--inactive" src="images/slider/ice-cream-marshmallow.png" width="306px" height="507px" alt="Пломбир с маршмеллоу в стаканчике.">
           </li>
         </ul>
-        <button class="button slider-prev" type="button">
+        <button class="visually-hidden button slider-prev" type="button">
           <span class="visually-hidden">Предыдущее фото.</span>
         </button>
-        <button class="button slider-next" type="button">
+        <button class="visually-hidden button slider-next" type="button">
           <span class="visually-hidden">Следующее фото.</span>
         </button>
         <ol class="slider-pagination reset-list">
@@ -108,10 +117,10 @@
             </button>
           </li>
         </ol>
-        <ul class="promo-social social reset-list">
+        <ul class="slider-social social reset-list">
           <li class="social__item">
             <a class="social__link" href="https://t.me/htmlacademy">
-              <svg class="social__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <svg class="social__icon" width="24" height="24" aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path fill-rule="evenodd" clip-rule="evenodd" d="M24 12a12 12 0 1 1-24 0 12 12 0 0 1 24 0ZM12.43 8.86c-1.17.48-3.5 1.49-7 3.01-.57.23-.86.45-.9.67-.04.36.42.5 1.04.7l.27.08c.6.2 1.43.44 1.86.45.39 0 .82-.16 1.3-.48 3.27-2.21 4.96-3.33 5.06-3.35.08-.02.18-.04.25.02.07.07.07.18.06.22-.05.19-1.84 1.86-2.77 2.72a28.24 28.24 0 0 0-.82.79c-.57.54-1 .96.02 1.63.5.32.89.59 1.28.85a88.77 88.77 0 0 0 1.8 1.23c.5.35.95.67 1.5.62.32-.03.65-.33.82-1.23.4-2.13 1.18-6.73 1.36-8.63.01-.16 0-.31-.02-.47a.5.5 0 0 0-.17-.33.78.78 0 0 0-.46-.14c-.46.01-1.15.25-4.48 1.64Z" />
               </svg>
               <span class="visually-hidden">Телеграм.</span>
@@ -119,7 +128,7 @@
           </li>
           <li class="social__item">
             <a class="social__link" href="https://vk.com/htmlacademy">
-              <svg class="social__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <svg class="social__icon" width="24" height="24" aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path fill-rule="evenodd" clip-rule="evenodd" d="M24 12a12 12 0 1 1-24 0 12 12 0 0 1 24 0Zm-11.41 2.97h-.72s-1.58.09-2.98-1.18C7.37 12.4 6.03 9.65 6.03 9.65s-.07-.18 0-.27c.1-.1.36-.1.36-.1l1.72-.01s.16.02.27.1c.1.05.15.17.15.17s.28.61.65 1.17c.71 1.08 1.05 1.32 1.29 1.2.35-.16.25-1.53.25-1.53s0-.5-.18-.71c-.14-.17-.41-.22-.53-.24-.1-.01.06-.2.26-.3.31-.13.86-.13 1.5-.13.5 0 .65.03.84.07.46.1.44.41.41 1.08l-.02.7v.18c-.01.34-.02.73.23.88.13.07.45 0 1.26-1.19.38-.56.66-1.23.66-1.23s.07-.12.16-.17c.1-.05.24-.04.24-.04h1.8s.54-.06.63.15c.1.23-.2.75-.94 1.61-.7.82-1.03 1.12-1 1.38.01.2.23.38.66.72.89.73 1.13 1.1 1.18 1.2l.01.01c.4.58-.44.62-.44.62l-1.6.02s-.34.06-.8-.2a3.94 3.94 0 0 1-.69-.6c-.33-.34-.65-.66-.91-.58-.45.12-.44.96-.44.96s0 .18-.1.28c-.1.1-.32.12-.32.12Z" />
               </svg>
               <span class="visually-hidden">Вконтакте.</span>
@@ -127,7 +136,7 @@
           </li>
           <li class="social__item">
             <a class="social__link" href="https://www.youtube.com/user/htmlacademyru">
-              <svg class="social__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <svg class="social__icon" width="24" height="24" aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="m14.004 11.791-2.808-1.31c-.245-.114-.446.014-.446.285v2.468c0 .271.201.399.446.285l2.806-1.31c.247-.115.247-.303.002-.418ZM12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0Zm0 16.875c-6.143 0-6.25-.554-6.25-4.875S5.857 7.125 12 7.125c6.142 0 6.25.554 6.25 4.875s-.108 4.875-6.25 4.875Z" />
               </svg>
               <span class="visually-hidden">YouTube.</span>
@@ -160,7 +169,7 @@
             <div class="product-card__purchase">
               <b class="product-card__price">310&nbsp;₽/кг</b>
               <button class="product-card__button button" type="button">
-                <svg class="product-card__icon" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg class="product-card__icon" width="16" height="16" aria-hidden="true" focusable="false" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path fill-rule="evenodd" clip-rule="evenodd" d="M1.16667 1.25C.79847 1.25.5 1.54848.5 1.91667c0 .36819.29848.66666.66667.66666h1.77127l.46743 2.33539a.66396.66396 0 0 0 .01063.0531l.96738 4.83333.00012.00056a1.8254 1.8254 0 0 0 .64571 1.06579c.3319.2672.74674.4098 1.17262.4033h5.62067a1.82555 1.82555 0 0 0 1.8185-1.46965l.001-.00499.9271-4.86144a.6669.6669 0 0 0-.1412-.54985.66678.66678 0 0 0-.5137-.24171H4.61072L4.1381 1.78583C4.07574 1.47426 3.80215 1.25 3.4844 1.25H1.16667Zm4.52431 8.29444L4.87759 5.4805h8.23081l-.7756 4.06686a.4923.4923 0 0 1-.1737.28555.4923.4923 0 0 1-.3181.10871v-.00013H6.19614v-.00012l-.01277.00025a.49218.49218 0 0 1-.4922-.39622l-.00019-.00096ZM4.55739 13.5054c0-.6879.55771-1.2457 1.24568-1.2457.68798 0 1.24569.5578 1.24569 1.2457 0 .688-.55771 1.2457-1.24569 1.2457-.68797 0-1.24568-.5577-1.24568-1.2457Zm6.37331 0c0-.6879.5577-1.2457 1.2457-1.2457.688 0 1.2457.5578 1.2457 1.2457 0 .688-.5577 1.2457-1.2457 1.2457-.688 0-1.2457-.5577-1.2457-1.2457Z" />
                 </svg>
                 <span class="visually-hidden">Заказать</span>
