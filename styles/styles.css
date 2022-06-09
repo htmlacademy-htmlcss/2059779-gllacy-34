@@ -110,6 +110,7 @@ html {
   color: var(--extra-dark);
   background-color: var(--extra-light);
   box-shadow: var(--small-shadow);
+  transition: border 100ms ease-out, background-color 100ms ease-out, padding 0ms linear; /* При клике дёргается вёрстка вокруг из-за паддингов и бордеров*/
   }
 
 .button--default:hover {
@@ -133,6 +134,7 @@ html {
   color: var(--neutral);
   background-color: var(--light);
   border: 4px solid var(--extra-light-04);
+  box-shadow: none;
 }
 
 .button--light-accent {
@@ -149,6 +151,7 @@ html {
   color: var(--extra-dark);
   background-color: var(--extra-light-03);
   box-shadow: var(--small-shadow);
+  transition: border 100ms ease-out, background-color 100ms ease-out, padding 0ms linear;
 }
 
 .button--light-accent:hover {
@@ -186,6 +189,7 @@ html {
   color: var(--extra-light);
   background-color: var(--extra-bright-accent);
   box-shadow: var(--small-shadow);
+  transition: border 100ms ease-out, background-color 100ms ease-out, padding 0ms linear;
 }
 
 .button--bright-accent:hover {
@@ -221,33 +225,74 @@ html {
   gap: 12px;
 }
 .social__item {
+  position: relative;
 }
 
 .social__link {
-  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   padding: 0;
-  display: block;
-  min-width: 28px;
-  min-height: 28px;
+  border: 2px solid var(--extra-light-03);
+  border-radius: 50%;
+  background-clip: content-box;
+  transition: 100ms ease-out; /*На псевдоэлемент не работает */
 }
 
 .social__icon {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  margin: auto;
   fill: var(--extra-light);
-  border: 2px solid var(--extra-light-03);
-  background-clip: content-box;
-  border-radius: 50%;
 }
 
-.social__icon:hover {
-  fill: var(--extra-light);
+.social__link:hover {
   border: 2px solid var(--extra-light-05);
+}
+
+.social__link:hover::after {
+  position: absolute;
+  content: "";
+  z-index: -1;
+  left: 50%;
+  transform: translateX(-50%);
+  display: block;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
   background-color: var(--extra-dark);
+}
+
+.social__link:focus {
+  border: 2px solid var(--extra-dark);
+}
+
+.social__link:focus::after {
+  position: absolute;
+  content: "";
+  z-index: -1;
+  left: 50%;
+  transform: translateX(-50%);
+  display: block;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background-color: var(--extra-dark);
+}
+
+.social__link:active {
+  border: 2px solid var(--extra-light-05);
+}
+
+.social__link:active::after {
+  position: absolute;
+  content: "";
+  z-index: -1;
+  left: 50%;
+  transform: translateX(-50%);
+  display: block;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background-color: var(--extra-dark);
+  opacity: 0.5;
 }
 
 /*Заголовки*/
@@ -361,87 +406,85 @@ html {
   margin-right: 16px;
 }
 
-.site-navigation {
+.page-navigation {
   display: flex;
+}
+
+.page-navigation--site {
   align-items: center;
   flex-wrap: wrap;
   width: 500px;
   margin-right: auto;
 }
 
-.site-navigation__link {
-  font-style: normal;
-  text-decoration: none;
-  line-height: 20px;
-  color: var(--extra-dark);
+.page-navigation--user {
+  column-gap: 16px;
+  max-width: 350px;
 }
 
-.menu-link--site {
+.page-navigation__link {
+  font-style: normal;
+  line-height: 20px;
+  text-decoration: none;
+  color: var(--extra-dark);
+  transition: 100ms ease-out;
+}
+
+.page-navigation__link--site {
   display: block;
   padding: 8px 16px;
 }
 
-.menu-link--current {
+.page-navigation__link--current {
   color: var(--extra-light);
   border-radius: 30px;
   background-color: var(--bright-accent);
 }
 
-.menu-link--site:hover {
+.page-navigation__link--site:hover {
   color: var(--extra-dark);
   border-radius: 30px;
   background-color: var(--extra-light-05);
 }
 
-.menu-link--site:focus {
+.page-navigation__link--site:focus {
   color: var(--extra-dark);
   border: 2px solid var(--extra-dark);
   border-radius: 30px;
   background-color: var(--extra-light-05);
   padding: 6px 14px;
-  outline: none;
 }
 
-.menu-link--site:active {
+.page-navigation__link--site:active {
   color: var(--extra-dark);
   border-radius: 30px;
   background-color: var(--extra-light);
 }
 
-.menu-link--user {
-  display: block;
-  padding: 6px 16px;
-  /* У иконки поиска 8 на 8 */
-  min-width: 16px;
-  min-height: 16px;
-}
-
-.menu-link--phone {
-  display: block;
-  margin-right: 16px;
-}
-
-.navigation__phone {
+.page-navigation__phone {
   font-weight: 700;
   text-decoration: none;
   color: var(--extra-dark);
 }
 
-.user-navigation {
-  display: flex;
-  column-gap: 16px;
-  max-width: 350px;
+.page-navigation__link--phone {
+  display: block;
+  margin-right: 16px;
 }
 
-.user-navigation__item {
-  background-color: var(--extra-light-accent);
-}
-
-.user-navigation__link {
+.page-navigation__link--user {
+  display: block;
+  padding: 6px 16px;
+  /* У иконки поиска 8 на 8 */
+  min-width: 16px;
+  min-height: 16px;
+  border-radius: 30px;
+  /*Игры в БЭМ здесь нарушаются*/
   font-size: 14px;
   line-height: 20px;
   text-decoration: none;
   color: var(--extra-dark);
+  background-color: var(--extra-light-03);
 }
 
 /**/
@@ -560,7 +603,7 @@ html {
 .promo-action-cards__card {
   width: 570px;
   box-sizing: border-box;
-  padding: 36px;
+  padding: 32px; /*Добавление бордеров кнопке начинает разносить стенки родителя. Box-sizing не работает. Пришлось снизить паддинг на 2 пикселя.*/
 }
 
 .promo-action__title {
@@ -646,11 +689,52 @@ html {
 }
 
 .product-card__button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 6px;
+  box-sizing: border-box;
   background-color: var(--extra-bright-accent);
+  border: 2px solid var(--extra-bright-accent);
   border-radius: 50%;
-  min-width: 16px;
-  min-height: 16px;
-  padding: 0;
+  cursor: pointer;
+  transition: 100ms ease-out;
+}
+
+.product-card__icon {
+  fill: var(--extra-light);
+}
+
+.product-card__button:hover {
+  background-color: var(--extra-light);
+  border: 2px solid var(--extra-bright-accent);
+}
+
+.product-card__icon:hover { /*Заливка работает только если навести на саму свгшку внутри круга. Пока не придумал, как бороться. Только если делать разные свгшки через background image. */
+  fill: var(--extra-dark);
+}
+
+.product-card__button:focus {
+  background-color: var(--extra-bright-accent);
+  border: 2px solid var(--extra-dark);
+}
+
+.product-card__button:active {
+  background-color: var(--extra-light-accent);
+  border: 2px solid var(--extra-bright-accent);
+}
+
+.product-card__icon:active {
+  fill: var(--extra-dark);
+}
+
+.product-card__button:disabled {
+  background-color: var(--neutral);
+  border: 2px solid var(--neutral);
+}
+
+.product-card__icon:disabled {
+  fill: var(--dark);
 }
 
 /*О компании*/
