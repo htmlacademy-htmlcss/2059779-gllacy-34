@@ -769,6 +769,7 @@ html {
   left: 50%;
   transform: translateX(-50%);
   object-fit: contain;
+  box-shadow: var(--small-shadow);
 }
 
 .product-card__description {
@@ -973,6 +974,7 @@ html {
   width: 500px;
   padding: 40px;
   box-sizing: border-box;
+  box-shadow: var(--big-shadow);
 }
 
 .delivery__title {
@@ -1008,6 +1010,7 @@ html {
   width: 343px;
   padding: 40px;
   box-sizing: border-box;
+  box-shadow: var(--big-shadow);
 }
 
 .contacts__title {
