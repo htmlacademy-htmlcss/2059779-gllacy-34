@@ -51,8 +51,16 @@
   --extra-light-accent: #ffcbd8;
   --bright-accent: #ff4a78;
   --extra-bright-accent: #ff2f64;
-  --transparent-accent: rgba(252, 252, 252, 0.3);
-  --transparent-border: rgba(45, 52, 64, 0.5);
+  --transparent-border: rgba(45, 52, 64, 0.5); /* Перевести нотацию цветов в HEX с альфой для единообразия*/
+  --small-shadow: 0px 4px 12px rgba(45, 52, 64, 0.1);
+  --middle-shadow: 0px 8px 16px rgba(45, 52, 64, 0.12);
+  --big-shadow: 0px 15px 40px rgba(45, 52, 64, 0.12);
+  /*button colors*/
+  --extra-light-03: #fcfcfc4d;
+  --extra-light-04: #fcfcfc66;
+  --extra-light-05: #fcfcfc80;
+  --extra-bright-accent-03: #ff2f644d;
+  --neutral-03: #b9b9b94d;
 }
 
 html {
@@ -87,9 +95,10 @@ html {
   border-radius: 26px;
   padding: 12px 32px;
   border: 0;
+  background-clip: padding-box;
 }
 
-.button--form {
+.button--default {
   font-family: inherit;
   font-weight: 700;
   font-size: 16px;
@@ -97,23 +106,72 @@ html {
   text-decoration: none;
   text-align: center;
   cursor: pointer;
-  color: var(--extra-light);
-  background-color: var(--bright-accent);
-}
-
-.button--link {
-  font-family: inherit;
-  font-weight: 700;
-  font-size: 16px;
-  line-height: 20px;
-  text-decoration: none;
-  text-align: center;
-  cursor: pointer;
+  border: 4px solid var(--extra-light-04);
   color: var(--extra-dark);
+  background-color: var(--extra-light);
+  box-shadow: var(--small-shadow);
+  }
+
+.button--default:hover {
+  background-color: var(--extra-light-04);
+  border-color: var(--extra-light);
+}
+
+.button--default:focus {
+  background-color: var(--extra-light-05);
+  border: 2px solid var(--extra-dark); /*С толщиной в 2 пикселя при выборе табом начинает шатать размеры. Не знаю, что делать.*/
+}
+
+.button--default:active {
+  background-color: var(--extra-light);
+  border: 2px solid var(--extra-dark);
+}
+
+.button--default:disabled {
+  color: var(--neutral);
+  background-color: var(--light);
+  border: 4px solid var(--extra-light-04);
+}
+
+.button--light-accent {
+  padding: 8px 32px; /* У кнопки  "Применить" в фильтрах паддинг 8px 52px. */
+  font-family: inherit;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+  text-decoration: none;
+  text-align: center;
+  cursor: pointer;
+  border: 2px solid var(--extra-light);
+  border-radius: 20px;
+  color: var(--extra-dark);
+  background-color: var(--extra-light-03);
+  box-shadow: var(--small-shadow);
+}
+
+.button--light-accent:hover {
+  border: 2px solid var(--extra-light-04);
   background-color: var(--extra-light);
 }
 
-.button--filter {
+.button--light-accent:focus {
+  border: 2px solid var(--extra-dark);
+  background-color: var(--extra-light-03);
+}
+
+.button--light-accent:active {
+  border: none;
+  background-color: var(--extra-light-05);
+}
+
+.button--light-accent:disabled {
+  font-weight: 400;
+  opacity: 0.4;
+  border: 2px solid var(--extra-light);
+  background-color: var(--extra-light-03);
+}
+
+.button--bright-accent {
   font-family: inherit;
   font-weight: 700;
   font-size: 16px;
@@ -121,8 +179,33 @@ html {
   text-decoration: none;
   text-align: center;
   cursor: pointer;
+  border: 4px solid var(--extra-bright-accent-03);
+  color: var(--extra-light);
+  background-color: var(--extra-bright-accent);
+  box-shadow: var(--small-shadow);
+}
+
+.button--bright-accent:hover {
   color: var(--extra-dark);
-  background-color: var(--transparent-accent);
+  border: 4px solid var(--extra-bright-accent);
+  background-color: var(--extra-light-03);
+}
+
+.button--bright-accent:focus {
+  border: 2px solid var(--extra-dark);
+  background-color: var(--extra-bright-accent);
+}
+
+.button--bright-accent:active {
+  border: 2px solid var(--extra-dark);
+  background-color: var(--page-background);
+}
+
+.button--bright-accent:disabled {
+  font-weight: 400;
+  color: var(--dark);
+  border: 4px solid var(--neutral-03);
+  background-color: var(--neutral);
 }
 
 /*Социальные кнопочки*/
@@ -130,17 +213,36 @@ html {
 .social {
   display: flex;
   flex-wrap: wrap;
-  gap: 16px;
+  gap: 12px;
 }
 .social__item {
-  min-width: 24px;
-  min-height: 24px;
 }
 
 .social__link {
+  position: relative;
+  padding: 0;
   display: block;
+  min-width: 28px;
+  min-height: 28px;
+}
+
+.social__icon {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  fill: var(--extra-light);
+  border: 2px solid var(--extra-light-03);
+  background-clip: content-box;
   border-radius: 50%;
-  background-color: var(--extra-light); /*Чтобы пока видно было*/
+}
+
+.social__icon:hover {
+  fill: var(--extra-light);
+  border: 2px solid var(--extra-light-05);
+  background-color: var(--extra-dark);
 }
 
 /*Заголовки*/
@@ -300,7 +402,7 @@ html {
 }
 
 .user-navigation__item {
-  background-color: var(--transparent-accent);
+  background-color: var(--extra-light-accent);
 }
 
 .user-navigation__link {
@@ -321,7 +423,7 @@ html {
 }
 
 .common-page-footer {
-  border-top: 1px solid var(--transparent-accent);
+  border-top: 1px solid var(--extra-light-04);
 }
 
 .about {
@@ -486,7 +588,7 @@ html {
   top: -50px; /*В макете 51*/
   left: 50%;
   transform: translateX(-50%);
-  object-fit: cover;
+  object-fit: contain;
 }
 
 .product-card__description {
@@ -780,7 +882,7 @@ html {
 }
 
 .catalog-products__select {
-  background-color: var(--transparent-accent);
+  background-color: var(--extra-light-accent);
   border-radius: 20px;
   border: none;
 }
@@ -794,7 +896,7 @@ html {
 .catalog-products__filter-list {
   display: flex;
   column-gap: 16px;
-  background-color: var(--transparent-accent);
+  background-color: var(--extra-light-accent);
   border-radius: 20px;
   border: none;
   }
@@ -806,7 +908,7 @@ html {
 }
 
 .catalog-products__button {
-  background-color: var(--transparent-accent);
+  background-color: var(--extra-light-accent);
 }
 
 .pagination {
