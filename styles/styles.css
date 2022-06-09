@@ -120,11 +120,13 @@ html {
 .button--default:focus {
   background-color: var(--extra-light-05);
   border: 2px solid var(--extra-dark); /*С толщиной в 2 пикселя при выборе табом начинает шатать размеры. Не знаю, что делать.*/
+  padding: 14px 34px; /* Добавил увеличенный паддинг */
 }
 
 .button--default:active {
   background-color: var(--extra-light);
   border: 2px solid var(--extra-dark);
+  padding: 14px 34px;
 }
 
 .button--default:disabled {
@@ -162,6 +164,7 @@ html {
 .button--light-accent:active {
   border: none;
   background-color: var(--extra-light-05);
+  padding: 10px 34px;
 }
 
 .button--light-accent:disabled {
@@ -194,11 +197,13 @@ html {
 .button--bright-accent:focus {
   border: 2px solid var(--extra-dark);
   background-color: var(--extra-bright-accent);
+  padding: 14px 34px;
 }
 
 .button--bright-accent:active {
   border: 2px solid var(--extra-dark);
   background-color: var(--page-background);
+  padding: 14px 34px;
 }
 
 .button--bright-accent:disabled {
@@ -374,6 +379,33 @@ html {
 .menu-link--site {
   display: block;
   padding: 8px 16px;
+}
+
+.menu-link--current {
+  color: var(--extra-light);
+  border-radius: 30px;
+  background-color: var(--bright-accent);
+}
+
+.menu-link--site:hover {
+  color: var(--extra-dark);
+  border-radius: 30px;
+  background-color: var(--extra-light-05);
+}
+
+.menu-link--site:focus {
+  color: var(--extra-dark);
+  border: 2px solid var(--extra-dark);
+  border-radius: 30px;
+  background-color: var(--extra-light-05);
+  padding: 6px 14px;
+  outline: none;
+}
+
+.menu-link--site:active {
+  color: var(--extra-dark);
+  border-radius: 30px;
+  background-color: var(--extra-light);
 }
 
 .menu-link--user {
