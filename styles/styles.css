@@ -40,7 +40,8 @@
 
 :root {
   --page-background: #feafc3;
-  /* Варианты страниц #69a9ff и #fcc850 */
+  --page-background-variant-1: #69a9ff;
+  --page-background-variant-2: #fcc850;
   --neutral: #b9b9b9;
   --extra-light: #fcfcfc;
   --light: #e7e7e7;
@@ -156,7 +157,7 @@ html {
   color: var(--extra-dark);
   background-color: var(--extra-light-03);
   box-shadow: var(--small-shadow);
-  transition: border 100ms ease-out, background-color 100ms ease-out, padding 0ms linear;
+  transition: border 100ms ease-out, background-color 100ms ease-out, padding 0ms linear; /* От шатания разметки не помогает */
 }
 
 .button--light-accent:hover {
@@ -242,8 +243,7 @@ html {
   border: 2px solid var(--extra-light-03);
   border-radius: 50%;
   background-clip: content-box;
-  transition: 100ms ease-out;
-  /*На псевдоэлемент не работает */
+  transition: 100ms ease-out;  /*На псевдоэлемент не работает */
 }
 
 .social__icon {
@@ -619,7 +619,7 @@ html {
 
 .slider__item-product {
   width: 540px;
-  padding: 136px 0px 136px 70px;
+  padding: 136px 0 136px 70px;
   box-sizing: border-box;
 }
 
@@ -765,7 +765,6 @@ html {
   border-radius: 50%;
   position: absolute;
   top: -50px;
-  /*В макете 51*/
   left: 50%;
   transform: translateX(-50%);
   object-fit: contain;
@@ -889,7 +888,6 @@ html {
 .main-news__blog-title {
   margin: 0;
   margin-bottom: 12px;
-  /* Чё-то я приуныл, и мне надоело в БЭМ играть. Это сколько же классов нужно расплодить, чтобы развести вид и форму? */
   line-height: 20px;
   color: var(--dark);
 }
@@ -911,7 +909,6 @@ html {
 }
 
 .main-news__container--blog {
-  /* По идее БЭМ пытается исключить каскад, а я тут его добавляю. И блок должен быть закрыть на изменение, а я его изменяю. Нужно другой класс в принципе что ли? */
   padding: 32px;
 }
 
@@ -966,7 +963,7 @@ html {
 .delivery__form-description {
   display: block;
   width: 380px;
-  margin: 0px;
+  margin: 0;
   margin-bottom: 32px;
 }
 
