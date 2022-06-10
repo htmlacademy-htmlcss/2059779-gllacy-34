@@ -40,7 +40,8 @@
 
 :root {
   --page-background: #feafc3;
-  /* Варианты страниц #69a9ff и #fcc850 */
+  --page-background-variant-1: #69a9ff;
+  --page-background-variant-2: #fcc850;
   --neutral: #b9b9b9;
   --extra-light: #fcfcfc;
   --light: #e7e7e7;
@@ -51,8 +52,17 @@
   --extra-light-accent: #ffcbd8;
   --bright-accent: #ff4a78;
   --extra-bright-accent: #ff2f64;
-  --transparent-accent: rgba(252, 252, 252, 0.3);
   --transparent-border: rgba(45, 52, 64, 0.5);
+  /* Перевести нотацию цветов в HEX с альфой для единообразия*/
+  --small-shadow: 0px 4px 12px rgba(45, 52, 64, 0.1);
+  --middle-shadow: 0px 8px 16px rgba(45, 52, 64, 0.12);
+  --big-shadow: 0px 15px 40px rgba(45, 52, 64, 0.12);
+  /*button colors*/
+  --extra-light-03: #fcfcfc4d;
+  --extra-light-04: #fcfcfc66;
+  --extra-light-05: #fcfcfc80;
+  --extra-bright-accent-03: #ff2f644d;
+  --neutral-03: #b9b9b94d;
 }
 
 html {
@@ -87,9 +97,10 @@ html {
   border-radius: 26px;
   padding: 12px 32px;
   border: 0;
+  background-clip: padding-box;
 }
 
-.button--form {
+.button--default {
   font-family: inherit;
   font-weight: 700;
   font-size: 16px;
@@ -97,23 +108,82 @@ html {
   text-decoration: none;
   text-align: center;
   cursor: pointer;
-  color: var(--extra-light);
-  background-color: var(--bright-accent);
-}
-
-.button--link {
-  font-family: inherit;
-  font-weight: 700;
-  font-size: 16px;
-  line-height: 20px;
-  text-decoration: none;
-  text-align: center;
-  cursor: pointer;
+  border: 4px solid var(--extra-light-04);
   color: var(--extra-dark);
+  background-color: var(--extra-light);
+  box-shadow: var(--small-shadow);
+  transition: border 100ms ease-out, background-color 100ms ease-out, padding 0ms linear;
+  /* При клике дёргается вёрстка вокруг из-за паддингов и бордеров*/
+}
+
+.button--default:hover {
+  background-color: var(--extra-light-04);
+  border-color: var(--extra-light);
+}
+
+.button--default:focus {
+  background-color: var(--extra-light-05);
+  border: 2px solid var(--extra-dark);
+  /*С толщиной в 2 пикселя при выборе табом начинает шатать размеры. Не знаю, что делать.*/
+  padding: 14px 34px;
+  /* Добавил увеличенный паддинг */
+}
+
+.button--default:active {
+  background-color: var(--extra-light);
+  border: 2px solid var(--extra-dark);
+  padding: 14px 34px;
+}
+
+.button--default:disabled {
+  color: var(--neutral);
+  background-color: var(--light);
+  border: 4px solid var(--extra-light-04);
+  box-shadow: none;
+}
+
+.button--light-accent {
+  padding: 8px 32px;
+  /* У кнопки  "Применить" в фильтрах паддинг 8px 52px. */
+  font-family: inherit;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+  text-decoration: none;
+  text-align: center;
+  cursor: pointer;
+  border: 2px solid var(--extra-light);
+  border-radius: 20px;
+  color: var(--extra-dark);
+  background-color: var(--extra-light-03);
+  box-shadow: var(--small-shadow);
+  transition: border 100ms ease-out, background-color 100ms ease-out, padding 0ms linear; /* От шатания разметки не помогает */
+}
+
+.button--light-accent:hover {
+  border: 2px solid var(--extra-light-04);
   background-color: var(--extra-light);
 }
 
-.button--filter {
+.button--light-accent:focus {
+  border: 2px solid var(--extra-dark);
+  background-color: var(--extra-light-03);
+}
+
+.button--light-accent:active {
+  border: none;
+  background-color: var(--extra-light-05);
+  padding: 10px 34px;
+}
+
+.button--light-accent:disabled {
+  font-weight: 400;
+  opacity: 0.4;
+  border: 2px solid var(--extra-light);
+  background-color: var(--extra-light-03);
+}
+
+.button--bright-accent {
   font-family: inherit;
   font-weight: 700;
   font-size: 16px;
@@ -121,8 +191,36 @@ html {
   text-decoration: none;
   text-align: center;
   cursor: pointer;
+  border: 4px solid var(--extra-bright-accent-03);
+  color: var(--extra-light);
+  background-color: var(--extra-bright-accent);
+  box-shadow: var(--small-shadow);
+  transition: border 100ms ease-out, background-color 100ms ease-out, padding 0ms linear;
+}
+
+.button--bright-accent:hover {
   color: var(--extra-dark);
-  background-color: var(--transparent-accent);
+  border: 4px solid var(--extra-bright-accent);
+  background-color: var(--extra-light-03);
+}
+
+.button--bright-accent:focus {
+  border: 2px solid var(--extra-dark);
+  background-color: var(--extra-bright-accent);
+  padding: 14px 34px;
+}
+
+.button--bright-accent:active {
+  border: 2px solid var(--extra-dark);
+  background-color: var(--page-background);
+  padding: 14px 34px;
+}
+
+.button--bright-accent:disabled {
+  font-weight: 400;
+  color: var(--dark);
+  border: 4px solid var(--neutral-03);
+  background-color: var(--neutral);
 }
 
 /*Социальные кнопочки*/
@@ -130,17 +228,78 @@ html {
 .social {
   display: flex;
   flex-wrap: wrap;
-  gap: 16px;
+  gap: 12px;
 }
+
 .social__item {
-  min-width: 24px;
-  min-height: 24px;
+  position: relative;
 }
 
 .social__link {
-  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  border: 2px solid var(--extra-light-03);
   border-radius: 50%;
-  background-color: var(--extra-light); /*Чтобы пока видно было*/
+  background-clip: content-box;
+  transition: 100ms ease-out;  /*На псевдоэлемент не работает */
+}
+
+.social__icon {
+  fill: var(--extra-light);
+}
+
+.social__link:hover {
+  border: 2px solid var(--extra-light-05);
+}
+
+.social__link:hover::after {
+  position: absolute;
+  content: "";
+  z-index: -1;
+  left: 50%;
+  transform: translateX(-50%);
+  display: block;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background-color: var(--extra-dark);
+}
+
+.social__link:focus {
+  border: 2px solid var(--extra-dark);
+}
+
+.social__link:focus::after {
+  position: absolute;
+  content: "";
+  z-index: -1;
+  left: 50%;
+  transform: translateX(-50%);
+  display: block;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background-color: var(--extra-dark);
+}
+
+.social__link:active {
+  border: 2px solid var(--extra-light-05);
+}
+
+.social__link:active::after {
+  position: absolute;
+  content: "";
+  z-index: -1;
+  left: 50%;
+  transform: translateX(-50%);
+  display: block;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background-color: var(--extra-dark);
+  opacity: 0.5;
 }
 
 /*Заголовки*/
@@ -254,60 +413,125 @@ html {
   margin-right: 16px;
 }
 
-.site-navigation {
+.page-navigation {
   display: flex;
+}
+
+.page-navigation--site {
   align-items: center;
   flex-wrap: wrap;
   width: 500px;
   margin-right: auto;
 }
 
-.site-navigation__link {
-  font-style: normal;
-  text-decoration: none;
-  line-height: 20px;
-  color: var(--extra-dark);
+.page-navigation--user {
+  column-gap: 16px;
+  max-width: 350px;
 }
 
-.menu-link--site {
+.page-navigation__link {
+  font-style: normal;
+  line-height: 20px;
+  text-decoration: none;
+  color: var(--extra-dark);
+  transition: 100ms ease-out;
+}
+
+.page-navigation__link--site {
   display: block;
   padding: 8px 16px;
 }
 
-.menu-link--user {
-  display: block;
-  padding: 6px 16px;
-  /* У иконки поиска 8 на 8 */
-  min-width: 16px;
-  min-height: 16px;
+.page-navigation__link--current {
+  color: var(--extra-light);
+  border-radius: 30px;
+  background-color: var(--bright-accent);
 }
 
-.menu-link--phone {
-  display: block;
-  margin-right: 16px;
+.page-navigation__link--site:hover {
+  color: var(--extra-dark);
+  border-radius: 30px;
+  background-color: var(--extra-light-05);
 }
 
-.navigation__phone {
+.page-navigation__link--site:focus {
+  color: var(--extra-dark);
+  border: 2px solid var(--extra-dark);
+  border-radius: 30px;
+  background-color: var(--extra-light-05);
+  padding: 6px 14px;
+}
+
+.page-navigation__link--site:active {
+  color: var(--extra-dark);
+  border-radius: 30px;
+  background-color: var(--extra-light);
+}
+
+.page-navigation__phone {
   font-weight: 700;
   text-decoration: none;
   color: var(--extra-dark);
 }
 
-.user-navigation {
+.page-navigation__link--phone {
+  display: block;
+  margin-right: 16px;
+}
+
+.page-navigation__link--user {
   display: flex;
-  column-gap: 16px;
-  max-width: 350px;
-}
-
-.user-navigation__item {
-  background-color: var(--transparent-accent);
-}
-
-.user-navigation__link {
+  align-items: center;
+  gap: 6px;
+  padding: 4px 14px;
+  min-width: 16px;
+  min-height: 16px;
+  /*Игры в БЭМ здесь нарушаются*/
   font-size: 14px;
   line-height: 20px;
   text-decoration: none;
   color: var(--extra-dark);
+  border: 2px solid var(--extra-light-03);
+  /*Бордер задаю, чтобы ничего не прыгало потом при изменении состояний*/
+  border-radius: 30px;
+  background-color: var(--extra-light-03);
+  background-clip: padding-box;
+  box-sizing: border-box;
+  transition: 100ms ease-out;
+}
+
+.page-navigation__icon {
+  fill: var(--extra-dark);
+}
+
+.page-navigation__link--serch {
+  padding: 7px;
+  border-radius: 50%;
+}
+
+.page-navigation__link--user:hover {
+  border: 2px solid var(--extra-light-05);
+  background-color: var(--extra-light-05);
+}
+
+.page-navigation__link--user:focus {
+  border: 2px solid var(--extra-dark);
+  background-color: var(--extra-light-05);
+}
+
+.page-navigation__link--user:active {
+  border: 2px solid var(--extra-light);
+  background-color: var(--extra-light);
+}
+
+.page-navigation__link--current .page-navigation__link--user {
+  /*Не совсем понимаю, как кнопка поиска может быть активным пунктом меню, но ладно. */
+  border: 2px solid var(--extra-bright-accent);
+  background-color: var(--extra-bright-accent);
+}
+
+.page-navigation__link--current .page-navigation__icon {
+  fill: var(--extra-bright-accent);
 }
 
 /**/
@@ -321,7 +545,7 @@ html {
 }
 
 .common-page-footer {
-  border-top: 1px solid var(--transparent-accent);
+  border-top: 1px solid var(--extra-light-04);
 }
 
 .about {
@@ -333,6 +557,7 @@ html {
 }
 
 .about__link {
+  position: relative;
   font-size: 14px;
   line-height: 20px;
   text-decoration: none;
@@ -341,6 +566,19 @@ html {
 
 .about__link--favorite {
   font-weight: 700;
+}
+
+.about__link--favorite::before {
+  content: "";
+  display: block;
+  width: 14px;
+  height: 14px;
+  background-image: url("../images/icons/heart-icon.svg");
+  background-repeat: no-repeat;
+  background-size: 14px 14px;
+  position: absolute;
+  left: -22px;
+  top: 2px;
 }
 
 .about-text {
@@ -381,11 +619,12 @@ html {
 
 .slider__item-product {
   width: 540px;
-  padding: 136px 0px 136px 70px;
+  padding: 136px 0 136px 70px;
   box-sizing: border-box;
 }
 
-.slider__item-product--inactive, /*Потом разделить*/
+.slider__item-product--inactive,
+/*Потом разделить*/
 .slider__image--inactive {
   display: none;
 }
@@ -415,7 +654,48 @@ html {
   left: 0;
 }
 
-.promo-social {
+.slider-pagination {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.slider-pagination__button {
+  display: block;
+  padding: 0;
+  width: 11px;
+  height: 11px;
+  border: 1px solid var(--extra-light-03);
+  border-radius: 50%;
+  background-color: var(--extra-light-03);
+  cursor: pointer;
+}
+
+.slider-pagination__button--active {
+  border: 1px solid var(--extra-light);
+  background-color: var(--extra-light);
+}
+
+.slider-pagination__button:hover {
+  border: 1px solid var(--extra-light);
+  background-color: var(--extra-light-03);
+}
+
+.slider-pagination__button:focus {
+  border: 1px solid var(--extra-dark);
+  background-color: var(--extra-light-03);
+}
+
+.slider-pagination__button:active {
+  border: 1px solid var(--extra-light);
+  background-color: var(--extra-light);
+  opacity: 0.5;
+}
+
+.slider-social {
   position: absolute;
   bottom: 0;
   right: 0;
@@ -426,7 +706,8 @@ html {
 .promo-action-cards__card {
   width: 570px;
   box-sizing: border-box;
-  padding: 36px;
+  padding: 32px;
+  /*Добавление бордеров кнопке начинает разносить стенки родителя. Box-sizing не работает. Пришлось снизить паддинг на 2 пикселя.*/
 }
 
 .promo-action__title {
@@ -483,10 +764,11 @@ html {
   display: block;
   border-radius: 50%;
   position: absolute;
-  top: -50px; /*В макете 51*/
+  top: -50px;
   left: 50%;
   transform: translateX(-50%);
-  object-fit: cover;
+  object-fit: contain;
+  box-shadow: var(--small-shadow);
 }
 
 .product-card__description {
@@ -512,11 +794,52 @@ html {
 }
 
 .product-card__button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 6px;
+  box-sizing: border-box;
   background-color: var(--extra-bright-accent);
+  border: 2px solid var(--extra-bright-accent);
   border-radius: 50%;
-  min-width: 16px;
-  min-height: 16px;
-  padding: 0;
+  cursor: pointer;
+  transition: 100ms ease-out;
+}
+
+.product-card__icon {
+  fill: var(--extra-light);
+}
+
+.product-card__button:hover {
+  background-color: var(--extra-light);
+  border: 2px solid var(--extra-bright-accent);
+}
+
+.product-card__button:hover .product-card__icon {
+  fill: var(--extra-dark);
+}
+
+.product-card__button:focus {
+  background-color: var(--extra-bright-accent);
+  border: 2px solid var(--extra-dark);
+}
+
+.product-card__button:active {
+  background-color: var(--extra-light-accent);
+  border: 2px solid var(--extra-bright-accent);
+}
+
+.product-card__button:active .product-card__icon {
+  fill: var(--extra-dark);
+}
+
+.product-card__button:disabled {
+  background-color: var(--neutral);
+  border: 2px solid var(--neutral);
+}
+
+.product-card__button:disabled .product-card__icon {
+  fill: var(--dark);
 }
 
 /*О компании*/
@@ -564,7 +887,7 @@ html {
 
 .main-news__blog-title {
   margin: 0;
-  margin-bottom: 12px;   /* Чё-то я приуныл, и мне надоело в БЭМ играть. Это сколько же классов нужно расплодить, чтобы развести вид и форму? */
+  margin-bottom: 12px;
   line-height: 20px;
   color: var(--dark);
 }
@@ -585,7 +908,7 @@ html {
   box-sizing: border-box;
 }
 
-.main-news__container--blog { /* По идее БЭМ пытается исключить каскад, а я тут его добавляю. И блок должен быть закрыть на изменение, а я его изменяю. Нужно другой класс в принципе что ли? */
+.main-news__container--blog {
   padding: 32px;
 }
 
@@ -604,7 +927,8 @@ html {
   column-gap: 14px;
 }
 
-.main-news__subscription-input { /* Тут надо бы разделить flex-grow и оформление по разным классам*/
+.main-news__subscription-input {
+  /* Тут надо бы разделить flex-grow и оформление по разным классам*/
   flex-grow: 1;
   line-height: 20px;
   color: var(--neutral);
@@ -626,7 +950,8 @@ html {
 .delivery__text {
   width: 371px;
   padding-top: 103px;
-  padding-left: 36px; /*Не могу придумать, как в данном случае сохранить единообразие падингов, чтобы не было left и bottom*/
+  padding-left: 36px;
+  /*Не могу придумать, как в данном случае сохранить единообразие падингов, чтобы не было left и bottom*/
 }
 
 .delivery__description {
@@ -638,7 +963,7 @@ html {
 .delivery__form-description {
   display: block;
   width: 380px;
-  margin: 0px;
+  margin: 0;
   margin-bottom: 32px;
 }
 
@@ -646,6 +971,7 @@ html {
   width: 500px;
   padding: 40px;
   box-sizing: border-box;
+  box-shadow: var(--big-shadow);
 }
 
 .delivery__title {
@@ -681,9 +1007,11 @@ html {
   width: 343px;
   padding: 40px;
   box-sizing: border-box;
+  box-shadow: var(--big-shadow);
 }
 
-.contacts__title { /* Отсюда и ниже очередной смешение формы и оформления */
+.contacts__title {
+  /* Отсюда и ниже очередной смешение формы и оформления */
   width: 203px;
   margin: 0;
   margin-bottom: 12px;
@@ -735,9 +1063,15 @@ html {
 
 .breadcrumbs {
   display: flex;
-  flex-wrap: wrap;
   column-gap: 28px;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
   margin-bottom: 16px;
+}
+
+.breadcrumbs__item {
+  position: relative;
 }
 
 .breadcrumbs__link {
@@ -750,6 +1084,17 @@ html {
 
 .breadcrumbs__link--current {
   border-bottom: 1px solid var(--extra-dark);
+}
+
+:not(.breadcrumbs__link--parrent) .breadcrumbs__link--current::before {
+  content: "";
+  background-image: url("../images/icons/breadcrumbs-arrow-icon.svg");
+  display: block;
+  width: 14px;
+  height: 14px;
+  position: absolute;
+  top: 7px;
+  left: -20px;
 }
 
 /*Карточки товаров с фильтрами*/
@@ -780,7 +1125,7 @@ html {
 }
 
 .catalog-products__select {
-  background-color: var(--transparent-accent);
+  background-color: var(--extra-light-accent);
   border-radius: 20px;
   border: none;
 }
@@ -794,10 +1139,10 @@ html {
 .catalog-products__filter-list {
   display: flex;
   column-gap: 16px;
-  background-color: var(--transparent-accent);
+  background-color: var(--extra-light-accent);
   border-radius: 20px;
   border: none;
-  }
+}
 
 .catalog-products__control-label {
   font-size: 14px;
@@ -806,7 +1151,7 @@ html {
 }
 
 .catalog-products__button {
-  background-color: var(--transparent-accent);
+  background-color: var(--extra-light-accent);
 }
 
 .pagination {
@@ -815,6 +1160,7 @@ html {
   grid-template-areas: ". button list";
   padding-top: 57px;
   padding-bottom: 81px;
+  align-items: center;
 }
 
 .pagination-button {
@@ -830,11 +1176,59 @@ html {
 }
 
 .pagination-list__link {
-  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   min-width: 24px;
   min-height: 24px;
   font-size: 16px;
   line-height: 20px;
   text-decoration: none;
   color: var(--extra-dark);
-  }
+  border: 1px solid transparent;
+  border-radius: 50%;
+  padding: 2px;
+  background-color: transparent;
+}
+
+.pagination-list__link:hover {
+  border: 1px solid var(--extra-light-05);
+  background-color: var(--extra-light-05);
+}
+
+.pagination-list__link:focus {
+  border: 1px solid var(--extra-dark);
+  background-color: var(--extra-light-05);
+}
+
+.pagination-list__link:active {
+  border: 1px solid var(--extra-light);
+  background-color: var(--extra-light-05);
+}
+
+.pagination-list__link--current {
+  border: 1px solid var(--extra-light);
+  background-color: var(--extra-light);
+}
+
+.pagination-list__link--prev {
+  background-image: url("../images/icons/left-arrow-icon.svg");
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+}
+
+.pagination-list__link--next {
+  background-image: url("../images/icons/right-arrow-icon.svg");
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+}
+
+.pagination-list__link--disabled {
+  opacity: 0.3;
+}
+
+.pagination-list__link--disabled:hover {
+  border: 1px solid transparent;
+  background-color: transparent;
+  cursor: auto;
+}
