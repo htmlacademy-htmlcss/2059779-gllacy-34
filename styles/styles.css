@@ -300,6 +300,10 @@ html {
   opacity: 0.5;
 }
 
+/*Инпуты*/
+/*text*/
+
+
 /*Заголовки*/
 /*section-title*/
 .section-title {
@@ -320,6 +324,7 @@ html {
 .cards {
   display: flex;
   justify-content: space-between;
+  align-items: flex-start;
 }
 
 /*card*/
@@ -338,6 +343,7 @@ html {
 .card--blog {
   background: url("../images/blog.jpg") no-repeat var(--blank);
   background-size: cover;
+  align-self: stretch; /* Флекс дети по поперечной оси выровнены по началу оси, чтобы в случае появления нескольких заголовков в блоге соседний блок с подпиской не выглядел нелепо. А этот параметр выравнивает высоту блога с подпиской при одной записи */
 }
 
 .card--post-border {
@@ -353,11 +359,11 @@ html {
 }
 
 .card--raspberry {
-  background: url("../images/promo-action/raspberry.jpg") no-repeat 100% 0% var(--neutral-accent);
+  background: url("../images/promo-action/raspberry.jpg") no-repeat 100% bottom var(--neutral-accent);
 }
 
 .card--marshmallow {
-  background: url("../images/promo-action/marshmallow.jpg") no-repeat 100% 0% var(--neutral-accent);
+  background: url("../images/promo-action/marshmallow.jpg") no-repeat 100% bottom var(--neutral-accent);
 }
 
 .card--blank-accent {
@@ -972,6 +978,7 @@ html {
 
 .main-news__container {
   width: 558px;
+  height: 100%;
   padding: 26px;
   box-sizing: border-box;
 }
@@ -1028,11 +1035,29 @@ html {
   margin: 0;
 }
 
+.delivery__form {
+  display: grid;
+  grid-template-columns: 30% 70%;
+  gap: 16px 20px;
+}
+
+.delivery__form-item--address {
+  grid-column: 1 / -1;
+  padding-bottom: 12px;
+}
+
 .delivery__form-description {
   display: block;
   width: 380px;
   margin: 0;
   margin-bottom: 32px;
+}
+
+.delivery__form-item {
+  display: flex;
+  flex-flow: column;
+  gap: 8px 0;
+  margin: 0;
 }
 
 .delivery__order {
@@ -1050,17 +1075,24 @@ html {
 }
 
 .delivery__form-label {
+  font-weight: 700;
   line-height: 20px;
   color: var(--extra-dark);
 }
 
 .delivery__input {
+  padding: 14px 16px;
+  font-family: inherit;
+  font-size: 16px;
   line-height: 20px;
   color: var(--neutral);
+  border: 1px solid var(--neutral);
+  border-radius: 4px;
 }
 
 .delivery__button {
   text-align: center;
+  grid-column: 1 / -1;
 }
 
 /*Контакты*/
@@ -1154,7 +1186,7 @@ html {
   border-bottom: 1px solid var(--extra-dark);
 }
 
-:not(.breadcrumbs__link--parrent) .breadcrumbs__link--current::before {
+.breadcrumbs__item + .breadcrumbs__item::before {
   content: "";
   background-image: url("../images/icons/breadcrumbs-arrow-icon.svg");
   display: block;
