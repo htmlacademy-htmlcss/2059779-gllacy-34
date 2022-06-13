@@ -20,7 +20,7 @@
       <header class="page-header">
         <nav class="navigation">
           <a class="navigation__logo" href="index.html">
-            <img class="page-header-logo" src="images/page-header-logo.svg" width="137px" height="57px" alt="Логотип магазина мороженого «Глейси».">
+            <img class="page-header-logo" src="images/page-header-logo.svg" width="137" height="57" alt="Логотип магазина мороженого «Глейси».">
           </a>
           <ul class="page-navigation page-navigation--site reset-list">
             <li class="page-navigation__item">
@@ -74,7 +74,7 @@
                 <p class="slider__definition">Натуральное мороженое из&nbsp;свежих сливок и&nbsp;молока с&nbsp;вкуснейшим клубничным джемом&nbsp;&mdash; это идеальный десерт для всей семьи.</p>
                 <a class="button button--default" href="#">Заказать</a>
               </div>
-              <img class="slider__image" src="images/slider/ice-cream-strawberry.png" width="306px" height="507px" alt="Пломбир с джемом в стаканчике.">
+              <img class="slider__image" src="images/slider/ice-cream-strawberry.png" width="306" height="507" alt="Пломбир с джемом в стаканчике.">
             </li>
             <li class="slider__item slider__item--inactive">
               <div class="slider__item-product slider__item-product--inactive">
@@ -82,7 +82,7 @@
                 <p class="slider__definition slider__definition--inactive">Сливочное мороженое с&nbsp;ярким банановым вкусом подарит вам свежесть и&nbsp;наслаждение даже в&nbsp;самый жаркий летний день.</p>
                 <a class="button button--default slider__order--inactive" href="#">Заказать</a>
               </div>
-              <img class="slider__image slider__image--inactive" src="images/slider/ice-cream-banana.png" width="306px" height="507px" alt="Сливочное мороженое с бананом в стаканчике.">
+              <img class="slider__image slider__image--inactive" src="images/slider/ice-cream-banana.png" width="306" height="507" alt="Сливочное мороженое с бананом в стаканчике.">
             </li>
             <li class="slider__item slider__item--inactive">
               <div class="slider__item-product slider__item-product--inactive">
@@ -90,7 +90,7 @@
                 <p class="slider__definition slider__definition--inactive">Необычный сладкий десерт с&nbsp;карамельным топпингом и&nbsp;кусочками зефира завоюет сердца сладкоежек всех возрастов.</p>
                 <a class="button button--default slider__order--inactive" href="#">Заказать</a>
               </div>
-              <img class="slider__image slider__image--inactive" src="images/slider/ice-cream-marshmallow.png" width="306px" height="507px" alt="Пломбир с маршмеллоу в стаканчике.">
+              <img class="slider__image slider__image--inactive" src="images/slider/ice-cream-marshmallow.png" width="306" height="507" alt="Пломбир с маршмеллоу в стаканчике.">
             </li>
           </ul>
           <button class="visually-hidden button slider-prev" type="button">
@@ -162,8 +162,13 @@
           <h2 class="promo-action__title section-title">Попробуйте самые популярные вкусы нашего мороженого</h2>
           <div class="product-cards">
             <article class="product-card card--small card--light-accent">
-              <h3 class="product-card__title">Малинка</h3>
-              <img class="product-card__image" src="images/catalog/raspberry.jpg" width="168px" height="168px" alt="">
+              <div class="product-card__product">
+                <!-- Для создания контекста при ховере пришлось добавить обёртку. А теперь мне предстоит занимательное погружение в мир RegExp, чтобы не переписывать всё руками. -->
+                <h3 class="product-card__title"><a class="product-card__link" href="#">Малинка</a></h3>
+                <a class="product-card__img-link" href="#" tabindex="-1">
+                  <img class="product-card__image" src="images/catalog/raspberry.jpg" width="168" height="168" alt="">
+                </a>
+              </div>
               <p class="product-card__description">Сливочное мороженое с&nbsp;малиновым джемом</p>
               <div class="product-card__purchase">
                 <b class="product-card__price">310&nbsp;₽/кг</b>
@@ -176,8 +181,10 @@
               </div>
             </article>
             <article class="product-card card--small card--light-accent">
-              <h3 class="product-card__title">Фисташка</h3>
-              <img class="product-card__image" src="images/catalog/pistachio.jpg" width="168px" height="168px" alt="">
+              <div class="product-card__product">
+                <h3 class="product-card__title"><a class="product-card__link" href="#">Фисташка</a></h3>
+                <a class="product-card__img-link" href="#" tabindex="-1"><img class="product-card__image" src="images/catalog/pistachio.jpg" width="168" height="168" alt=""></a>
+              </div>
               <p class="product-card__description">Фисташковый пломбир с&nbsp;кусочками шоколада</p>
               <div class="product-card__purchase">
                 <b class="product-card__price">340&nbsp;₽/кг</b>
@@ -190,8 +197,10 @@
               </div>
             </article>
             <article class="product-card card--small card--light-accent">
-              <h3 class="product-card__title">Черника</h3>
-              <img class="product-card__image" src="images/catalog/blueberry.jpg" width="168px" height="168px" alt="">
+              <div class="product-card__product">
+                <h3 class="product-card__title"><a class="product-card__link" href="#">Черника</a></h3>
+                <a class="product-card__img-link" href="#" tabindex="-1"><img class="product-card__image" src="images/catalog/blueberry.jpg" width="168" height="168" alt=""></a>
+              </div>
               <p class="product-card__description">Крем-брюле с&nbsp;черничным джемом</p>
               <div class="product-card__purchase">
                 <b class="product-card__price">330&nbsp;₽/кг</b>
@@ -204,8 +213,10 @@
               </div>
             </article>
             <article class="product-card card--small card--light-accent">
-              <h3 class="product-card__title">Бабл-гам</h3>
-              <img class="product-card__image" src="images/catalog/bubble-gum.jpg" width="168px" height="168px" alt="">
+              <div class="product-card__product">
+                <h3 class="product-card__title"><a class="product-card__link" href="#">Бабл-гам</a></h3>
+                <a class="product-card__img-link" href="#" tabindex="-1"><img class="product-card__image" src="images/catalog/bubble-gum.jpg" width="168" height="168" alt=""></a>
+              </div>
               <p class="product-card__description">Ванильный пломбир со&nbsp;сладкой посыпкой</p>
               <div class="product-card__purchase">
                 <b class="product-card__price">320&nbsp;₽/кг</b>
@@ -251,8 +262,8 @@
                   <button class="button button--bright-accent" type="submit">Отправить</button>
                 </form>
               </div>
+            </aside>
           </div>
-          </aside>
         </section>
         <section class="delivery card--big">
           <div class="card-content">
@@ -339,8 +350,8 @@
           </li>
         </ul>
         <div class="footer-logo-container">
-          <a class="footer-logo" href="https://htmlacademy.ru/">
-            <img class="footer-logo__image" src="images/footer-logo.svg" width="93px" height="27px" alt="логотип HTML Academy.">
+          <a class="footer-logo" href="https://htmlacademy.ru/" tabindex="-1">
+            <img class="footer-logo__image" src="images/footer-logo.svg" width="93" height="27" alt="логотип HTML Academy.">
           </a>
           <p class="about-text">Сделано в&nbsp;<a class="htmlacademy-link" href="https://htmlacademy.ru/">.html&nbsp;academy</a>&nbsp;©&nbsp;2021</p>
         </div>
