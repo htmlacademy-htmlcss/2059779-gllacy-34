@@ -684,24 +684,130 @@ html {
   position: relative;
 }
 
-.slider__item {
+.slider {
   display: flex;
 }
 
-.slider__item-product {
+.slider__text {
   width: 540px;
   padding: 136px 0 136px 70px;
   box-sizing: border-box;
 }
 
-.slider__item-product--inactive,
-/*Потом разделить*/
-.slider__image--inactive {
+.slider__text--inactive {
   display: none;
 }
 
-.slider__image {
+.slider__images {
+  width: 630px;
+  display: flex;
+  column-gap: 41px;
+}
+
+.slider__picture {
+  position: relative;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.slider__picture--active {
+  width: 348px;
   padding: 21px 21px 26px;
+}
+
+.slider__picture--active::after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 312px;
+  height: 312px;
+  background-color: var(--extra-light-accent);
+  border-radius: 50%;
+  z-index: -1;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.slider__picture--inactive {
+  width: 100px;
+  padding: 0 17px;
+}
+
+.slider__picture--inactive::after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 100px;
+  height: 100px;
+  background-color: var(--extra-light-accent);
+  border-radius: 50%;
+  z-index: -1;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0.4;
+}
+
+.slider__image--inactive {
+  opacity: 0.4;
+  transform: scale(28%);
+}
+
+.slider__image--inactive:hover {
+  opacity: 1;
+  cursor: pointer;
+}
+
+.slider__content {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.slider--button {
+  position: absolute;
+  display: block;
+  width: 38px;
+  height: 38px;
+  padding: 0;
+  background: url("../images/icons/arrow-light-icon.svg") no-repeat 55% 50%;
+  border: 2px solid var(--extra-light);
+  border-radius: 50%;
+  background-color: var(--extra-light-03);
+  transition: var(--links-transition);
+  cursor: pointer;
+}
+
+.slider-prev {
+  transform: rotate(180deg);
+  left: -22px;
+}
+
+.slider-next {
+  right: -22px;
+}
+
+.slider--button:hover {
+  background: url("../images/icons/arrow-icon.svg") no-repeat 55% 50%;
+  border: 2px solid transparent;
+  background-color: var(--extra-light);
+}
+
+.slider--button:focus {
+  background: url("../images/icons/arrow-icon.svg") no-repeat 55% 50%;
+  border: 2px solid var(--extra-dark);
+  background-color: var(--extra-light-03);
+}
+
+.slider--button:active {
+  background: url("../images/icons/arrow-icon.svg") no-repeat 55% 50%;
+  border: 2px solid transparent;
+  background-color: var(--extra-light-05);
+}
+
+.slider--button:disabled {
+  opacity: 0.4;
 }
 
 .slider__title {
