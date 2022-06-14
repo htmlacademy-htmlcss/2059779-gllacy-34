@@ -368,7 +368,8 @@ html {
 /*cards*/
 .cards {
   display: flex;
-  justify-content: space-between;
+  gap: 40px 30px;
+  flex-wrap: wrap;
   align-items: flex-start;
 }
 
@@ -777,6 +778,7 @@ html {
   width: 570px;
   box-sizing: border-box;
   padding: 32px 36px;
+  flex-grow: 1;
 }
 
 .promo-action__title {
@@ -1054,6 +1056,7 @@ html {
 /*main-news*/
 .main-news__item {
   width: 570px;
+  flex-grow: 1;
 }
 
 .main-news__blog-title {
@@ -1088,7 +1091,7 @@ html {
 }
 
 .main-news__container {
-  width: 558px;
+  width: 100%;
   height: 100%;
   padding: 26px;
   box-sizing: border-box;
