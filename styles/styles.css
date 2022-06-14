@@ -42,28 +42,29 @@
   --page-background: #feafc3;
   --page-background-variant-1: #69a9ff;
   --page-background-variant-2: #fcc850;
-  --neutral: #b9b9b9;
-  --extra-light: #fcfcfc;
-  --light: #e7e7e7;
   --blank: #ffffff;
+  --neutral: #b9b9b9;
+  --neutral-03: #b9b9b94d;
+  --light: #e7e7e7;
+  --extra-light: #fcfcfc;
+  --extra-light-03: #fcfcfc4d;
+  --extra-light-04: #fcfcfc66;
+  --extra-light-05: #fcfcfc80;
   --dark: #565c66;
   --extra-dark: #2d3440;
   --neutral-accent: #ff7799;
   --extra-light-accent: #ffcbd8;
   --bright-accent: #ff4a78;
   --extra-bright-accent: #ff2f64;
-  --transparent-border: rgba(45, 52, 64, 0.5);
-  /* Перевести нотацию цветов в HEX с альфой для единообразия*/
-  --small-shadow: 0px 4px 12px rgba(45, 52, 64, 0.1);
-  --middle-shadow: 0px 8px 16px rgba(45, 52, 64, 0.12);
-  --big-shadow: 0px 15px 40px rgba(45, 52, 64, 0.12);
-  /*button colors*/
-  --extra-light-03: #fcfcfc4d;
-  --extra-light-04: #fcfcfc66;
-  --extra-light-05: #fcfcfc80;
   --extra-bright-accent-03: #ff2f644d;
-  --neutral-03: #b9b9b94d;
-  --links-transition: 100ms ease-out;
+  --transparent-border: ##2d344080;
+  --error: #ea5454;
+  --warning: #fd912e;
+  --success: #00e484;
+  --small-shadow: 0px 4px 12px #2d34401a;
+  --middle-shadow: 0px 8px 16px #2d34401f;
+  --big-shadow: 0px 15px 40px #2d34401f;
+  --links-transition: 100ms ease-out, padding 0ms linear, border-width 0ms linear;
 }
 
 html {
@@ -113,7 +114,7 @@ html {
   color: var(--extra-dark);
   background-color: var(--extra-light);
   box-shadow: var(--small-shadow);
-  transition: var(--links-transition), padding 0ms linear, border-width 0ms linear;
+  transition: var(--links-transition);
 }
 
 .button--default:hover {
@@ -155,7 +156,7 @@ html {
   color: var(--extra-dark);
   background-color: var(--extra-light-03);
   box-shadow: var(--small-shadow);
-  transition: var(--links-transition), padding 0ms linear, border-width 0ms linear;
+  transition: var(--links-transition);
 }
 
 .button--light-accent:hover {
@@ -193,7 +194,7 @@ html {
   color: var(--extra-light);
   background-color: var(--extra-bright-accent);
   box-shadow: var(--small-shadow);
-  transition: var(--links-transition), padding 0ms linear, border-width 0ms linear;
+  transition: var(--links-transition);
 }
 
 .button--bright-accent:hover {
@@ -220,6 +221,54 @@ html {
   border: 4px solid var(--neutral-03);
   background-color: var(--neutral);
 }
+
+
+/*Инпуты*/
+/*input-text*/
+.input--text {
+  padding: 14px 14px;
+  font-family: inherit;
+  font-size: 16px;
+  line-height: 20px;
+  color: var(--extra-dark);
+  background-color: var(--blank);
+  border: 1px solid var(--neutral);
+  border-radius: 4px;
+}
+
+.input--text::placeholder {
+  color: var(--neutral);
+}
+
+.input--text:hover {
+  padding: 14px 14px;
+  border: 1px solid var(--extra-dark);
+}
+
+.input--text:focus {
+  padding: 13px 13px;
+  border: 2px solid var(--extra-dark);
+}
+
+.input--text:invalid {
+  border: 1px solid var(--error);
+}
+
+.input--text:invalid:hover {
+  padding: 13px 13px;
+  border: 2px solid var(--error);
+}
+
+.input--text:disabled {
+  background-color: var(--light);
+  border: 1px solid var(--neutral);
+  opacity: 0.65;
+}
+
+.input--text:disabled:hover {
+  opacity: 1;
+}
+
 
 /*Социальные кнопочки*/
 /*social*/
@@ -299,10 +348,6 @@ html {
   background-color: var(--extra-dark);
   opacity: 0.5;
 }
-
-/*Инпуты*/
-/*text*/
-
 
 /*Заголовки*/
 /*section-title*/
@@ -417,19 +462,23 @@ html {
   margin-right: 16px;
 }
 
+.page-header-logo {
+  display: block;
+}
+
 .page-navigation {
   display: flex;
+  flex-wrap: wrap;
 }
 
 .page-navigation--site {
   align-items: center;
-  flex-wrap: wrap;
-  width: 500px;
+  max-width: 500px;
   margin-right: auto;
 }
 
 .page-navigation--user {
-  column-gap: 16px;
+  gap: 8px 16px;
   max-width: 350px;
 }
 
@@ -438,7 +487,7 @@ html {
   line-height: 20px;
   text-decoration: none;
   color: var(--extra-dark);
-  transition: var(--links-transition), padding 0ms linear, border-width 0ms linear;
+  transition: var(--links-transition);
 }
 
 .page-navigation__link--site {
@@ -770,6 +819,8 @@ html {
 }
 
 .product-card__title {
+  overflow-wrap: break-word;
+  box-decoration-break: clone;
   text-align: center;
   margin: 0;
   margin-bottom: 8px;
@@ -833,6 +884,7 @@ html {
 
 .product-card__description {
   line-height: 22px;
+  overflow-wrap: break-word; /* На самом деле мне не хватило фантазии придумать такие длинные слова для описания, чтобы они вылезали за пределы бокса. Также как и для названий. */
   color: var(--dark);
   text-align: center;
   margin: 0;
@@ -850,6 +902,7 @@ html {
   font-weight: 700;
   font-size: 20px;
   line-height: 24px;
+  overflow-wrap: anywhere; /* На случай гиперинфляции. */
   color: var(--extra-dark);
 }
 
@@ -932,11 +985,69 @@ html {
 }
 
 .company-description__features-item {
-  width: 505px;
+  width: 442px;
+  padding-left: 64px;
+  position: relative;
 }
 
 .company-description__features-item:last-child:nth-child(odd) {
   width: 1042px;
+}
+
+.company-description__features-item--ice-lolly::before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 46px;
+  height: 46px;
+  background: url("../images/icons/ice-lolly-icon.svg") no-repeat 50% 50%;
+  background-size: 32px 32px;
+  left: 0;
+  top: 0;
+  border: 2px solid var(--extra-dark);
+  border-radius: 50%;
+}
+
+.company-description__features-item--cow::before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 46px;
+  height: 46px;
+  background: url("../images/icons/cow-icon.svg") no-repeat 50% 50%;
+  background-size: 32px 32px;
+  left: 0;
+  top: 0;
+  border: 2px solid var(--extra-dark);
+  border-radius: 50%;
+}
+
+.company-description__features-item--leaf::before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 46px;
+  height: 46px;
+  background: url("../images/icons/leaf-icon.svg") no-repeat 50% 50%;
+  background-size: 32px 32px;
+  left: 0;
+  top: 0;
+  border: 2px solid var(--extra-dark);
+  border-radius: 50%;
+}
+
+.company-description__features-item--thermometer::before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 46px;
+  height: 46px;
+  background: url("../images/icons/thermometer-icon.svg") no-repeat 50% 50%;
+  background-size: 32px 32px;
+  left: 0;
+  top: 0;
+  border: 2px solid var(--extra-dark);
+  border-radius: 50%;
 }
 
 /*Блог и подписка*/
@@ -1005,8 +1116,6 @@ html {
 .main-news__subscription-input {
   /* Тут надо бы разделить flex-grow и оформление по разным классам*/
   flex-grow: 1;
-  line-height: 20px;
-  color: var(--neutral);
 }
 
 .main-news__subscription-button {
@@ -1037,7 +1146,7 @@ html {
 
 .delivery__form {
   display: grid;
-  grid-template-columns: 30% 70%;
+  grid-template-columns: 116px 286px;
   gap: 16px 20px;
 }
 
@@ -1078,16 +1187,6 @@ html {
   font-weight: 700;
   line-height: 20px;
   color: var(--extra-dark);
-}
-
-.delivery__input {
-  padding: 14px 16px;
-  font-family: inherit;
-  font-size: 16px;
-  line-height: 20px;
-  color: var(--neutral);
-  border: 1px solid var(--neutral);
-  border-radius: 4px;
 }
 
 .delivery__button {
@@ -1182,8 +1281,20 @@ html {
   color: var(--extra-dark);
 }
 
+.breadcrumbs__link:hover {
+  opacity: 0.7;
+}
+
+.breadcrumbs__link:active {
+  opacity: 1;
+}
+
 .breadcrumbs__link--current {
   border-bottom: 1px solid var(--extra-dark);
+}
+
+.breadcrumbs__link--current:hover {
+  opacity: 1;
 }
 
 .breadcrumbs__item + .breadcrumbs__item::before {
@@ -1312,13 +1423,14 @@ html {
 }
 
 .pagination-list__link--prev {
-  background-image: url("../images/icons/left-arrow-icon.svg");
+  background-image: url("../images/icons/arrow-icon.svg");
   background-repeat: no-repeat;
   background-position: 50% 50%;
+  transform: rotate(180deg);
 }
 
 .pagination-list__link--next {
-  background-image: url("../images/icons/right-arrow-icon.svg");
+  background-image: url("../images/icons/arrow-icon.svg");
   background-repeat: no-repeat;
   background-position: 50% 50%;
 }
