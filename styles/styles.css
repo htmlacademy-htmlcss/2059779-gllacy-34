@@ -51,13 +51,14 @@
   --extra-light-04: #fcfcfc66;
   --extra-light-05: #fcfcfc80;
   --dark: #565c66;
+  --dark-03: #565c664d;
   --extra-dark: #2d3440;
   --neutral-accent: #ff7799;
   --extra-light-accent: #ffcbd8;
   --bright-accent: #ff4a78;
   --extra-bright-accent: #ff2f64;
   --extra-bright-accent-03: #ff2f644d;
-  --transparent-border: ##2d344080;
+  --transparent-border: #2d344080;
   --error: #ea5454;
   --warning: #fd912e;
   --success: #00e484;
@@ -222,6 +223,10 @@ html {
   background-color: var(--neutral);
 }
 
+.button--filter {
+  align-self: flex-end;
+  margin-left: -8px; /* Не могу придумать ничего более краткого без кучи дополнительных обёрток */
+}
 
 /*Инпуты*/
 /*input-text*/
@@ -353,15 +358,15 @@ html {
 /*section-title*/
 .section-title {
   margin: 0;
-  margin-bottom: 56px;
+  padding-bottom: 56px;
 }
 
 .section-title--delivery {
-  margin-bottom: 24px;
+  padding-bottom: 24px;
 }
 
 .section-title--сatalog {
-  margin-bottom: 40px;
+  padding-bottom: 40px;
 }
 
 /*Карточки*/
@@ -592,7 +597,8 @@ html {
 /**/
 /*about*/
 .page-footer {
-  display: flex;
+  display: grid;
+  grid-template-columns: 33% 33% 33%;
   justify-content: space-between;
   padding-top: 48px;
 }
@@ -607,6 +613,7 @@ html {
   grid-template-columns: max-content max-content;
   gap: 8px 24px;
   align-content: start;
+  justify-content: center;
 }
 
 .about__link {
@@ -657,6 +664,8 @@ html {
 .footer-logo-container {
   width: 193px;
   margin-bottom: 14px;
+  padding-right: 14px;
+  justify-self: end;
 }
 
 .htmlacademy-link {
@@ -1223,7 +1232,6 @@ html {
 }
 
 .main-news__subscription-input {
-  /* Тут надо бы разделить flex-grow и оформление по разным классам*/
   flex-grow: 1;
 }
 
@@ -1244,7 +1252,6 @@ html {
   width: 371px;
   padding-top: 103px;
   padding-left: 36px;
-  /*Не могу придумать, как в данном случае сохранить единообразие паддингов, чтобы не было left и bottom*/
 }
 
 .delivery__description {
@@ -1319,7 +1326,6 @@ html {
 }
 
 .contacts__title {
-  /* Отсюда и ниже очередной смешение формы и оформления */
   max-width: 203px;
   margin: 0;
   margin-bottom: 12px;
@@ -1369,6 +1375,8 @@ html {
   width: 1170px;
 }
 
+/*Хлебные крошки*/
+/*breadcrumbs*/
 .breadcrumbs {
   display: flex;
   column-gap: 28px;
@@ -1426,54 +1434,228 @@ html {
   color: var(--extra-dark);
 }
 
-.catalog-products-fields {
+/*Форма с фильтрами*/
+/*filter*/
+.filter {
   display: flex;
-  column-gap: 24px;
-  justify-content: flex-start;
-  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 16px 24px;
+  max-width: 900px;
 }
 
-.catalog-products__field {
+.filter__item {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
   border: none;
+  margin: 0;
+  padding: 0;
 }
 
-.catalog-products__title {
-  font-size: 14px;
+.filter__title {
+  margin: 0;
+  padding-left: 16px;
+  font-family: inherit;
   font-weight: 400;
-  line-height: 20px;
-  color: var(--extra-dark);
-}
-
-.catalog-products__select {
-  background-color: var(--extra-light-accent);
-  border-radius: 20px;
-  border: none;
-}
-
-.catalog-products__select-item {
   font-size: 14px;
   line-height: 20px;
   color: var(--extra-dark);
 }
 
-.catalog-products__filter-list {
+.filter__title--range {
   display: flex;
-  column-gap: 16px;
-  background-color: var(--extra-light-accent);
-  border-radius: 20px;
-  border: none;
+  column-gap: 4px;
 }
 
-.catalog-products__control-label {
+.filter__label {
+  display: flex;
+  column-gap: 4px;
+}
+
+.filter__container {
+  width: 196px;
+  padding: 8px 16px;
+  box-sizing: border-box;
+  border: 2px solid transparent;
+  border-radius: 20px;
+  color: var(--extra-dark);
+  background-color: var(--extra-light-accent);
+}
+
+.filter__container--select {
+  background: url("../images/icons/arrow-down-icon.svg") no-repeat right 10px center var(--extra-light-accent);
+}
+
+.filter__container--select:hover {
+  background-color: var(--extra-light-05);
+}
+
+.filter__container--select:focus {
+  background-color: var(--extra-light-04);
+  border: 2px solid var(--extra-light);
+}
+
+.filter__select {
+  font-family: inherit;
+  font-size: 14px;
+  line-height: 20px;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.filter__select--price {
+  -webkit-appearance: textfield;
+  appearance: textfield;
+  padding: 0;
+  width: 25px;
+  border: 0;
+  background-color: inherit;
+  color: inherit;
+}
+
+.filter__container--range {
+  padding: 16px 14px;
+}
+
+.filter__scale {
+  position: relative;
+  height: 2px;
+  background-color: var(--dark-03);
+}
+
+.filter__bar {
+  position: absolute;
+  left: 40px;
+  width: 56px;
+  height: 2px;
+  background-color: var(--dark);
+}
+
+.filter__toggle {
+  position: absolute;
+  display: block;
+  width: 16px;
+  height: 16px;
+  padding: 0;
+  background-color: var(--extra-light);
+  border: 6px solid var(--extra-dark);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.filter__toggle:hover {
+  background-color: var(--extra-dark);
+  border: 6px solid var(--extra-light);
+}
+
+.filter__toggle:focus {
+  background-color: var(--extra-dark);
+  border: 6px solid var(--extra-light);
+  box-shadow: 0 0 0 2px var(--extra-dark);
+}
+
+.filter__toggle--min {
+  left: -8px;
+  top: -8px;
+}
+
+.filter__toggle--max {
+  right: -8px;
+  top: -8px;
+}
+
+.filter__container--checks {
+  display: flex;
+  width: 383px;
+  column-gap: 16px;
+  padding: 8px 24px;
+}
+
+.filter__value {
+  font-family: inherit;
+  font-weight: 400;
   font-size: 14px;
   line-height: 20px;
   color: var(--extra-dark);
 }
 
-.catalog-products__button {
-  background-color: var(--extra-light-accent);
+.filter__check {
+  width: 16px;
+  height: 16px;
+  border: 1px solid var(--extra-dark);
 }
 
+.filter__check:hover {
+  border-color: var(--extra-light);
+}
+
+.filter__input:disabled + .filter__check {
+  opacity: 0.4;
+}
+
+.filter__input:disabled + .filter__check:hover {
+  border-color: var(--extra-dark);
+}
+
+.filter__input:focus + .filter__check {
+  outline: 2px solid var(--extra-light); /*Табы перемещаются по чекбоксам и радиобаттонам очень странно. Tabindex не помогает. */
+}
+
+.filter__check--radio {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  }
+
+.filter__check--radio::after {
+  content: "";
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background-color: var(--extra-dark);
+  border-radius: 50%;
+  display: none;
+}
+
+.filter__check--radio:hover::after {
+  background-color: var(--extra-light);
+}
+
+.filter__input:checked + .filter__check--radio::after {
+  display: block;
+}
+
+.filter__label--checks {
+  align-items: center;
+}
+
+.filter__container--box {
+  display: flex;
+  width: 604px;
+  column-gap: 16px;
+  padding: 8px 24px;
+}
+
+.filter__check--box {
+  border-width: 1px;
+  border-radius: 3px;
+  box-sizing: border-box;
+}
+
+.filter__input:checked + .filter__check--box {
+  border: none;
+  background: url("../images/icons/checkbox-checked-icon.svg") no-repeat;
+}
+
+.filter__input:checked:hover + .filter__check--box {
+  border: none;
+  background: url("../images/icons/checkbox-light-checked-icon.svg") no-repeat;
+}
+
+/*Пагинация*/
+/*pagination*/
 .pagination {
   display: grid;
   grid-template-columns: 33% 33% 33%;
@@ -1481,6 +1663,7 @@ html {
   padding-top: 57px;
   padding-bottom: 81px;
   align-items: center;
+  justify-content: space-between;
 }
 
 .pagination-button {
