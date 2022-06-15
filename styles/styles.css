@@ -38,6 +38,7 @@
   overflow: hidden;
 }
 
+/*Цвета*/
 :root {
   --page-background: #feafc3;
   --page-background-variant-1: #69a9ff;
@@ -53,6 +54,7 @@
   --dark: #565c66;
   --dark-03: #565c664d;
   --extra-dark: #2d3440;
+  --extra-dark-03: #2d34404d;
   --neutral-accent: #ff7799;
   --extra-light-accent: #ffcbd8;
   --bright-accent: #ff4a78;
@@ -65,6 +67,7 @@
   --small-shadow: 0px 4px 12px #2d34401a;
   --middle-shadow: 0px 8px 16px #2d34401f;
   --big-shadow: 0px 15px 40px #2d34401f;
+  --tooltip-shadow: 0px 4px 8px #c2c2c233;
   --links-transition: 100ms ease-out, padding 0ms linear, border-width 0ms linear;
 }
 
@@ -239,6 +242,7 @@ html {
   background-color: var(--blank);
   border: 1px solid var(--neutral);
   border-radius: 4px;
+  box-sizing: border-box;
 }
 
 .input--text::placeholder {
@@ -274,6 +278,73 @@ html {
   opacity: 1;
 }
 
+/*Тултип*/
+/*tooltip*/
+.tooltip {
+  display: flex;
+  column-gap: 4px;
+  align-items: center;
+}
+
+.tooltip__button {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  background-color: transparent;
+  padding: 0;
+  margin: 0;
+}
+
+.tooltip__icon {
+  fill: var(--extra-dark);
+}
+
+.tooltip__text {
+  position: absolute;
+  display: none;
+  z-index: 1;
+  left: 22px;
+  font-size: 12px;
+  line-height: 16px;
+  text-align: left;
+  width: 170px;
+  padding: 8px 10px;
+  background-color: var(--blank);
+  border: 1px solid var(--neutral);
+  box-shadow: var(--tooltip-shadow);
+}
+
+.tooltip__button:hover::before {
+  content: "";
+  position: absolute;
+  z-index: 2;
+  display: block;
+  width: 0;
+  height: 0;
+  border: 10px solid transparent;
+  border-left: 0;
+  border-right: 7px solid var(--neutral);
+  right: -9px;
+}
+
+.tooltip__button:hover::after {
+  content: "";
+  position: absolute;
+  z-index: 2;
+  display: block;
+  width: 0;
+  height: 0;
+  border: 10px solid transparent;
+  border-left: 0;
+  border-right: 7px solid var(--blank);
+  right: -10px;
+}
+/* Вся эта хренотень с псевдоэлементами только потому, что изначально в Фигме был баг при выгрузке уголка. Андрей Серёдкин подсказал, как можно двумя бордерами нарисовать. */
+.tooltip__button:hover .tooltip__text{
+  display: block;
+}
 
 /*Социальные кнопочки*/
 /*social*/
@@ -1264,6 +1335,7 @@ html {
   display: grid;
   grid-template-columns: 116px 286px;
   gap: 16px 20px;
+  align-items: end;
 }
 
 .delivery__form-item--address {
@@ -1735,4 +1807,80 @@ html {
   border: 1px solid transparent;
   background-color: transparent;
   cursor: auto;
+}
+
+/*Модальное окно*/
+/*modal*/
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  background-color: var(--extra-dark-03);
+}
+
+.modal--close {
+  display: none;
+}
+
+.modal--open:hover + .modal--close {
+  display: flex;
+}
+
+.modal:hover.modal--close {
+  display: flex;
+}
+
+.modal__feedback {
+  position: relative;
+  margin: auto;
+  padding: 64px;
+  width: 570px;
+  background-color: var(--extra-light);
+  border-radius: 8px;
+  box-shadow: var(--big-shadow);
+}
+
+.modal__content {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.modal__title {
+  margin: 0;
+  line-height: 30px;
+  color: var(--extra-dark);
+}
+
+.modal__close-button {
+  position: absolute;
+  top: 32px;
+  right: 32px;
+  display: block;
+  border: 0;
+  padding: 0;
+  width: 20px;
+  height: 20px;
+  background: url("../images/icons/close-icon.svg") no-repeat transparent;
+  background-size: 10px 10px;
+  background-position: center;
+  cursor: pointer;
+}
+
+.modal__form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.modal__item {
+  margin: 0;
+}
+
+.modal__button {
+  padding-top: 16px;
+  align-self: flex-end;
 }

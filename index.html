@@ -176,7 +176,7 @@
               </div>
               <p class="product-card__description">Сливочное мороженое с&nbsp;малиновым джемом</p>
               <div class="product-card__purchase">
-                <b class="product-card__price">310&nbsp;<nobr>₽/кг</nobr></b>
+                <b class="product-card__price">310&nbsp;₽/кг</nobr></b>
                 <button class="product-card__button button" type="button">
                   <svg class="product-card__icon" width="16" height="16" aria-hidden="true" focusable="false" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path fill-rule="evenodd" clip-rule="evenodd" d="M1.16667 1.25C.79847 1.25.5 1.54848.5 1.91667c0 .36819.29848.66666.66667.66666h1.77127l.46743 2.33539a.66396.66396 0 0 0 .01063.0531l.96738 4.83333.00012.00056a1.8254 1.8254 0 0 0 .64571 1.06579c.3319.2672.74674.4098 1.17262.4033h5.62067a1.82555 1.82555 0 0 0 1.8185-1.46965l.001-.00499.9271-4.86144a.6669.6669 0 0 0-.1412-.54985.66678.66678 0 0 0-.5137-.24171H4.61072L4.1381 1.78583C4.07574 1.47426 3.80215 1.25 3.4844 1.25H1.16667Zm4.52431 8.29444L4.87759 5.4805h8.23081l-.7756 4.06686a.4923.4923 0 0 1-.1737.28555.4923.4923 0 0 1-.3181.10871v-.00013H6.19614v-.00012l-.01277.00025a.49218.49218 0 0 1-.4922-.39622l-.00019-.00096ZM4.55739 13.5054c0-.6879.55771-1.2457 1.24568-1.2457.68798 0 1.24569.5578 1.24569 1.2457 0 .688-.55771 1.2457-1.24569 1.2457-.68797 0-1.24568-.5577-1.24568-1.2457Zm6.37331 0c0-.6879.5577-1.2457 1.2457-1.2457.688 0 1.2457.5578 1.2457 1.2457 0 .688-.5577 1.2457-1.2457 1.2457-.688 0-1.2457-.5577-1.2457-1.2457Z" />
@@ -263,8 +263,8 @@
                 <p class="main-news__subscription">Подпишитесь на&nbsp;нашу сладкую рассылку и&nbsp;будьте всегда в&nbsp;курсе всего самого вкусного, что у&nbsp;нас происходит. Обещаем не&nbsp;спамить и&nbsp;не&nbsp;слать всякой ненужной ерунды. Честно =)</p>
                 <form class="main-news__subscription-form" action="https://echo.htmlacademy.ru/" method="post">
                   <label class="visually-hidden" for="newsletter-email">Email.</label>
-                  <input class="main-news__subscription-input input--text" placeholder="email@example.com" type="email" name="newsletter-email" id="newsletter-email">
-                  <button class="button button--bright-accent" type="submit">Отправить</button>
+                  <input class="main-news__subscription-input input--text" id="newsletter-email" type="email" name="newsletter-email" placeholder="email@example.com">
+                  <button class="button button--bright-accent">Отправить</button>
                 </form>
               </div>
             </aside>
@@ -281,19 +281,33 @@
               <p class="delivery__form-description">Укажите адрес и&nbsp;дату доставки, и&nbsp;мы&nbsp;свяжемся с&nbsp;вами, чтобы подтвердить заказ.</p>
               <form class="delivery__form" action="https://echo.htmlacademy.ru/" method="post">
                 <p class="delivery__form-item delivery__form-item--date">
-                  <label class="delivery__form-label" for="delivery-date">Дата</label>
-                  <input class="input--text" type="text" id="delivery-date" name="delivery-date" placeholder="01.04.2020">
+                  <span class="tooltip">
+                    <label class="delivery__form-label" for="delivery-date">Дата</label>
+                    <button class="tooltip__button" type="button" aria-labelledby="tooltip__date">
+                      <svg class="tooltip__icon" width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M7.0003 2.125c-2.6926 0-4.8753 2.1828-4.8753 4.8753 0 2.6925 2.1827 4.8753 4.8753 4.8753 2.6925 0 4.8752-2.1828 4.8752-4.8753 0-2.6925-2.1827-4.8752-4.8752-4.8752ZM.7917 7.0004c0-3.4289 2.7797-6.2086 6.2086-6.2086 3.4289 0 6.2085 2.7797 6.2085 6.2086 0 3.4289-2.7796 6.2086-6.2085 6.2086-3.429 0-6.2086-2.7797-6.2086-6.2086ZM7 6.3334a.6667.6667 0 0 1 .6666.6667v2.2167a.6667.6667 0 0 1-1.3333 0V7.0001a.6667.6667 0 0 1 .6667-.6667Zm0-2.2168A.6667.6667 0 0 0 7 5.45h.0058a.6667.6667 0 0 0 0-1.3334h-.0058Z" /></svg>
+                      <span class="tooltip__text" id="tooltip__date" role="tooltip">Введите дату доставки</span>
+                    </button>
+                  </span>
+                  <input class="input--text" id="delivery-date" type="text" name="delivery-date" placeholder="01.04.2020">
                 </p>
                 <p class="delivery__form-item delivery__form-item--phone">
                   <label class="delivery__form-label" for="delivery-phone">Телефон</label>
-                  <input class="input--text" type="text" id="delivery-phone" name="delivery-phone" placeholder="+7 800 999-00-00">
+                  <input class="input--text" id="delivery-phone" type="text" name="delivery-phone" placeholder="+7 800 999-00-00">
                 </p>
                 <p class="delivery__form-item delivery__form-item--address">
-                  <label class="delivery__form-label" for="delivery-address">Адрес</label>
-                  <input class="input--text" type="text" id="delivery-address" name="delivery-address" placeholder="ул. Большая Конюшенная, 19/8">
+                  <span class="tooltip">
+                   <label class="delivery__form-label" for="delivery-address">Адрес</label>
+                   <button class="tooltip__button" type="button" aria-labelledby="tooltip__address">
+                     <svg class="tooltip__icon" width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
+                       <path fill-rule="evenodd" clip-rule="evenodd" d="M7.0003 2.125c-2.6926 0-4.8753 2.1828-4.8753 4.8753 0 2.6925 2.1827 4.8753 4.8753 4.8753 2.6925 0 4.8752-2.1828 4.8752-4.8753 0-2.6925-2.1827-4.8752-4.8752-4.8752ZM.7917 7.0004c0-3.4289 2.7797-6.2086 6.2086-6.2086 3.4289 0 6.2085 2.7797 6.2085 6.2086 0 3.4289-2.7796 6.2086-6.2085 6.2086-3.429 0-6.2086-2.7797-6.2086-6.2086ZM7 6.3334a.6667.6667 0 0 1 .6666.6667v2.2167a.6667.6667 0 0 1-1.3333 0V7.0001a.6667.6667 0 0 1 .6667-.6667Zm0-2.2168A.6667.6667 0 0 0 7 5.45h.0058a.6667.6667 0 0 0 0-1.3334h-.0058Z" /></svg>
+                      <span class="tooltip__text" id="tooltip__address" role="tooltip">Введите название улицы, дома и квартиры</span>
+                   </button>
+                  </span>
+                  <input class="input--text" id="delivery-address" type="text" name="delivery-address" placeholder="ул. Большая Конюшенная, 19/8">
                 </p>
                 <div class="delivery__button">
-                  <button class="button button--bright-accent" type="submit">Отправить</button>
+                  <button class="button button--bright-accent">Отправить</button>
                 </div>
               </form>
             </div>
@@ -308,7 +322,27 @@
               <p class="contacts__title">Для заказов по&nbsp;телефону:</p>
               <a class="contacts__phone-number" href="tel:+78128121212">+7&nbsp;(812)&nbsp;812-12-12</a>
               <p class="contacts__note">(с&nbsp;10&nbsp;до&nbsp;20&nbsp;ежедневно)</p>
-              <button class="button button--bright-accent" type="button">Форма обратной связи</button>
+              <button class="modal--open button button--bright-accent" type="button">Форма обратной связи</button>
+              <!-- Перенёс сюда, чтобы можно было показывать форму при наведении. Закрывается по уводу фокуса вьюпорта. -->
+              <div class="modal modal--close">
+                <div class="modal__feedback">
+                  <button class="modal__close-button"></button>
+                  <section class="modal__content">
+                    <h2 class="modal__title">Мы обязательно ответим вам!</h2>
+                    <form class="modal__form" action="https://echo.htmlacademy.ru/" method="post">
+                      <label class="visually-hidden" for="modal__person">Имя и фамилия.</label>
+                      <input class="input--text" id="modal__person" type="text" name="delivery-date" placeholder="Имя и фамилия">
+                      <label class="visually-hidden" for="modal__email">E-mail.</label>
+                      <input class="input--text" id="modal__email" type="email" name="modal__email" placeholder="email@example.com">
+                      <label class="visually-hidden" for="modal__message">Ваше сообщение</label>
+                      <textarea class="input--text" id="modal__message" name="modal__message" rows="7" placeholder="В свободной форме"></textarea>
+                      <div class="modal__button">
+                        <button class="button button--bright-accent">Отправить</button>
+                      </div>
+                    </form>
+                  </section>
+                </div>
+              </div>
             </address>
           </div>
         </section>
