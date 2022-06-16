@@ -110,6 +110,7 @@ html {
   font-family: inherit;
   font-weight: 700;
   font-size: 16px;
+  font-style: normal;
   line-height: 20px;
   text-decoration: none;
   text-align: center;
@@ -151,6 +152,7 @@ html {
   font-family: inherit;
   font-weight: 700;
   font-size: 16px;
+  font-style: normal;
   line-height: 20px;
   text-decoration: none;
   text-align: center;
@@ -190,6 +192,7 @@ html {
   font-family: inherit;
   font-weight: 700;
   font-size: 16px;
+  font-style: normal;
   line-height: 20px;
   text-decoration: none;
   text-align: center;
@@ -1821,16 +1824,12 @@ html {
   background-color: var(--extra-dark-03);
 }
 
+.modal--close:target {
+  display: flex;
+}
+
 .modal--close {
   display: none;
-}
-
-.modal--open:hover + .modal--close {
-  display: flex;
-}
-
-.modal:hover.modal--close {
-  display: flex;
 }
 
 .modal__feedback {
@@ -1852,6 +1851,7 @@ html {
 .modal__title {
   margin: 0;
   line-height: 30px;
+  font-style: normal;
   color: var(--extra-dark);
 }
 
@@ -1883,4 +1883,52 @@ html {
 .modal__button {
   padding-top: 16px;
   align-self: flex-end;
+}
+
+/*Joker*/
+.joker {
+  position: relative;
+}
+
+.joker::before {
+  content: "";
+  position: absolute;
+  top: -366px;
+  display: block;
+  visibility: hidden;
+  width: 180px;
+  height: 366px;
+  background: url("../images/joker.png") no-repeat transparent;
+  opacity: 0;
+  transform-origin: bottom left;
+  transform: scale(0.3) skewX(30deg);
+  transition: opacity 2s ease-out, transform 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.joker:hover::before {
+  visibility: visible;
+  transform: scale(1) skewX(0deg);
+  opacity: 1;
+}
+
+.joker::after {
+  content: "";
+  position: absolute;
+  left: 186px;
+  top: -446px;
+  display: block;
+  width: 233px;
+  height: 276px;
+  background: url("../images/hitme.png") no-repeat transparent;
+  opacity: 0;
+  transform-origin: left;
+  transform: scaleX(0.3);
+  transition: opacity 2s linear, transform 1s cubic-bezier(0.275, 0.885, 0.32, 2.275);
+  transition-delay: 1s;
+}
+
+.joker:hover::after {
+  visibility: visible;
+  transform: scale(1);
+  opacity: 1;
 }
