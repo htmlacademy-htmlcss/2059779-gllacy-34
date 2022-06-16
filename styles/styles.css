@@ -25,19 +25,6 @@
   font-display: swap;
 }
 
-.visually-hidden {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  border: 0;
-  padding: 0;
-  white-space: nowrap;
-  clip-path: inset(100%);
-  clip: rect(0 0 0 0);
-  overflow: hidden;
-}
-
 /*Цвета*/
 :root {
   --page-background: #feafc3;
@@ -96,6 +83,26 @@ html {
   margin: 0 auto;
 }
 
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+/*List reset*/
+.reset-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
 /*Кнопки*/
 /*button*/
 .button {
@@ -148,7 +155,6 @@ html {
 
 .button--light-accent {
   padding: 8px 32px;
-  /* У кнопки  "Применить" в фильтрах паддинг 8px 52px. */
   font-family: inherit;
   font-weight: 700;
   font-size: 16px;
@@ -231,6 +237,7 @@ html {
 
 .button--filter {
   align-self: flex-end;
+  padding: 8px 52px;
   margin-left: -8px; /* Не могу придумать ничего более краткого без кучи дополнительных обёрток */
 }
 
@@ -279,74 +286,6 @@ html {
 
 .input--text:disabled:hover {
   opacity: 1;
-}
-
-/*Тултип*/
-/*tooltip*/
-.tooltip {
-  display: flex;
-  column-gap: 4px;
-  align-items: center;
-}
-
-.tooltip__button {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: none;
-  background-color: transparent;
-  padding: 0;
-  margin: 0;
-}
-
-.tooltip__icon {
-  fill: var(--extra-dark);
-}
-
-.tooltip__text {
-  position: absolute;
-  display: none;
-  z-index: 1;
-  left: 22px;
-  font-size: 12px;
-  line-height: 16px;
-  text-align: left;
-  width: 170px;
-  padding: 8px 10px;
-  background-color: var(--blank);
-  border: 1px solid var(--neutral);
-  box-shadow: var(--tooltip-shadow);
-}
-
-.tooltip__button:hover::before {
-  content: "";
-  position: absolute;
-  z-index: 2;
-  display: block;
-  width: 0;
-  height: 0;
-  border: 10px solid transparent;
-  border-left: 0;
-  border-right: 7px solid var(--neutral);
-  right: -9px;
-}
-
-.tooltip__button:hover::after {
-  content: "";
-  position: absolute;
-  z-index: 2;
-  display: block;
-  width: 0;
-  height: 0;
-  border: 10px solid transparent;
-  border-left: 0;
-  border-right: 7px solid var(--blank);
-  right: -10px;
-}
-/* Вся эта хренотень с псевдоэлементами только потому, что изначально в Фигме был баг при выгрузке уголка. Андрей Серёдкин подсказал, как можно двумя бордерами нарисовать. */
-.tooltip__button:hover .tooltip__text{
-  display: block;
 }
 
 /*Социальные кнопочки*/
@@ -513,11 +452,240 @@ html {
   margin-bottom: 28px;
 }
 
-/*List reset*/
-.reset-list {
-  margin: 0;
+/*Тултип*/
+/*tooltip*/
+.tooltip {
+  display: flex;
+  column-gap: 4px;
+  align-items: center;
+}
+
+.tooltip__button {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  background-color: transparent;
   padding: 0;
-  list-style: none;
+  margin: 0;
+}
+
+.tooltip__icon {
+  fill: var(--extra-dark);
+}
+
+.tooltip__text {
+  position: absolute;
+  display: none;
+  z-index: 1;
+  left: 22px;
+  font-size: 12px;
+  line-height: 16px;
+  text-align: left;
+  width: 170px;
+  padding: 8px 10px;
+  background-color: var(--blank);
+  border: 1px solid var(--neutral);
+  box-shadow: var(--tooltip-shadow);
+}
+
+.tooltip__button:hover::before {
+  content: "";
+  position: absolute;
+  z-index: 2;
+  display: block;
+  width: 0;
+  height: 0;
+  border: 10px solid transparent;
+  border-left: 0;
+  border-right: 7px solid var(--neutral);
+  right: -9px;
+}
+
+.tooltip__button:hover::after {
+  content: "";
+  position: absolute;
+  z-index: 2;
+  display: block;
+  width: 0;
+  height: 0;
+  border: 10px solid transparent;
+  border-left: 0;
+  border-right: 7px solid var(--blank);
+  right: -10px;
+}
+
+/* Вся эта хренотень с псевдоэлементами только потому, что изначально в Фигме был баг при выгрузке уголка. Андрей Серёдкин подсказал, как можно двумя бордерами нарисовать. */
+.tooltip__button:hover .tooltip__text {
+  display: block;
+}
+
+/*Модальное окно*/
+/*modal*/
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  background-color: var(--extra-dark-03);
+}
+
+.modal--close:target {
+  display: flex;
+}
+
+.modal--close {
+  display: none;
+}
+
+.modal__feedback {
+  position: relative;
+  margin: auto;
+  padding: 64px;
+  width: 570px;
+  background-color: var(--extra-light);
+  border-radius: 8px;
+  box-shadow: var(--big-shadow);
+}
+
+.modal__content {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.modal__title {
+  margin: 0;
+  line-height: 30px;
+  font-style: normal;
+  color: var(--extra-dark);
+}
+
+.modal__close-button {
+  position: absolute;
+  top: 32px;
+  right: 32px;
+  display: block;
+  border: 0;
+  padding: 0;
+  width: 20px;
+  height: 20px;
+  background: url("../images/icons/close-icon.svg") no-repeat transparent;
+  background-size: 10px 10px;
+  background-position: center;
+  cursor: pointer;
+}
+
+.modal__form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.modal__item {
+  margin: 0;
+}
+
+.modal__button {
+  padding-top: 16px;
+  align-self: flex-end;
+}
+
+/*Joker*/
+.joker {
+  position: relative;
+}
+
+.joker::before {
+  content: "";
+  position: absolute;
+  top: -366px;
+  display: block;
+  visibility: hidden;
+  width: 180px;
+  height: 366px;
+  background: url("../images/joker.png") no-repeat transparent;
+  opacity: 0;
+  transform-origin: bottom left;
+  transform: scale(0.3) skewX(30deg);
+  transition: opacity 2s ease-out, transform 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.joker:hover::before {
+  visibility: visible;
+  transform: scale(1) skewX(0deg);
+  opacity: 1;
+}
+
+.joker::after {
+  content: "";
+  position: absolute;
+  left: 186px;
+  top: -446px;
+  display: block;
+  width: 233px;
+  height: 276px;
+  background: url("../images/hitme.png") no-repeat transparent;
+  opacity: 0;
+  transform-origin: left;
+  transform: scaleX(0.3);
+  transition: opacity 2s linear, transform 1s cubic-bezier(0.275, 0.885, 0.32, 2.275);
+  transition-delay: 1s;
+}
+
+.joker:hover::after {
+  visibility: visible;
+  transform: scale(1);
+  opacity: 1;
+}
+
+/*Корзина*/
+.cart {
+  position: relative;
+}
+
+.cart__content {
+  position: absolute;
+  top: 40px;
+  right: 0;
+  display: none;
+  box-sizing: border-box;
+  flex-direction: column;
+  gap: 32px;
+  margin: auto;
+  width: 288px;
+  padding: 48px;
+  background-color: var(--extra-light);
+  box-shadow: var(--big-shadow);
+  border-radius: 4px;
+}
+
+.cart:hover .cart__content {
+  display: block;
+}
+
+.cart:hover::after {
+  content: "";
+  position: absolute;
+  top: 14px;
+  right: 0;
+  z-index: 2;
+  display: block;
+  width: 200px;
+  height: 200px;
+  opacity: 1;
+  background-color: red;
+}
+
+.cart__message {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 30px;
+  color: var(--extra-dark);
+  text-align: center;
 }
 
 /**/
@@ -1810,125 +1978,4 @@ html {
   border: 1px solid transparent;
   background-color: transparent;
   cursor: auto;
-}
-
-/*Модальное окно*/
-/*modal*/
-.modal {
-  position: fixed;
-  top: 0;
-  left: 0;
-  display: flex;
-  width: 100%;
-  height: 100%;
-  background-color: var(--extra-dark-03);
-}
-
-.modal--close:target {
-  display: flex;
-}
-
-.modal--close {
-  display: none;
-}
-
-.modal__feedback {
-  position: relative;
-  margin: auto;
-  padding: 64px;
-  width: 570px;
-  background-color: var(--extra-light);
-  border-radius: 8px;
-  box-shadow: var(--big-shadow);
-}
-
-.modal__content {
-  display: flex;
-  flex-direction: column;
-  gap: 32px;
-}
-
-.modal__title {
-  margin: 0;
-  line-height: 30px;
-  font-style: normal;
-  color: var(--extra-dark);
-}
-
-.modal__close-button {
-  position: absolute;
-  top: 32px;
-  right: 32px;
-  display: block;
-  border: 0;
-  padding: 0;
-  width: 20px;
-  height: 20px;
-  background: url("../images/icons/close-icon.svg") no-repeat transparent;
-  background-size: 10px 10px;
-  background-position: center;
-  cursor: pointer;
-}
-
-.modal__form {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-
-.modal__item {
-  margin: 0;
-}
-
-.modal__button {
-  padding-top: 16px;
-  align-self: flex-end;
-}
-
-/*Joker*/
-.joker {
-  position: relative;
-}
-
-.joker::before {
-  content: "";
-  position: absolute;
-  top: -366px;
-  display: block;
-  visibility: hidden;
-  width: 180px;
-  height: 366px;
-  background: url("../images/joker.png") no-repeat transparent;
-  opacity: 0;
-  transform-origin: bottom left;
-  transform: scale(0.3) skewX(30deg);
-  transition: opacity 2s ease-out, transform 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-}
-
-.joker:hover::before {
-  visibility: visible;
-  transform: scale(1) skewX(0deg);
-  opacity: 1;
-}
-
-.joker::after {
-  content: "";
-  position: absolute;
-  left: 186px;
-  top: -446px;
-  display: block;
-  width: 233px;
-  height: 276px;
-  background: url("../images/hitme.png") no-repeat transparent;
-  opacity: 0;
-  transform-origin: left;
-  transform: scaleX(0.3);
-  transition: opacity 2s linear, transform 1s cubic-bezier(0.275, 0.885, 0.32, 2.275);
-  transition-delay: 1s;
-}
-
-.joker:hover::after {
-  visibility: visible;
-  transform: scale(1);
-  opacity: 1;
 }
