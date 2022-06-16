@@ -3,7 +3,7 @@
   font-style: normal;
   font-weight: 400;
   src: url("../fonts/inter-400.woff2") format("woff2"),
-    url("../fonts/inter-400.woff") format("woff");
+       url("../fonts/inter-400.woff") format("woff");
   font-display: swap;
 }
 
@@ -12,7 +12,7 @@
   font-style: normal;
   font-weight: 700;
   src: url("../fonts/inter-700.woff2") format("woff2"),
-    url("../fonts/inter-700.woff") format("woff");
+       url("../fonts/inter-700.woff") format("woff");
   font-display: swap;
 }
 
@@ -21,7 +21,7 @@
   font-style: normal;
   font-weight: 900;
   src: url("../fonts/inter-900.woff2") format("woff2"),
-    url("../fonts/inter-900.woff") format("woff");
+       url("../fonts/inter-900.woff") format("woff");
   font-display: swap;
 }
 
@@ -153,6 +153,12 @@ html {
   box-shadow: none;
 }
 
+.button--default-loading {
+  padding-right: 56px;
+  background: url("../images/icons/spinner-dark-icon.svg") no-repeat right 32px center var(--extra-light);
+  background-clip: padding-box;
+}
+
 .button--light-accent {
   padding: 8px 32px;
   font-family: inherit;
@@ -235,10 +241,21 @@ html {
   background-color: var(--neutral);
 }
 
+.button--bright-accent-loading {
+  padding-right: 56px;
+  background: url("../images/icons/spinner-light-icon.svg") no-repeat right 32px center var(--extra-bright-accent);
+  background-clip: padding-box;
+}
+
 .button--filter {
   align-self: flex-end;
   padding: 8px 52px;
   margin-left: -8px; /* Не могу придумать ничего более краткого без кучи дополнительных обёрток */
+}
+
+.button--filter:active {
+  border: 2px solid transparent;
+  padding: 8px 52px;
 }
 
 /*Инпуты*/
@@ -480,6 +497,7 @@ html {
   display: none;
   z-index: 1;
   left: 22px;
+  top: -10px;
   font-size: 12px;
   line-height: 16px;
   text-align: left;
@@ -651,6 +669,7 @@ html {
   position: absolute;
   top: 40px;
   right: 0;
+  z-index: 1;
   display: none;
   box-sizing: border-box;
   flex-direction: column;
@@ -663,21 +682,24 @@ html {
   border-radius: 4px;
 }
 
-.cart:hover .cart__content {
-  display: block;
+.cart__content--empty {
+  padding: 48px 0;
 }
 
-.cart:hover::after {
+.cart:hover .cart__content {
+  display: flex;
+}
+
+.cart:hover::before {
   content: "";
   position: absolute;
   top: 14px;
   right: 0;
-  z-index: 2;
+  z-index: 1;
   display: block;
-  width: 200px;
+  width: 100%;
   height: 200px;
-  opacity: 1;
-  background-color: red;
+  background-color: transparent;
 }
 
 .cart__message {
@@ -764,7 +786,9 @@ html {
 }
 
 .page-navigation__link--site:active {
+  padding: 6px 14px;
   color: var(--extra-dark);
+  border: 2px solid transparent;
   border-radius: 30px;
   background-color: var(--extra-light);
 }
@@ -824,14 +848,14 @@ html {
   background-color: var(--extra-light);
 }
 
-.page-navigation__link--current .page-navigation__link--user {
-  /*Не совсем понимаю, как кнопка поиска может быть активным пунктом меню, но ладно. */
+.page-navigation__link--current.page-navigation__link--user {
+  color: var(--extra-light);
   border: 2px solid var(--extra-bright-accent);
   background-color: var(--extra-bright-accent);
 }
 
 .page-navigation__link--current .page-navigation__icon {
-  fill: var(--extra-bright-accent);
+  fill: var(--extra-light);
 }
 
 /**/
@@ -1002,7 +1026,7 @@ html {
 
 .slider__image--inactive {
   opacity: 0.4;
-  transform: scale(28%);
+  transform: scale(0.28);
 }
 
 .slider__image--inactive:hover {
@@ -1747,13 +1771,17 @@ html {
 }
 
 .filter__select--price {
-  -webkit-appearance: textfield;
   appearance: textfield;
   padding: 0;
   width: 25px;
   border: 0;
   background-color: inherit;
   color: inherit;
+}
+
+.filter__select--price::-webkit-outer-spin-button,
+.filter__select--price::-webkit-inner-spin-button {
+  -webkit-appearance: none;
 }
 
 .filter__container--range {

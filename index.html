@@ -58,7 +58,7 @@
                 </svg>
                 <span class="page-navigation__text">Корзина</span>
               </a>
-              <div class="cart__content"><span class="cart__message">Ваша корзина пока пуста</span></div>
+              <div class="cart__content cart__content--empty"><span class="cart__message">Ваша корзина пока пуста</span></div>
             </li>
           </ul>
         </nav>
@@ -324,7 +324,7 @@
               <p class="contacts__title">Для заказов по&nbsp;телефону:</p>
               <a class="contacts__phone-number" href="tel:+78128121212">+7&nbsp;(812)&nbsp;812-12-12</a>
               <p class="contacts__note">(с&nbsp;10&nbsp;до&nbsp;20&nbsp;ежедневно)</p>
-              <div class="joker">
+              <div class="joker" id="close">
                 <a class="button button--bright-accent" href="#modal">Форма обратной связи</a>
               </div>
             </address>
@@ -380,7 +380,7 @@
         </div>
         <div class="modal modal--close" id="modal">
           <div class="modal__feedback">
-            <a class="modal__close-button" href="#"></a>
+            <a class="modal__close-button" href="#close"></a>
             <section class="modal__content">
               <h2 class="modal__title">Мы обязательно ответим вам!</h2>
               <form class="modal__form" action="https://echo.htmlacademy.ru/" method="post">
