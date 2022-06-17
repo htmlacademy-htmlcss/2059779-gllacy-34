@@ -1599,6 +1599,10 @@ html {
   color: var(--extra-dark);
 }
 
+.product-card__currency {
+  white-space: nowrap;
+}
+
 .product-card__button {
   display: flex;
   justify-content: center;
