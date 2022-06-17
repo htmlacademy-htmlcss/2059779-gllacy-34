@@ -44,6 +44,7 @@
   --extra-dark-03: #2d34404d;
   --neutral-accent: #ff7799;
   --extra-light-accent: #ffcbd8;
+  --extra-light-accent-05: #fcd5df;
   --bright-accent: #ff4a78;
   --extra-bright-accent: #ff2f64;
   --extra-bright-accent-03: #ff2f644d;
@@ -55,7 +56,7 @@
   --middle-shadow: 0px 8px 16px #2d34401f;
   --big-shadow: 0px 15px 40px #2d34401f;
   --tooltip-shadow: 0px 4px 8px #c2c2c233;
-  --links-transition: 100ms ease-out, padding 0ms linear, border-width 0ms linear;
+  --links-transition: 100ms ease-out, padding 0ms linear, border-width 0ms linear, border-radius 0ms linear;
 }
 
 html {
@@ -705,6 +706,19 @@ html {
   padding: 0 16px;
 }
 
+.dropdown__item:hover {
+  background-color: var(--extra-light-accent-05);
+}
+
+.dropdown__item:active {
+  background-color: var(--extra-bright-accent);
+}
+
+.dropdown__item:active .dropdown__link {
+  color: var(--extra-light);
+  background-color: transparent;
+}
+
 .dropdown__link {
   display: block;
   padding: 6px 0;
@@ -722,16 +736,8 @@ html {
   border-bottom: 1px solid var(--neutral);
 }
 
-.dropdown__link:hover {
-  opacity: 0.7;
-}
-
-.dropdown__link:focus {
-  border: 1px solid var(--dark);
-}
-
-.dropdown__link:active {
-  opacity: 1;
+.dropdown__link:focus-visible {
+  background-color: var(--extra-light-accent-05);
 }
 
 /*Попапы*/
@@ -1044,8 +1050,7 @@ html {
   border-radius: 30px;
 }
 
-.page-navigation__link--site:hover {
-  color: var(--extra-dark);
+.page-navigation__item:hover {
   background-color: var(--extra-light-05);
   border-radius: 30px;
 }
@@ -1125,12 +1130,6 @@ html {
   color: var(--extra-light);
   background-color: var(--extra-bright-accent);
   border: 2px solid var(--extra-bright-accent);
-}
-
-.page-navigation__link--user:hover {
-  color: var(--extra-dark);
-  background-color: var(--extra-light-05);
-  border: 2px solid var(--extra-light-05);
 }
 
 .page-navigation__link--user:focus {
