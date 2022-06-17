@@ -1085,6 +1085,7 @@ html {
 }
 
 .page-navigation__phone {
+  line-height: 20px;
   font-weight: 700;
   text-decoration: none;
   color: var(--extra-dark);
@@ -1164,7 +1165,7 @@ html {
   display: grid;
   grid-template-columns: 33% 33% 33%;
   justify-content: space-between;
-  padding-top: 48px;
+  padding-top: 42px;
 }
 
 .common-page-footer {
@@ -1276,6 +1277,8 @@ html {
   display: flex;
   column-gap: 41px;
   width: 630px;
+  padding-top: 20px;
+  padding-left: 3px;
 }
 
 .slider__picture {
@@ -1391,6 +1394,8 @@ html {
 }
 
 .slider__title {
+  margin-top: 23px;
+  margin-bottom: 24px;
   font-weight: 900;
   font-size: 36px;
   line-height: 46px;
@@ -1399,7 +1404,7 @@ html {
 
 .slider__definition {
   margin: 0;
-  margin-bottom: 48px;
+  margin-bottom: 44px;
   font-size: 18px;
   line-height: 24px;
   color: var(--extra-dark);
@@ -1472,6 +1477,8 @@ html {
 }
 
 .promo-action__title {
+  max-width: 600px;
+  margin: auto;
   font-size: 32px;
   line-height: 46px;
   font-weight: 900;
@@ -1498,7 +1505,11 @@ html {
   grid-template-columns: repeat(4, 270px);
   grid-template-rows: max-content;
   gap: 90px 30px;
-  padding-top: 95px;
+  padding-top: 50px;
+}
+
+.product-cards--catalog {
+  padding-top: 90px;
 }
 
 .product-card {
@@ -1668,6 +1679,7 @@ html {
 }
 
 .company-description__title {
+  max-width: 995px;
   font-size: 32px;
   line-height: 46px;
   font-weight: 900;
@@ -1679,6 +1691,7 @@ html {
   display: flex;
   flex-wrap: wrap;
   gap: 40px 30px;
+  justify-content: flex-start;
 }
 
 .company-description__features-item {
@@ -1697,8 +1710,8 @@ html {
   top: 0;
   left: 0;
   display: block;
-  width: 46px;
-  height: 46px;
+  width: 44px;
+  height: 44px;
   background: url("../images/icons/ice-lolly-icon.svg") no-repeat 50% 50%;
   background-size: 32px 32px;
   border: 2px solid var(--extra-dark);
@@ -1711,8 +1724,8 @@ html {
   top: 0;
   left: 0;
   display: block;
-  width: 46px;
-  height: 46px;
+  width: 44px;
+  height: 44px;
   background: url("../images/icons/cow-icon.svg") no-repeat 50% 50%;
   background-size: 32px 32px;
   border: 2px solid var(--extra-dark);
@@ -1725,8 +1738,8 @@ html {
   top: 0;
   left: 0;
   display: block;
-  width: 46px;
-  height: 46px;
+  width: 44px;
+  height: 44px;
   background: url("../images/icons/leaf-icon.svg") no-repeat 50% 50%;
   background-size: 32px 32px;
   border: 2px solid var(--extra-dark);
@@ -1739,8 +1752,8 @@ html {
   top: 0;
   left: 0;
   display: block;
-  width: 46px;
-  height: 46px;
+  width: 44px;
+  height: 44px;
   background: url("../images/icons/thermometer-icon.svg") no-repeat 50% 50%;
   background-size: 32px 32px;
   border: 2px solid var(--extra-dark);
@@ -1935,7 +1948,7 @@ html {
 
 .contacts__note {
   margin: 0;
-  margin-bottom: 32px;
+  margin-bottom: 28px;
   font-style: normal;
   font-size: 14px;
   line-height: 20px;
@@ -1949,7 +1962,7 @@ html {
 /*Каталог*/
 /**/
 .common-header {
-  margin-bottom: 32px;
+  margin-bottom: 54px;
 }
 
 .main-catalog {
