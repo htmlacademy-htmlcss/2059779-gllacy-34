@@ -105,27 +105,27 @@
           <h2 class="visually-hidden">Выбор мороженого</h2>
           <div class="slider">
             <ul class="slider__description reset-list">
-              <li class="slider__text slider__text--active" id="slider__text--1">
+              <li class="slider__text slider__text--active" id="slider__text-1">
                 <!-- Я так понимаю, что под JS нужны будут ID. -->
-                <p class="slider__title">Нежный пломбир с&nbsp;клубничным джемом</p>
-                <p class="slider__definition">Натуральное мороженое из&nbsp;свежих сливок и&nbsp;молока с&nbsp;вкуснейшим клубничным джемом&nbsp;&mdash; это идеальный десерт для всей семьи.</p>
+                <p class="slider__title" id="slider__title-1">Нежный пломбир с&nbsp;клубничным джемом</p>
+                <p class="slider__definition" id="slider__descriprion-1">Натуральное мороженое из&nbsp;свежих сливок и&nbsp;молока с&nbsp;вкуснейшим клубничным джемом&nbsp;&mdash; это идеальный десерт для всей семьи.</p>
                 <a class="button button--default" href="#">Заказать</a>
               </li>
-              <li class="slider__text slider__text--inactive" id="slider__text--2">
-                <p class="slider__title slider__title--inactive">Сливочное мороженое со&nbsp;вкусом банана</p>
-                <p class="slider__definition slider__definition--inactive">Сливочное мороженое с&nbsp;ярким банановым вкусом подарит вам свежесть и&nbsp;наслаждение даже в&nbsp;самый жаркий летний день.</p>
+              <li class="slider__text slider__text--inactive" id="slider__text-2">
+                <p class="slider__title slider__title--inactive" id="slider__title-2">Сливочное мороженое со&nbsp;вкусом банана</p>
+                <p class="slider__definition slider__definition--inactive" id="slider__descriprion-2">Сливочное мороженое с&nbsp;ярким банановым вкусом подарит вам свежесть и&nbsp;наслаждение даже в&nbsp;самый жаркий летний день.</p>
                 <a class="button button--default slider__order--inactive" href="#">Заказать</a>
               </li>
-              <li class="slider__text slider__text--inactive" id="slider__text--3">
-                <p class="slider__title slider__title--inactive">Карамельный пломбир с&nbsp;маршмеллоу</p>
-                <p class="slider__definition slider__definition--inactive">Необычный сладкий десерт с&nbsp;карамельным топпингом и&nbsp;кусочками зефира завоюет сердца сладкоежек всех возрастов.</p>
+              <li class="slider__text slider__text--inactive" id="slider__text-3">
+                <p class="slider__title slider__title--inactive" id="slider__title-3">Карамельный пломбир с&nbsp;маршмеллоу</p>
+                <p class="slider__definition slider__definition--inactive" id="slider__descriprion-3">Необычный сладкий десерт с&nbsp;карамельным топпингом и&nbsp;кусочками зефира завоюет сердца сладкоежек всех возрастов.</p>
                 <a class="button button--default slider__order--inactive" href="#">Заказать</a>
               </li>
             </ul>
             <ul class="slider__images reset-list">
-              <li class="slider__picture slider__picture--active" id="slider__picture--1">
+              <li class="slider__picture slider__picture--active" id="slider__picture-1">
                 <div class="slider__content">
-                  <img class="slider__image" src="images/slider/ice-cream-strawberry.png" width="306" height="507" alt="Пломбир с джемом в стаканчике.">
+                  <img class="slider__image" src="images/slider/ice-cream-strawberry.png" width="306" height="507" alt="Пломбир с джемом в стаканчике." aria-labelledby="slider__text-1" aria-describedby="slider__descriprion-1">
                   <button class="button slider--button slider-prev" type="button">
                     <span class="visually-hidden">Предыдущее фото.</span>
                   </button>
@@ -134,27 +134,27 @@
                   </button>
                 </div>
               </li>
-              <li class="slider__picture slider__picture--inactive" id="slider__picture--2">
-                <img class="slider__image slider__image--inactive" src="images/slider/ice-cream-banana.png" width="306" height="507" alt="Сливочное мороженое с бананом в стаканчике.">
+              <li class="slider__picture slider__picture--inactive" id="slider__picture-2">
+                <img class="slider__image slider__image--inactive" src="images/slider/ice-cream-banana.png" width="306" height="507" alt="Сливочное мороженое с бананом в стаканчике." aria-labelledby="slider__text-2" aria-describedby="slider__descriprion-2">
               </li>
-              <li class="slider__picture slider__picture--inactive" id="slider__picture--3">
-                <img class="slider__image slider__image--inactive" src="images/slider/ice-cream-marshmallow.png" width="306" height="507" alt="Пломбир с маршмеллоу в стаканчике.">
+              <li class="slider__picture slider__picture--inactive" id="slider__picture-3">
+                <img class="slider__image slider__image--inactive" src="images/slider/ice-cream-marshmallow.png" width="306" height="507" alt="Пломбир с маршмеллоу в стаканчике." aria-labelledby="slider__text-3" aria-describedby="slider__descriprion-3">
               </li>
             </ul>
           </div>
           <ol class="slider-pagination reset-list">
             <li class="slider-pagination__item">
-              <button class="button slider-pagination__button slider-pagination__button--active" id="pagination--1">
+              <button class="button slider-pagination__button slider-pagination__button--active" type="button" id="pagination-1">
                 <span class="visually-hidden">Первый слайд.</span>
               </button>
             </li>
             <li class="slider-pagination__item">
-              <button class="button slider-pagination__button" id="pagination--2">
+              <button class="button slider-pagination__button" type="button" id="pagination-2">
                 <span class="visually-hidden">Второй слайд.</span>
               </button>
             </li>
             <li class="slider-pagination__item">
-              <button class="button slider-pagination__button" id="pagination--3">
+              <button class="button slider-pagination__button" type="button" id="pagination-3">
                 <span class="visually-hidden">Третий слайд.</span>
               </button>
             </li>
@@ -418,7 +418,7 @@
         </div>
         <div class="modal modal--close" id="modal">
           <div class="modal__feedback">
-            <a class="modal__close-button" href="#close"></a>
+            <a class="modal__close-button" href="#close" role="button" aria-label="Закрыть окно"></a>
             <section class="modal__content">
               <h2 class="modal__title">Мы обязательно ответим вам!</h2>
               <form class="modal__form" action="https://echo.htmlacademy.ru/" method="post">

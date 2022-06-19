@@ -250,7 +250,6 @@ html {
 
 .button--filter {
   align-self: flex-end;
-  margin-left: -8px; /* Не могу придумать ничего более краткого без кучи дополнительных обёрток */
   padding: 8px 52px;
 }
 
@@ -397,7 +396,7 @@ html {
 }
 
 .section-title--сatalog {
-  padding-bottom: 40px;
+  padding-bottom: 36px;
 }
 
 /*Карточки*/
@@ -1165,10 +1164,11 @@ html {
   display: grid;
   grid-template-columns: 33% 33% 33%;
   justify-content: space-between;
-  padding-top: 42px;
+  padding-top: 36px;
 }
 
 .common-page-footer {
+  padding-top: 42px;
   border-top: 1px solid var(--extra-light-04);
 }
 
@@ -1230,7 +1230,6 @@ html {
 .footer-logo-container {
   justify-self: end;
   width: 193px;
-  margin-bottom: 14px;
   padding-right: 14px;
 }
 
@@ -1509,7 +1508,7 @@ html {
 }
 
 .product-cards--catalog {
-  padding-top: 90px;
+  padding-top: 94px;
 }
 
 .product-card {
@@ -1607,6 +1606,7 @@ html {
   line-height: 24px;
   font-weight: 700;
   overflow-wrap: anywhere; /* На случай гиперинфляции. */
+  word-spacing: 3px; /*Для пиксель перфекта*/
   color: var(--extra-dark);
 }
 
@@ -2033,8 +2033,13 @@ html {
 .filter {
   display: flex;
   flex-wrap: wrap;
+  gap: 16px
+}
+
+.filter__content {
+  display: flex;
+  flex-wrap: wrap;
   gap: 16px 24px;
-  max-width: 900px;
 }
 
 .filter__item {
@@ -2067,7 +2072,7 @@ html {
 }
 
 .filter__container {
-  width: 196px;
+  width: max-content;
   padding: 8px 16px;
   box-sizing: border-box;
   color: var(--extra-dark);
@@ -2090,6 +2095,7 @@ html {
 }
 
 .filter__select {
+  padding-right: 58px;
   font-family: inherit;
   font-size: 14px;
   line-height: 20px;
@@ -2117,6 +2123,7 @@ html {
 
 .filter__scale {
   position: relative;
+  width: 164px;
   height: 2px;
   background-color: var(--dark-03);
 }
@@ -2124,7 +2131,7 @@ html {
 .filter__bar {
   position: absolute;
   left: 40px;
-  width: 56px;
+  width: 64px;
   height: 2px;
   background-color: var(--dark);
 }
@@ -2154,7 +2161,7 @@ html {
 
 .filter__toggle--min {
   top: -8px;
-  left: -8px;
+  left: -16px;
 }
 
 .filter__toggle--max {
@@ -2164,7 +2171,6 @@ html {
 
 .filter__container--checks {
   display: flex;
-  width: 383px;
   column-gap: 16px;
   padding: 8px 24px;
 }
@@ -2265,8 +2271,8 @@ html {
   grid-template-areas: ". button list";
   align-items: center;
   justify-content: space-between;
-  padding-top: 57px;
-  padding-bottom: 81px;
+  padding-top: 55px;
+  padding-bottom: 80px;
 
 }
 
@@ -2289,6 +2295,7 @@ html {
   min-width: 24px;
   min-height: 24px;
   padding: 2px;
+  box-sizing: border-box;
   font-size: 16px;
   line-height: 20px;
   text-decoration: none;
