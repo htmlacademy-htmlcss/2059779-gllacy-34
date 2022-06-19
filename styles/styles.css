@@ -82,6 +82,7 @@ html {
   min-height: 100%;
   width: 1170px;
   margin: 0 auto;
+  padding: 0 98px;
 }
 
 .visually-hidden {
@@ -113,6 +114,7 @@ html {
   border-radius: 26px;
   border: 0;
 }
+
 
 .button--default {
   font-family: inherit;
@@ -258,6 +260,10 @@ html {
   border: 2px solid transparent;
 }
 
+.button--login {
+  align-self: center;
+}
+
 /*Инпуты*/
 /*input-text*/
 .input--text {
@@ -339,6 +345,7 @@ html {
 .social__link:hover::after {
   content: "";
   position: absolute;
+  top: 4px;
   left: 50%;
   z-index: -1;
   display: block;
@@ -608,8 +615,8 @@ html {
 }
 
 .modal__button {
-  padding-top: 16px;
   align-self: flex-end;
+  padding-top: 16px;
 }
 
 /*Joker*/
@@ -823,6 +830,7 @@ html {
 
 .login-form__button {
   display: flex;
+  flex-wrap: wrap;
   gap: 22px;
   align-self: flex-start;
 }
@@ -882,8 +890,10 @@ html {
 
 .cart__order {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
+  gap: 16px;
 }
 
 .cart__box {
@@ -1123,6 +1133,7 @@ html {
 }
 
 .page-navigation__icon {
+  min-width: 16px;
   fill: var(--extra-dark);
 }
 
@@ -1164,7 +1175,7 @@ html {
   display: grid;
   grid-template-columns: 33% 33% 33%;
   justify-content: space-between;
-  padding-top: 36px;
+  padding: 36px 0 48px 0;
 }
 
 .common-page-footer {
@@ -1179,6 +1190,10 @@ html {
   align-content: start;
   justify-content: center;
   width: 400px;
+}
+
+.about__item {
+  max-width: 200px;
 }
 
 .about__link {
@@ -1471,6 +1486,7 @@ html {
 /*promo-action*/
 .promo-action-cards__card {
   flex-grow: 1;
+  width: 570px;
   padding: 32px 36px;
   box-sizing: border-box;
 }
@@ -1598,6 +1614,7 @@ html {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  max-width: 200px;
   margin-top: auto;
 }
 
@@ -1610,7 +1627,7 @@ html {
   color: var(--extra-dark);
 }
 
-.product-card__currency {
+.product-card__currency { /*Я оставляю здесь это свойство, чтобы не разбивалась надпись Р/кг на строки, но если будет переполнение (что мало вероятно), то его нужно убирать. */
   white-space: nowrap;
 }
 
@@ -1826,6 +1843,7 @@ html {
 
 .main-news__subscription-input {
   flex-grow: 1;
+  align-self: center;
 }
 
 .main-news__subscription-button {
@@ -1838,7 +1856,6 @@ html {
   width: 1170px;
   background: url("../images/delivery.jpg") no-repeat;
   background-size: cover;
-  overflow: hidden;
 }
 
 .delivery__text {
@@ -2072,7 +2089,11 @@ html {
 }
 
 .filter__container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
   width: max-content;
+  max-width: 1170px;
   padding: 8px 16px;
   box-sizing: border-box;
   color: var(--extra-dark);
@@ -2092,6 +2113,10 @@ html {
 .filter__container--select:focus {
   background-color: var(--extra-light-04);
   border: 2px solid var(--extra-light);
+}
+
+.filter__container--checks {
+  padding: 8px 24px;
 }
 
 .filter__select {
@@ -2169,12 +2194,6 @@ html {
   right: -8px;
 }
 
-.filter__container--checks {
-  display: flex;
-  column-gap: 16px;
-  padding: 8px 24px;
-}
-
 .filter__value {
   font-family: inherit;
   font-size: 14px;
@@ -2186,6 +2205,7 @@ html {
 .filter__check {
   width: 16px;
   height: 16px;
+  min-width: 16px;
   border: 1px solid var(--extra-dark);
 }
 
@@ -2212,6 +2232,7 @@ html {
 .filter__check--radio {
   position: relative;
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   border-radius: 50%;
@@ -2237,13 +2258,6 @@ html {
 
 .filter__label--checks {
   align-items: center;
-}
-
-.filter__container--box {
-  display: flex;
-  width: 604px;
-  column-gap: 16px;
-  padding: 8px 24px;
 }
 
 .filter__check--box {
@@ -2277,15 +2291,22 @@ html {
 }
 
 .pagination-button {
-  grid-area: button;
+  display: flex; /*Для маловероятного переполнения кнопками */
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+  align-items: center;
   text-align: center;
+  grid-area: button;
 }
 
 .pagination-list {
   display: flex;
+  flex-wrap: wrap;
   justify-self: end;
-  grid-area: list;
+  align-items: center;
   list-style: none;
+  grid-area: list;
 }
 
 .pagination-list__link {
@@ -2294,7 +2315,7 @@ html {
   align-items: center;
   min-width: 24px;
   min-height: 24px;
-  padding: 2px;
+  aspect-ratio: 1 / 1; /*Чтобы сохранить круглый задний фон для трёхзначных числе и выше ставлю этот параметр, но если вбить нелепо огромные тексты из теста, то всё просто взрывается.  */
   box-sizing: border-box;
   font-size: 16px;
   line-height: 20px;
@@ -2335,7 +2356,7 @@ html {
 .pagination-list__link--next {
   background-image: url("../images/icons/arrow-icon.svg");
   background-repeat: no-repeat;
-  background-position: 50% 50%;
+  background-position: 55% 50%;
 }
 
 .pagination-list__link--disabled {
