@@ -2,8 +2,7 @@
   font-family: Inter;
   font-style: normal;
   font-weight: 400;
-  src: url("../fonts/inter-400.woff2") format("woff2"),
-       url("../fonts/inter-400.woff") format("woff");
+  src: url("../fonts/inter-400.woff2") format("woff2");
   font-display: swap;
 }
 
@@ -11,8 +10,7 @@
   font-family: Inter;
   font-style: normal;
   font-weight: 700;
-  src: url("../fonts/inter-700.woff2") format("woff2"),
-       url("../fonts/inter-700.woff") format("woff");
+  src: url("../fonts/inter-700.woff2") format("woff2");
   font-display: swap;
 }
 
@@ -111,6 +109,7 @@ html {
 /* button */
 .button {
   display: inline-block;
+  margin-left: -4px;
   padding: 12px 32px;
   background-clip: padding-box;
   border-radius: 26px;
@@ -254,6 +253,7 @@ html {
 .button--filter {
   align-self: flex-end;
   padding: 8px 52px;
+  font-size: 14px;
 }
 
 .button--filter:active {
@@ -395,23 +395,22 @@ html {
 /* Заголовки */
 /* section-title */
 .section-title {
-  margin: 0;
-  padding-bottom: 56px;
+  margin: 0 auto 56px;
 }
 
 .section-title--delivery {
-  padding-bottom: 24px;
+  margin-bottom: 24px;
 }
 
 .section-title--сatalog {
-  padding-bottom: 36px;
+  margin-bottom: 39px;
 }
 
 /* Сетка блоков */
 /* mesh */
 .mesh {
   display: flex;
-  gap: 40px 30px;
+  gap: 40px 28px;
   flex-wrap: wrap;
   align-items: flex-start;
 }
@@ -514,9 +513,10 @@ html {
 
 .modal__feedback {
   position: relative;
+  width: 570px;
   margin: auto;
   padding: 64px;
-  width: 570px;
+  box-sizing: border-box;
   background-color: var(--extra-light);
   box-shadow: var(--big-shadow);
   border-radius: 8px;
@@ -558,63 +558,15 @@ html {
 
 .modal-form__feedback-controls {
   align-self: flex-end;
-  padding-top: 16px;
+  padding-top: 8px;
 }
 
 .modal-form__login-controls {
   display: flex;
   flex-wrap: wrap;
-  gap: 22px;
+  gap: 18px;
   align-self: flex-start;
-  padding-top: 16px;
-}
-
-/* Joker */
-.joker {
-  position: relative;
-}
-
-.joker::before {
-  content: "";
-  position: absolute;
-  top: -366px;
-  display: block;
-  visibility: hidden;
-  width: 180px;
-  height: 366px;
-  background: url("../images/joker.png") no-repeat transparent;
-  transform-origin: bottom left;
-  transform: scale(0.3) skewX(30deg);
-  opacity: 0;
-  transition: opacity 2s ease-out, transform 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-}
-
-.joker:hover::before {
-  visibility: visible;
-  transform: scale(1) skewX(0deg);
-  opacity: 1;
-}
-
-.joker::after {
-  content: "";
-  position: absolute;
-  left: 186px;
-  top: -446px;
-  display: block;
-  width: 233px;
-  height: 276px;
-  background: url("../images/hitme.png") no-repeat transparent;
-  transform-origin: left;
-  transform: scaleX(0.3);
-  opacity: 0;
-  transition: opacity 2s linear, transform 1s cubic-bezier(0.275, 0.885, 0.32, 2.275);
-  transition-delay: 1s;
-}
-
-.joker:hover::after {
-  visibility: visible;
-  transform: scale(1);
-  opacity: 1;
+  margin-top: 8px;
 }
 
 /* Дропдауны пользовательского меню */
@@ -711,7 +663,7 @@ html {
   display: none;
   box-sizing: border-box;
   flex-direction: column;
-  gap: 32px;
+  gap: 24px;
   margin: auto;
   padding: 48px;
   background-color: var(--extra-light);
@@ -744,7 +696,8 @@ html {
 }
 
 .popup__content--cart {
-  width: 448px;
+  width: 441px;
+  padding: 48px 48px 44px;
 }
 
 .popup__content--cart-empty {
@@ -753,7 +706,8 @@ html {
 }
 
 .popup__content--login-form {
-  width: 420px;
+  gap: 32px;
+  width: 425px;
 }
 
 .popup__content--search {
@@ -790,6 +744,8 @@ html {
   flex-direction: column;
   justify-content: space-between;
   align-items: flex-start;
+  font-size: 14px;
+  line-height: 22px;
 }
 
 .modal-form__action {
@@ -814,7 +770,7 @@ html {
 /* Корзина */
 /* cart */
 .cart {
-  padding-bottom: 32px;
+  padding-bottom: 28px;
   border-bottom: 1px solid var(--light);
   font-weight: 700;
   font-size: 18px;
@@ -833,11 +789,11 @@ html {
 
 .cart__box--image {
   width: 17%;
-  padding-right: 16px;
+  padding-right: 10px;
 }
 
 .cart__box--product {
-  width: 48%;
+  width: 53%;
   padding-right: 16px;
 }
 
@@ -914,7 +870,7 @@ html {
   display: block;
   width: 16px;
   height: 16px;
-  background: url("../images/icons/close-icon.svg") no-repeat center center transparent;
+  background: url("../images/icons/close-icon.svg") no-repeat center right transparent;
 }
 
 .cart-order {
@@ -923,6 +879,7 @@ html {
   justify-content: space-between;
   align-items: center;
   gap: 16px;
+  margin-top: 5px;
 }
 
 .cart-order__text {
@@ -951,11 +908,12 @@ html {
 .navigation__logo-link {
   display: block;
   width: 137px;
-  margin-right: 16px;
+  margin-right: 15px;
 }
 
 .navigation__logo {
   display: block;
+  margin-top: -1px;
 }
 
 .navigation__phone {
@@ -1107,21 +1065,22 @@ html {
   display: grid;
   grid-template-columns: 33% 33% 33%;
   justify-content: space-between;
-  padding: 36px 0 48px;
+  padding: 40px 0 34px;
 }
 
 .common-page-footer {
-  padding-top: 42px;
+  padding-top: 48px;
   border-top: 1px solid var(--extra-light-04);
 }
 
 .about {
   display: grid;
   grid-template-columns: max-content max-content;
-  gap: 8px 24px;
+  gap: 5px 24px;
   align-content: start;
   justify-content: center;
   width: 400px;
+  padding-left: 5px; /* И без пикселья всё было пёрфект. */
 }
 
 .about__item {
@@ -1169,6 +1128,8 @@ html {
 }
 
 .about-text {
+  margin: 0;
+  margin-top: 10px;
   font-size: 12px;
   line-height: 16px;
   color: var(--extra-dark);
@@ -1211,7 +1172,7 @@ html {
 
 .slider__text {
   width: 540px;
-  padding: 136px 0 136px 70px;
+  padding: 136px 0 135px 70px;
   box-sizing: border-box;
 }
 
@@ -1290,12 +1251,12 @@ html {
 
 .slider__button {
   position: absolute;
+  top: 47%;
   display: block;
   width: 38px;
   height: 38px;
   padding: 0;
-  background: url("../images/icons/arrow-light-icon.svg") no-repeat 55% 50%;
-  background-color: var(--extra-light-03);
+  background: url("../images/icons/arrow-light-icon.svg") no-repeat 55% 50% var(--extra-light-03);
   border: 2px solid var(--extra-light);
   border-radius: 50%;
   cursor: pointer;
@@ -1312,26 +1273,22 @@ html {
 }
 
 .slider__button:hover {
-  background: url("../images/icons/arrow-icon.svg") no-repeat 55% 50%;
-  background-color: var(--extra-light);
+  background: url("../images/icons/arrow-icon.svg") no-repeat 55% 50% var(--extra-light);
   border: 2px solid transparent;
 }
 
 .slider__button:focus {
-  background: url("../images/icons/arrow-icon.svg") no-repeat 55% 50%;
-  background-color: var(--extra-light-03);
+  background: url("../images/icons/arrow-icon.svg") no-repeat 55% 50% var(--extra-light-03);
   border: 2px solid transparent;
 }
 
 .slider__button:focus-visible {
-  background: url("../images/icons/arrow-icon.svg") no-repeat 55% 50%;
-  background-color: var(--extra-light-03);
+  background: url("../images/icons/arrow-icon.svg") no-repeat 55% 50% var(--extra-light-03);
   border: 2px solid var(--extra-dark);
 }
 
 .slider__button:active {
-  background: url("../images/icons/arrow-icon.svg") no-repeat 55% 50%;
-  background-color: var(--extra-light-05);
+  background: url("../images/icons/arrow-icon.svg") no-repeat 55% 50% var(--extra-light-05);
   border: 2px solid transparent;
 }
 
@@ -1340,7 +1297,7 @@ html {
 }
 
 .slider__title {
-  margin-top: 23px;
+  margin-top: 24px;
   margin-bottom: 24px;
   font-weight: 900;
   font-size: 36px;
@@ -1349,6 +1306,7 @@ html {
 }
 
 .slider__definition {
+  width: 90%;
   margin: 0;
   margin-bottom: 44px;
   font-size: 18px;
@@ -1358,11 +1316,11 @@ html {
 
 .slider-pagination {
   position: absolute;
-  bottom: 0;
-  left: 0;
+  bottom: 2px;
+  left: 3px;
   display: flex;
   justify-content: space-between;
-  gap: 8px;
+  gap: 12px;
 }
 
 .slider-pagination__button {
@@ -1370,6 +1328,7 @@ html {
   padding: 0;
   width: 11px;
   height: 11px;
+  box-sizing: content-box;
   background-color: var(--extra-light-03);
   border: 1px solid var(--extra-light-03);
   border-radius: 50%;
@@ -1411,7 +1370,7 @@ html {
 /* Промо */
 /* promo-action */
 .promo-action-cards__card {
-  padding: 36px;
+  padding: 32px 36px;
   border-radius: var(--big-radius);
 }
 
@@ -1425,7 +1384,6 @@ html {
 
 .promo-action__title {
   max-width: 600px;
-  margin: auto;
   font-size: 32px;
   line-height: 46px;
   font-weight: 900;
@@ -1434,8 +1392,7 @@ html {
 }
 
 .promo-action-cards__title {
-  margin: 0;
-  margin-bottom: 28px;
+  margin: 3px 0 27px;
   font-size: 24px;
   line-height: 30px;
   font-weight: 700;
@@ -1443,9 +1400,9 @@ html {
 }
 
 .promo-action-cards__description {
-  width: 328px;
+  width: 66%;
   margin: 0;
-  margin-bottom: 28px;
+  margin-bottom: 24px;
   line-height: 22px;
   color: var(--extra-dark);
 }
@@ -1456,12 +1413,12 @@ html {
   display: grid;
   grid-template-columns: repeat(4, 270px);
   grid-template-rows: max-content;
-  gap: 90px 30px;
-  padding-top: 50px;
+  gap: 91px 30px;
+  padding-top: 52px;
 }
 
 .product-cards--catalog {
-  padding-top: 94px;
+  padding-top: 95px;
 }
 
 .product-card {
@@ -1648,13 +1605,13 @@ html {
 .company-description__features-list {
   display: flex;
   flex-wrap: wrap;
-  gap: 40px 30px;
+  gap: 40px 31px;
   justify-content: flex-start;
 }
 
 .company-description__features-item {
   position: relative;
-  width: 442px;
+  width: 441px;
   padding-left: 64px;
 }
 
@@ -1670,7 +1627,7 @@ html {
   display: block;
   width: 44px;
   height: 44px;
-  background: url("../images/icons/ice-lolly-icon.svg") no-repeat 50% 50%;
+  background: url("../images/icons/ice-lolly-icon.svg") no-repeat 50% 50% transparent;
   background-size: 32px 32px;
   border: 2px solid var(--extra-dark);
   border-radius: 50%;
@@ -1684,7 +1641,7 @@ html {
   display: block;
   width: 44px;
   height: 44px;
-  background: url("../images/icons/cow-icon.svg") no-repeat 50% 50%;
+  background: url("../images/icons/cow-icon.svg") no-repeat 50% 50% transparent;
   background-size: 32px 32px;
   border: 2px solid var(--extra-dark);
   border-radius: 50%;
@@ -1698,7 +1655,7 @@ html {
   display: block;
   width: 44px;
   height: 44px;
-  background: url("../images/icons/leaf-icon.svg") no-repeat 50% 50%;
+  background: url("../images/icons/leaf-icon.svg") no-repeat 50% 50% transparent;
   background-size: 32px 32px;
   border: 2px solid var(--extra-dark);
   border-radius: 50%;
@@ -1712,7 +1669,7 @@ html {
   display: block;
   width: 44px;
   height: 44px;
-  background: url("../images/icons/thermometer-icon.svg") no-repeat 50% 50%;
+  background: url("../images/icons/thermometer-icon.svg") no-repeat 50% 50% transparent;
   background-size: 32px 32px;
   border: 2px solid var(--extra-dark);
   border-radius: 50%;
@@ -1721,10 +1678,11 @@ html {
 /* Блог */
 /* news */
 .news {
-  align-self: stretch;
+  min-height: 224px;
   background: url("../images/blog.jpg") no-repeat var(--blank);
-  background-size: cover;
+  background-size: 345px; /* Или 62%. В процентах на всю ширину не слишком блюрится, но чтобы не запороть проверку, решил поставить жёсткий размер. */
   border-radius: var(--big-radius);
+  background-position: top right;
 }
 
 .news__container {
@@ -1735,15 +1693,16 @@ html {
 }
 
 .news__blog-title {
-  margin: 0;
-  margin-bottom: 12px;
+  margin: 1px 0 13px;
+  font-size: 16px;
   line-height: 20px;
   color: var(--dark);
 }
 
 .news__blog {
   display: block;
-  max-width: 303px;
+  max-width: 60%;
+  margin-bottom: 14px;
   box-sizing: border-box;
   font-size: 24px;
   line-height: 30px;
@@ -1790,7 +1749,7 @@ html {
 
 .subscription__form {
   display: flex;
-  column-gap: 14px;
+  column-gap: 18px;
 }
 
 .subscription__input {
@@ -1807,12 +1766,12 @@ html {
 }
 
 .info-card--delivery {
-  background: url("../images/delivery.jpg") no-repeat;
+  background: url("../images/delivery.jpg") no-repeat var(--neutral-accent);
   background-size: cover;
 }
 
 .info-card--contacts {
-  background: url("../images/contacts.jpg") no-repeat;
+  background: url("../images/contacts.jpg") no-repeat var(--neutral-accent);
   background-size: cover;
 }
 
@@ -1831,6 +1790,7 @@ html {
 }
 
 .info-card__title {
+  margin: 2px 0 23px;
   font-size: 32px;
   line-height: 46px;
   font-weight: 900;
@@ -1844,6 +1804,7 @@ html {
 }
 
 .info-card__block {
+  height: max-content;
   padding: 40px;
   box-sizing: border-box;
   background-color: var(--extra-light);
@@ -1857,12 +1818,13 @@ html {
 
 .info-card__block--contacts {
   width: 343px;
+  padding-top: 38px;
 }
 
 .info-card__form {
   display: grid;
   grid-template-columns: 116px 286px;
-  gap: 16px 20px;
+  gap: 16px 16px;
   align-items: end;
 }
 
@@ -1950,7 +1912,7 @@ html {
   flex-wrap: wrap;
   justify-content: flex-start;
   align-items: center;
-  margin-bottom: 16px;
+  margin-bottom: 17px;
 }
 
 .breadcrumbs__item {
@@ -1974,6 +1936,7 @@ html {
 }
 
 .breadcrumbs__link--current {
+  padding-bottom: 1px;
   border-bottom: 1px solid var(--extra-dark);
 }
 
@@ -2006,7 +1969,7 @@ html {
 .filter {
   display: flex;
   flex-wrap: wrap;
-  gap: 16px;
+  gap: 16px 21px;
 }
 
 .filter__content {
@@ -2018,7 +1981,7 @@ html {
 .filter__item {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 6px;
   border: none;
   margin: 0;
   padding: 0;
@@ -2041,13 +2004,17 @@ html {
 
 .filter__label {
   display: flex;
+  column-gap: 6px;
+}
+
+.filter__title--range .filter__label {
   column-gap: 4px;
 }
 
 .filter__container {
   display: flex;
   flex-wrap: wrap;
-  gap: 16px;
+  gap: 18px;
   width: max-content;
   max-width: 1170px;
   padding: 8px 16px;
@@ -2141,12 +2108,12 @@ html {
 }
 
 .filter__toggle--min {
-  top: -8px;
+  top: -6px;
   left: -16px;
 }
 
 .filter__toggle--max {
-  top: -8px;
+  top: -6px;
   right: -8px;
 }
 
@@ -2162,6 +2129,7 @@ html {
   width: 16px;
   height: 16px;
   min-width: 16px;
+  box-sizing: border-box;
   border: 1px solid var(--extra-dark);
 }
 
@@ -2223,12 +2191,12 @@ html {
 }
 
 .filter__input:checked + .filter__check--box {
-  background: url("../images/icons/checkbox-checked-icon.svg") no-repeat;
+  background: url("../images/icons/checkbox-checked-icon.svg") no-repeat transparent;
   border: none;
 }
 
 .filter__input:checked:hover + .filter__check--box {
-  background: url("../images/icons/checkbox-light-checked-icon.svg") no-repeat;
+  background: url("../images/icons/checkbox-light-checked-icon.svg") no-repeat transparent;
   border: none;
 }
 
@@ -2240,30 +2208,35 @@ html {
   grid-template-areas: ". button list";
   align-items: center;
   justify-content: space-between;
-  padding-top: 55px;
-  padding-bottom: 80px;
+  padding-top: 53px;
+  padding-bottom: 74px;
 }
 
-.pagination-button {
+.pagination__controls {
+  display: flex;
+  justify-self: end;
+  align-items: center;
+  grid-area: list;
+}
+
+.pagination__button {
   display: flex; /* Для маловероятного переполнения кнопками. */
   flex-wrap: wrap;
   gap: 8px;
   justify-content: center;
   align-items: center;
+  padding-right: 14px; /* Ради пиксель пёрфекта. */
   text-align: center;
   grid-area: button;
 }
 
-.pagination-list {
+.pagination__list {
   display: flex;
   flex-wrap: wrap;
-  justify-self: end;
   align-items: center;
-  list-style: none;
-  grid-area: list;
 }
 
-.pagination-list__link {
+.pagination__link {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -2280,44 +2253,47 @@ html {
   border-radius: 50%;
 }
 
-.pagination-list__link:hover {
+.pagination__link:hover {
   background-color: var(--extra-light-05);
   border: 1px solid var(--extra-light-05);
 }
 
-.pagination-list__link:focus {
+.pagination__link:focus {
   background-color: var(--extra-light-05);
   border: 1px solid var(--extra-dark);
 }
 
-.pagination-list__link:active {
+.pagination__link:active {
   background-color: var(--extra-light-05);
   border: 1px solid var(--extra-light);
 }
 
-.pagination-list__link--current {
+.pagination__link--current {
   background-color: var(--extra-light);
   border: 1px solid var(--extra-light);
 }
 
-.pagination-list__link--prev {
+.pagination__link--prev {
+  margin-left: 5px;
   background-image: url("../images/icons/arrow-icon.svg");
   background-repeat: no-repeat;
   background-position: 50% 50%;
   transform: rotate(180deg);
 }
 
-.pagination-list__link--next {
+.pagination__link--next {
+  margin-left: 5px;
+  margin-right: -5px;
   background-image: url("../images/icons/arrow-icon.svg");
   background-repeat: no-repeat;
   background-position: 55% 50%;
 }
 
-.pagination-list__link--disabled {
+.pagination__link--disabled {
   opacity: 0.3;
 }
 
-.pagination-list__link--disabled:hover {
+.pagination__link--disabled:hover {
   background-color: transparent;
   border: 1px solid transparent;
   cursor: auto;

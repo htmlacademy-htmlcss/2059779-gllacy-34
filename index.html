@@ -17,6 +17,7 @@
 
   <body class="page">
     <div class="page-container">
+      <h1 class="visually-hidden">Магазин мороженого «Глейси»</h1>
       <header class="page-header">
         <nav class="navigation">
           <a class="navigation__logo-link" href="index.html">
@@ -74,7 +75,7 @@
                   <label class="visually-hidden" for="login-form-password">Пароль</label>
                   <input class="input-text" id="login-form-password" type="password" name="login-form-password">
                   <div class="modal-form__login-controls">
-                    <button class="button button--bright-accent button--login">Войти</button>
+                    <button class="button button--bright-accent button--login" type="submit">Войти</button>
                     <div class="modal-form__actions">
                       <a class="modal-form__action" href="#">Забыли пароль?</a>
                       <a class="modal-form__action" href="#">Регистрация</a>
@@ -100,7 +101,6 @@
         </nav>
       </header>
       <main class="main-index">
-        <h1 class="visually-hidden">Магазин мороженого «Глейси»</h1>
         <section class="promo">
           <h2 class="visually-hidden">Выбор мороженого</h2>
           <div class="slider">
@@ -108,7 +108,7 @@
               <li class="slider__text slider__text--active" id="slider__text-1">
                 <!-- Я так понимаю, что под JS нужны будут ID. -->
                 <p class="slider__title" id="slider__title-1">Нежный пломбир с&nbsp;клубничным джемом</p>
-                <p class="slider__definition" id="slider__descriprion-1">Натуральное мороженое из&nbsp;свежих сливок и&nbsp;молока с&nbsp;вкуснейшим клубничным джемом&nbsp;&mdash; это идеальный десерт для всей семьи.</p>
+                <p class="slider__definition" id="slider__descriprion-1">Натуральное мороженое из&nbsp;свежих сливок и&nbsp;молока с&nbsp;вкуснейшим клубничным джемом &mdash;&nbsp;это идеальный десерт для всей семьи.</p><!-- Вообще Типограф говорит, что тире нельзя отрывать от предыдущего слова. Но тогда всё поедет. И тире в макете слишком короткое. -->
                 <a class="button button--default" href="#">Заказать</a>
               </li>
               <li class="slider__text slider__text--inactive" id="slider__text-2">
@@ -126,10 +126,10 @@
               <li class="slider__picture slider__picture--active" id="slider__picture-1">
                 <div class="slider__content">
                   <img class="slider__image" src="images/slider/ice-cream-strawberry.png" width="306" height="507" alt="Пломбир с джемом в стаканчике." aria-labelledby="slider__text-1" aria-describedby="slider__descriprion-1">
-                  <button class="button slider__button slider__button--prev" type="button">
+                  <button class="slider__button slider__button--prev" type="button">
                     <span class="visually-hidden">Предыдущее фото.</span>
                   </button>
-                  <button class="button slider__button slider__button--next" type="button">
+                  <button class="slider__button slider__button--next" type="button">
                     <span class="visually-hidden">Следующее фото.</span>
                   </button>
                 </div>
@@ -257,7 +257,7 @@
             </article>
             <article class="product-card">
               <div class="product-card__product">
-                <h3 class="product-card__title"><a class="product-card__link" href="#">Бабл-гам</a></h3>
+                <h3 class="product-card__title"><a class="product-card__link" href="#">Бабл&#8209;гам</a></h3>
                 <a class="product-card__img-link" href="#" tabindex="-1"><img class="product-card__image" src="images/catalog/bubble-gum.jpg" width="168" height="168" alt=""></a>
               </div>
               <p class="product-card__description">Ванильный пломбир со&nbsp;сладкой посыпкой</p>
@@ -277,7 +277,7 @@
           <div class="company-description__container">
             <h2 class="visually-hidden">О компании</h2>
             <article class="company-description__content">
-              <h3 class="company-description__title section-title">Магазин Глейси&nbsp;&mdash; это онлайн и&nbsp;офлайн-магазин по&nbsp;продаже мороженого собственного производства на&nbsp;развес</h3>
+              <h3 class="company-description__title section-title">Магазин Глейси&nbsp;– это онлайн и&nbsp;офлайн-магазин по&nbsp;продаже мороженого собственного производства на&nbsp;развес</h3>
               <ul class="company-description__features-list reset-list">
                 <li class="company-description__features-item company-description__features-item--ice-lolly">Всё наше мороженое изготавливается на&nbsp;собственном производстве с&nbsp;использованием современного оборудования и&nbsp;проверенных временем технологий.</li>
                 <li class="company-description__features-item company-description__features-item--cow">Закупка ингредиентов производится только у&nbsp;проверенных фермерских хозяйств, с&nbsp;которыми нас связывает долговременное сотрудничество.</li>
@@ -302,7 +302,7 @@
                 <form class="subscription__form" action="https://echo.htmlacademy.ru/" method="post">
                   <label class="visually-hidden" for="newsletter-email">Email.</label>
                   <input class="subscription__input input-text" id="newsletter-email" type="email" name="newsletter-email" placeholder="email@example.com">
-                  <button class="button button--bright-accent">Отправить</button>
+                  <button class="button button--bright-accent" type="submit">Отправить</button>
                 </form>
               </div>
             </aside>
@@ -311,7 +311,7 @@
         <section class="info-card info-card--delivery">
           <div class="info-card__content">
             <div class="info-card__text-block">
-              <h2 class="info-card__title section-title">Доставка любимого мороженого на&nbsp;дом</h2>
+              <h2 class="info-card__title">Доставка любимого мороженого на&nbsp;дом</h2>
               <p class="info-card__description">Хочется полакомиться любимым десертом, но&nbsp;нет времени съездить в&nbsp;магазин? Закажите доставку мороженого на&nbsp;дом, и&nbsp;курьер привезёт вам ваш заказ в&nbsp;течение
                 часа!</p>
             </div>
@@ -347,7 +347,7 @@
                   <input class="input-text" id="info-card-address" type="text" name="info-card-address" placeholder="ул. Большая Конюшенная, 19/8">
                 </p>
                 <div class="info-card__button">
-                  <button class="button button--bright-accent">Отправить</button>
+                  <button class="button button--bright-accent" type="submit">Отправить</button>
                 </div>
               </form>
             </div>
@@ -362,9 +362,7 @@
               <p class="info-card__address-title">Для заказов по&nbsp;телефону:</p>
               <a class="info-card__phone-number" href="tel:+78128121212">+7&nbsp;(812)&nbsp;812-12-12</a>
               <p class="info-card__note">(с&nbsp;10&nbsp;до&nbsp;20&nbsp;ежедневно)</p>
-              <div class="joker" id="close">
-                <a class="button button--bright-accent" href="#modal">Форма обратной связи</a>
-              </div>
+              <a class="button button--bright-accent" href="#modal">Форма обратной связи</a>
             </address>
           </div>
         </section>
@@ -401,10 +399,10 @@
             <a href="#" class="about__link about__link--favorite">Для поставщиков</a>
           </li>
           <li class="about__item">
-            <a href="#" class="about__link">О&nbsp;производстве</a>
+            <a href="#" class="about__link">Наши документы</a>
           </li>
           <li class="about__item">
-            <a href="#" class="about__link">Наши документы</a>
+            <a href="#" class="about__link">О&nbsp;производстве</a>
           </li>
           <li class="about__item">
             <a href="#" class="about__link">Экологические стандарты</a>
@@ -418,7 +416,9 @@
         </div>
         <div class="modal modal--close" id="modal">
           <div class="modal__feedback">
-            <a class="modal__close-button" href="#close" role="button" aria-label="Закрыть окно"></a>
+            <a href="#close"><!-- Иначе трюк с :target не работает. -->
+            <button class="modal__close-button" href="#close" type="button" role="button" aria-label="Закрыть окно"></button>
+            </a>
             <section class="modal__content">
               <h2 class="modal__title">Мы обязательно ответим вам!</h2>
               <form class="modal-form" action="https://echo.htmlacademy.ru/" method="post">
@@ -427,9 +427,9 @@
                 <label class="visually-hidden" for="modal__email">E-mail.</label>
                 <input class="input-text" id="modal__email" type="email" name="modal__email" placeholder="email@example.com">
                 <label class="visually-hidden" for="modal__message">Ваше сообщение</label>
-                <textarea class="input-text" id="modal__message" name="modal__message" rows="7" placeholder="В свободной форме"></textarea>
+                <textarea class="input-text" id="modal__message" name="modal__message" rows="6" placeholder="В свободной форме"></textarea>
                 <div class="modal-form__feedback-controls">
-                  <button class="button button--bright-accent button--modal">Отправить</button>
+                  <button class="button button--bright-accent button--modal" type="submit">Отправить</button>
                 </div>
               </form>
             </section>

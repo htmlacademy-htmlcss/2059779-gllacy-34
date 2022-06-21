@@ -74,7 +74,7 @@
                   <label class="visually-hidden" for="login-form-password">Пароль</label>
                   <input class="input-text" id="login-form-password" type="password" name="login-form-password">
                   <div class="modal-form__login-controls">
-                    <button class="button button--bright-accent button--login">Войти</button>
+                    <button class="button button--bright-accent button--login" type="submit">Войти</button>
                     <div class="modal-form__actions">
                       <a class="modal-form__action" href="#">Забыли пароль?</a>
                       <a class="modal-form__action" href="#">Регистрация</a>
@@ -253,7 +253,7 @@
                 </ul>
               </fieldset>
             </div>
-            <button class="button button--light-accent button--filter">Применить</button>
+            <button class="button button--light-accent button--filter" type="submit">Применить</button>
           </form>
           <div class="catalog-products-container product-cards product-cards--catalog">
             <article class="product-card">
@@ -307,7 +307,7 @@
             </article>
             <article class="product-card">
               <div class="product-card__product">
-                <h3 class="product-card__title"><a class="product-card__link" href="#">Бабл-гам</a></h3>
+                <h3 class="product-card__title"><a class="product-card__link" href="#">Бабл&#8209;гам</a></h3>
                 <a class="product-card__img-link" href="#" tabindex="-1"><img class="product-card__image" src="images/catalog/bubble-gum.jpg" width="168" height="168" alt=""></a>
               </div>
               <p class="product-card__description">Ванильный пломбир со&nbsp;сладкой посыпкой</p>
@@ -435,10 +435,10 @@
             </article>
             <article class="product-card">
               <div class="product-card__product">
-                <h3 class="product-card__title"><a class="product-card__link" href="#">Крем-брюле</a></h3>
+                <h3 class="product-card__title"><a class="product-card__link" href="#">Крем&#8209;брюле</a></h3>
                 <a class="product-card__img-link" href="#" tabindex="-1"><img class="product-card__image" src="images/catalog/creme-brulee.jpg" width="168" height="168" alt=""></a>
               </div>
-              <p class="product-card__description">Классическое крем-брюле </p>
+              <p class="product-card__description">Классическое крем&#8209;брюле </p>
               <div class="product-card__purchase">
                 <b class="product-card__price">280&nbsp;<span class="product-card__currency">₽/кг</span></b>
                 <button class="product-card__button button" type="button">
@@ -451,36 +451,34 @@
             </article>
           </div>
           <div class="pagination">
-            <div class="pagination-button">
+            <div class="pagination__button">
               <button class="button button--default" type="button">Показать ещё</button>
             </div>
-            <ul class="pagination-list reset-list">
-              <li class="pagination-list__item">
-                <a class="pagination-list__link pagination-list__link--prev pagination-list__link--disabled" href="#">
-                  <span class="visually-hidden">Предыдущая страница.</span>
-                </a>
-              </li>
-              <li class="pagination-list__item">
-                <a class="pagination-list__link" href="#">1</a>
-              </li>
-              <li class="pagination-list__item">
-                <a class="pagination-list__link" href="#">2</a>
-              </li>
-              <li class="pagination-list__item">
-                <a class="pagination-list__link pagination-list__link--current" href="#">3</a><!-- Вообще тут или первый пункт меню должен быть выбран, или стрелка влево активна. -->
-              </li>
-              <li class="pagination-list__item">
-                <a class="pagination-list__link" href="#">4</a>
-              </li>
-              <li class="pagination-list__item">
-                <a class="pagination-list__link" href="#">5</a>
-              </li>
-              <li class="pagination-list__item">
-                <a class="pagination-list__link pagination-list__link--next" href="#">
-                  <span class="visually-hidden">Следующая страница.</span>
-                </a>
-              </li>
-            </ul>
+            <div class="pagination__controls">
+              <a class="pagination__link pagination__link--prev pagination__link--disabled" href="#">
+                <span class="visually-hidden">Предыдущая страница.</span>
+              </a>
+              <ul class="pagination__list reset-list">
+                <li class="pagination__item">
+                  <a class="pagination__link" href="#">1</a>
+                </li>
+                <li class="pagination__item">
+                  <a class="pagination__link" href="#">2</a>
+                </li>
+                <li class="pagination__item">
+                  <a class="pagination__link pagination__link--current" href="#">3</a><!-- Вообще тут или первый пункт меню должен быть выбран, или стрелка влево активна. -->
+                </li>
+                <li class="pagination__item">
+                  <a class="pagination__link" href="#">4</a>
+                </li>
+                <li class="pagination__item">
+                  <a class="pagination__link" href="#">5</a>
+                </li>
+              </ul>
+              <a class="pagination__link pagination__link--next" href="#">
+                <span class="visually-hidden">Следующая страница.</span>
+              </a>
+            </div>
           </div>
         </section>
       </main>
