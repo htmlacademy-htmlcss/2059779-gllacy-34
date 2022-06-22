@@ -1463,13 +1463,13 @@ html {
   overflow-wrap: break-word;
   box-decoration-break: clone; /* В Хроме не работает, в фоксе очевидным образом падинги накладываются. Подумать на счёт line height или display block. */
   color: var(--extra-dark);
-  transition: var(--links-transition), padding 50ms linear;
 }
 
 .product-card__link:hover {
   padding: 8px 16px;
   background-color: var(--extra-light-accent);
   border-radius: 30px;
+  transition: var(--links-transition), padding 50ms linear;
 }
 
 .product-card__link:focus {
