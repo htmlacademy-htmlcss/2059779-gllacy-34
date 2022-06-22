@@ -18,7 +18,7 @@
   <body class="page">
     <div class="page-container">
       <header class="page-header common-header">
-        <nav class="navigation">
+        <nav class="navigation" aria-label="Основное меню">
           <a class="navigation__logo-link" href="index.html">
             <img class="navigation__logo" src="images/page-header-logo.svg" width="137" height="57" alt="Логотип магазина мороженого «Глейси».">
           </a>
@@ -42,97 +42,29 @@
           </ul>
           <a class="navigation__phone" href="tel:+78005558628">+7 800 555-86-28</a>
           <ul class="user-menu reset-list">
-            <li class="user-menu__item popup">
+            <li class="user-menu__item">
               <a class="user-menu__link user-menu__link--search" href="#search">
                 <svg class="user-menu__icon" width="14" height="14" fill="none" aria-hidden="true" focusable="false" viewBox="0 0 14 14" xmlns="http://www.w3.org/2000/svg">
                   <path fill-rule="evenodd" clip-rule="evenodd" d="M1.663 6.188a4.667 4.667 0 1 1 8.028 3.237.674.674 0 0 0-.124.124 4.667 4.667 0 0 1-7.904-3.361Zm8.412 4.688a6 6 0 1 1 .943-.943l2.45 2.45a.667.667 0 1 1-.943.943l-2.45-2.45Z" />
                 </svg>
                 <span class="visually-hidden">Поиск.</span>
               </a>
-              <div class="popup__open" id="search"><a class="popup__close" href="#closesearch"></a></div>
-              <section class="popup__content popup__content--search">
-                <h2 class="visually-hidden">Поиск</h2>
-                <form class="modal-form" action="https://echo.htmlacademy.ru/" method="post">
-                  <label class="visually-hidden" for="search-field">Поисковая строка.</label>
-                  <input class="input-text" id="search-field" type="search" name="login-form__email" placeholder="Поиск по сайту">
-                </form>
-              </section>
             </li>
-            <li class="user-menu__item popup">
+            <li class="user-menu__item">
               <a class="user-menu__link" href="#login">
                 <svg class="user-menu__icon" width="16" height="17" aria-hidden="true" focusable="false" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path fill-rule="evenodd" clip-rule="evenodd" d="M9 2.5246a.6667.6667 0 0 1 .6667-.6667h2.6666a1.9997 1.9997 0 0 1 2 2v9.3333a2 2 0 0 1-2 2H9.6667a.6666.6666 0 1 1 0-1.3333h2.6666a.6664.6664 0 0 0 .4714-.1953.6662.6662 0 0 0 .1953-.4714V3.8579a.6664.6664 0 0 0-.6667-.6667H9.6667A.6667.6667 0 0 1 9 2.5246ZM5.8619 4.7198a.6667.6667 0 0 1 .9428 0l3.3291 3.3291a.6627.6627 0 0 1 .129.177.664.664 0 0 1 .0705.2987.6636.6636 0 0 1-.1998.4759l-3.3288 3.3288a.6667.6667 0 1 1-.9428-.9428L8.057 9.1912H1.6668a.6667.6667 0 1 1 0-1.3333h6.3905L5.8619 5.6627a.6667.6667 0 0 1 0-.9429Z" />
                 </svg>
                 <span>Вход</span>
               </a>
-              <div class="popup__open" id="login"><a class="popup__close" href="#closelogin"></a></div>
-              <section class="popup__content popup__content--login-form">
-                <h2 class="popup__title">Личный кабинет</h2>
-                <form class="modal-form" action="https://echo.htmlacademy.ru/" method="post">
-                  <label class="visually-hidden" for="login-form-email">E-mail.</label>
-                  <input class="input-text" id="login-form-email" type="email" name="login-form-email" placeholder="email@example.com">
-                  <label class="visually-hidden" for="login-form-password">Пароль</label>
-                  <input class="input-text" id="login-form-password" type="password" name="login-form-password">
-                  <div class="modal-form__login-controls">
-                    <button class="button button--bright-accent button--login" type="submit">Войти</button>
-                    <div class="modal-form__actions">
-                      <a class="modal-form__action" href="#">Забыли пароль?</a>
-                      <a class="modal-form__action" href="#">Регистрация</a>
-                    </div>
-                  </div>
-                </form>
-              </section>
             </li>
-            <li class="user-menu__item popup">
+            <li class="user-menu__item">
               <a class="user-menu__link user-menu__link--current" href="#cart">
                 <svg class="user-menu__icon" width="16" height="16" aria-hidden="true" focusable="false" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path fill-rule="evenodd" clip-rule="evenodd" d="M1.16667 1.25C.79847 1.25.5 1.54848.5 1.91667c0 .36819.29848.66666.66667.66666h1.77127l.46743 2.33539a.66396.66396 0 0 0 .01063.0531l.96738 4.83333.00012.00056a1.8254 1.8254 0 0 0 .64571 1.06579c.3319.2672.74674.4098 1.17262.4033h5.62067a1.82555 1.82555 0 0 0 1.8185-1.46965l.001-.00499.9271-4.86144a.6669.6669 0 0 0-.1412-.54985.66678.66678 0 0 0-.5137-.24171H4.61072L4.1381 1.78583C4.07574 1.47426 3.80215 1.25 3.4844 1.25H1.16667Zm4.52431 8.29444L4.87759 5.4805h8.23081l-.7756 4.06686a.4923.4923 0 0 1-.1737.28555.4923.4923 0 0 1-.3181.10871v-.00013H6.19614v-.00012l-.01277.00025a.49218.49218 0 0 1-.4922-.39622l-.00019-.00096ZM4.55739 13.5054c0-.6879.55771-1.2457 1.24568-1.2457.68798 0 1.24569.5578 1.24569 1.2457 0 .688-.55771 1.2457-1.24569 1.2457-.68797 0-1.24568-.5577-1.24568-1.2457Zm6.37331 0c0-.6879.5577-1.2457 1.2457-1.2457.688 0 1.2457.5578 1.2457 1.2457 0 .688-.5577 1.2457-1.2457 1.2457-.688 0-1.2457-.5577-1.2457-1.2457Z" />
                 </svg>
                 <span>2 товара</span>
               </a>
-              <div class="popup__open" id="cart"><a class="popup__close" href="#closecart"></a></div>
-              <section class="popup__content popup__content--cart">
-                <h2 class="popup__title">Корзина</h2>
-                <table class="cart">
-                  <caption class="visually-hidden">Список товаров в корзине.</caption>
-                  <tbody>
-                  <tr class="cart__position">
-                    <td class="cart__box cart__box--image">
-                      <img class="cart__image" src="images/catalog/raspberry.jpg" width="46" height="46" alt="">
-                    </td>
-                    <td class="cart__box cart__box--product">
-                      <div class="cart__product">
-                        <a class="cart__name" href="#">Малинка</a>
-                        <span class="cart__quantity">1 кг&nbsp;х&nbsp;310&nbsp;₽</span>
-                      </div>
-                    </td>
-                    <td class="cart__box cart__box--price">310&nbsp;₽</td>
-                    <td class="cart__box cart__box--button">
-                      <button class="cart__delete" type="button"></button>
-                    </td>
-                  </tr>
-                  <tr class="cart__position">
-                    <td class="cart__box cart__box--image">
-                      <img class="cart__image" src="images/catalog/bubble-gum.jpg" width="46" height="46" alt="">
-                    </td>
-                    <td class="cart__box cart__box--product">
-                      <div class="cart__product">
-                        <a class="cart__name" href="#">Бабл-гам</a>
-                        <span class="cart__quantity">1,5 кг&nbsp;х&nbsp;320&nbsp;₽</span>
-                      </div>
-                    </td>
-                    <td class="cart__box cart__box--price">480&nbsp;₽</td>
-                    <td class="cart__box cart__box--button">
-                      <button class="cart__delete" type="button"></button>
-                    </td>
-                  </tr>
-                </tbody>
-                </table>
-                <div class="cart-order">
-                  <button class="button button--bright-accent">Оформить заказ</button>
-                  <span class="cart-order__text">Итого: 790&nbsp;₽</span>
-                </div>
-              </section>
             </li>
           </ul>
         </nav>
@@ -147,11 +79,82 @@
           </li>
         </ul>
         <h1 class="catalog-title section-title section-title--сatalog">Сливочное мороженое</h1>
+        <div class="popup">
+          <!-- Если где-то вверху будет изменение высоты, то конечно всё уедет. -->
+          <div class="popup__open" id="search"><a class="popup__close" href="#closesearch"></a></div>
+          <section class="popup__content popup__content--search">
+            <h2 class="visually-hidden">Поиск</h2>
+            <form class="modal-form" action="https://echo.htmlacademy.ru/" method="post">
+              <label class="visually-hidden" for="search-field">Поисковая строка.</label>
+              <input class="input-text" id="search-field" type="search" name="login-form__email" placeholder="Поиск по сайту">
+            </form>
+          </section>
+          <div class="popup__open" id="login"><a class="popup__close" href="#closelogin"></a></div>
+          <section class="popup__content popup__content--login-form">
+            <h2 class="popup__title">Личный кабинет</h2>
+            <form class="modal-form" action="https://echo.htmlacademy.ru/" method="post">
+              <label class="visually-hidden" for="login-form-email">E-mail.</label>
+              <input class="input-text" id="login-form-email" type="email" name="login-form-email" placeholder="email@example.com">
+              <label class="visually-hidden" for="login-form-password">Пароль</label>
+              <input class="input-text" id="login-form-password" type="password" name="login-form-password">
+              <div class="modal-form__login-controls">
+                <button class="button button--bright-accent button--login" type="submit">Войти</button>
+                <div class="modal-form__actions">
+                  <a class="modal-form__action" href="#">Забыли пароль?</a>
+                  <a class="modal-form__action" href="#">Регистрация</a>
+                </div>
+              </div>
+            </form>
+          </section>
+          <div class="popup__open" id="cart"><a class="popup__close" href="#closecart"></a></div>
+          <section class="popup__content popup__content--cart">
+            <h2 class="popup__title">Корзина</h2>
+            <table class="cart">
+              <caption class="visually-hidden">Список товаров в корзине.</caption>
+              <tbody>
+                <tr class="cart__position">
+                  <td class="cart__box cart__box--image">
+                    <img class="cart__image" src="images/catalog/raspberry.jpg" width="46" height="46" alt="">
+                  </td>
+                  <td class="cart__box cart__box--product">
+                    <div class="cart__product">
+                      <a class="cart__name" href="#">Малинка</a>
+                      <span class="cart__quantity">1 кг&nbsp;х&nbsp;310&nbsp;₽</span>
+                    </div>
+                  </td>
+                  <td class="cart__box cart__box--price">310&nbsp;₽</td>
+                  <td class="cart__box cart__box--button">
+                    <button class="cart__delete" type="button"></button>
+                  </td>
+                </tr>
+                <tr class="cart__position">
+                  <td class="cart__box cart__box--image">
+                    <img class="cart__image" src="images/catalog/bubble-gum.jpg" width="46" height="46" alt="">
+                  </td>
+                  <td class="cart__box cart__box--product">
+                    <div class="cart__product">
+                      <a class="cart__name" href="#">Бабл-гам</a>
+                      <span class="cart__quantity">1,5 кг&nbsp;х&nbsp;320&nbsp;₽</span>
+                    </div>
+                  </td>
+                  <td class="cart__box cart__box--price">480&nbsp;₽</td>
+                  <td class="cart__box cart__box--button">
+                    <button class="cart__delete" type="button"></button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <div class="cart-order">
+              <button class="button button--bright-accent">Оформить заказ</button>
+              <span class="cart-order__text">Итого: 790&nbsp;₽</span>
+            </div>
+          </section>
+        </div>
         <section>
           <h2 class="visually-hidden">Список товаров с фильтрами</h2>
           <form class="filter" action="https://echo.htmlacademy.ru/" method="get">
             <div class="filter__content">
-              <fieldset class="filter__item">
+              <fieldset class="filter__item" aria-label="Фильтр по параметрам">
                 <h3 class="filter__title">Сортировка</h3>
                 <select class="filter__select filter__container filter__container--select" aria-label="Сортировка" name="sorting">
                   <option value="popular">по популярности</option>
@@ -159,7 +162,7 @@
                   <option value="calory">по калорийности</option>
                 </select>
               </fieldset>
-              <fieldset class="filter__item">
+              <fieldset class="filter__item" aria-label="Фильтр по цене">
                 <h3 class="filter__title filter__title--range">
                   <label class="filter__label"><span>Цена:</span><input class="filter__select filter__select--price" type="number" value="100" name="min-price" tabindex="-1"><span>₽</span></label>
                   <label class="filter__label"><span>–</span><input class="filter__select  filter__select--price" type="number" value="500" name="max-price" tabindex="-1"><span>₽</span></label>
@@ -177,7 +180,7 @@
                   </div>
                 </div>
               </fieldset>
-              <fieldset class="filter__item">
+              <fieldset class="filter__item" aria-label="Фильтр по жирности">
                 <h3 class="filter__title">Жирность:</h3>
                 <ul class="filter__container filter__container--checks reset-list">
                   <li>
@@ -212,7 +215,7 @@
               </fieldset>
             </div>
             <div class="filter__content">
-              <fieldset class="filter__item">
+              <fieldset class="filter__item" aria-label="Фильтр по наполнителям">
                 <h3 class="filter__title">Наполнители:</h3>
                 <ul class="filter__container filter__container--checks reset-list">
                   <li>
@@ -455,7 +458,7 @@
               <button class="button button--default" type="button">Показать ещё</button>
             </div>
             <div class="pagination__controls">
-              <a class="pagination__link pagination__link--prev pagination__link--disabled" href="#">
+              <a class="pagination__link pagination__link--prev pagination__link--disabled" href="#" tabindex="-1" >
                 <span class="visually-hidden">Предыдущая страница.</span>
               </a>
               <ul class="pagination__list reset-list">
@@ -466,7 +469,7 @@
                   <a class="pagination__link" href="#">2</a>
                 </li>
                 <li class="pagination__item">
-                  <a class="pagination__link pagination__link--current" href="#">3</a><!-- Вообще тут или первый пункт меню должен быть выбран, или стрелка влево активна. -->
+                  <a class="pagination__link pagination__link--current" href="#">3</a>
                 </li>
                 <li class="pagination__item">
                   <a class="pagination__link" href="#">4</a>
@@ -509,7 +512,7 @@
             </a>
           </li>
         </ul>
-        <ul class="about reset-list">
+        <ul class="about reset-list" aria-label="Дополнительное меню">
           <li class="about__item">
             <a href="#" class="about__link about__link--favorite">Для поставщиков</a>
           </li>
@@ -525,7 +528,6 @@
         </ul>
         <div class="footer-logo-container">
           <a class="footer-logo" href="https://htmlacademy.ru/" tabindex="-1">
-            <!-- Здесь я хочу вообще скрыть эту ссылку от читалок, потому что ниже уже есть она же. Но я не уверен на счёт aria-hidden, потому что MDN пишет, что этот атрибут используется для неинтерактивных элементов. -->
             <img class="footer-logo__image" src="images/footer-logo.svg" width="93" height="27" alt="логотип HTML Academy.">
           </a>
           <p class="about-text">Сделано в&nbsp;<a class="htmlacademy-link" href="https://htmlacademy.ru/">.html&nbsp;academy</a>&nbsp;©&nbsp;2021</p>
