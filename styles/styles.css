@@ -1428,8 +1428,7 @@ html {
 /* product-cards */
 .product-cards {
   display: grid;
-  grid-template-columns: repeat(4, 270px);
-  grid-template-rows: max-content;
+  grid-template-columns: repeat(4, 1fr);
   gap: 91px 30px;
   padding-top: 52px;
 }
@@ -1442,7 +1441,7 @@ html {
   position: relative;
   display: flex;
   flex-direction: column;
-  width: 270px;
+  width: 100%;
   padding: 133px 40px 24px;
   box-sizing: border-box;
   background-color: var(--extra-light);
