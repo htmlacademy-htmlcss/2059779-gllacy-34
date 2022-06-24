@@ -717,8 +717,20 @@ html {
   width: 420px;
 }
 
+.popup__content--login-form-catalog {
+  right: 229px;
+  gap: 32px;
+  width: 420px;
+}
+
 .popup__content--search {
   right: 326px;
+  width: 356px;
+  padding: 24px 16px;
+}
+
+.popup__content--search-catalog {
+  right: 333px;
   width: 356px;
   padding: 24px 16px;
 }
@@ -1073,7 +1085,7 @@ html {
   display: grid;
   grid-template-columns: 33% 33% 33%;
   justify-content: space-between;
-  padding: 40px 0 34px;
+  padding: 40px 0 48px;
 }
 
 .common-page-footer {
@@ -1419,7 +1431,7 @@ html {
 /* product-cards */
 .product-cards {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(4, 270px);
   gap: 91px 30px;
   padding-top: 52px;
 }
@@ -2281,7 +2293,7 @@ html {
 }
 
 .pagination__link--prev {
-  margin-left: 5px;
+  margin-right: 5px;
   background-image: url("../images/icons/arrow-icon.svg");
   background-repeat: no-repeat;
   background-position: 50% 50%;
